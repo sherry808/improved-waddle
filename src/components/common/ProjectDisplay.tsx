@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { pdpData, PDPData } from '@/data/pdpData';
 import Image from 'next/image';
@@ -13,65 +13,76 @@ interface ProjectDisplayProps {
     excludeProjectId?: string;
 }
 
-export default function ProjectDisplay({
-    excludeProjectId,
-}: ProjectDisplayProps) {
+export default function ProjectDisplay({ excludeProjectId }: ProjectDisplayProps) {
     const allProjects: PDPData[] = Object.values(pdpData);
-
-    const projectsToDisplay = allProjects
-
-    const firstProject = projectsToDisplay[0];
-    const remainingProjects = projectsToDisplay.slice(1);
-
+    const projectsToDisplay = allProjects;
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!firstProject) return;
+        if (!containerRef.current) return;
 
         const ctx = gsap.context(() => {
-            const card = document.getElementById('first-project-card');
-            const container = document.getElementById('first-project-container');
+            const sections = gsap.utils.toArray<HTMLElement>('.project-content');
 
-            if (!card || !container) return;
-
-            gsap.set(card, { x: '100vw' });
-
-            gsap.to(card, {
-                x: 247,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: container,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: true,
-                    pin: true,
-                    anticipatePin: 1,
-                },
+            sections.forEach((section) => {
+                gsap.fromTo(
+                    section,
+                    { x: '-30%', opacity: 0 },
+                    {
+                        x: '0%',
+                        opacity: 1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            end: 'bottom center',
+                            scrub: true,
+                        },
+                    }
+                );
             });
         }, containerRef);
 
         return () => ctx.revert();
-    }, [firstProject]);
+    }, []);
 
     return (
-        <section className="w-full bg-[#F0E5D6]">
-            <div className="flex flex-col gap-[80px] bg-[#F0E5D6]">
+        <section className="w-full bg-[#F0E5D6] py-[120px]" ref={containerRef}>
+            <div className="flex flex-col gap-[160px] bg-[#F0E5D6]">
                 {projectsToDisplay.map((project) => (
-                    <div key={project.id} className="flex flex-col md:flex-row w-full items-center justify-center gap-8 md:gap-[80px]">
-                        {project.displayImages.map((_, i) => (
-                            <div key={i} className="w-[100px] h-[100px] md:w-[164px] md:h-[164px] bg-white flex-shrink-0" />
-                        ))}
-                        <div className="flex-shrink-0 text-center order-first md:order-none">
-                            <div className="flex justify-center gap-2">
-                                {project.page1.area.map((area, i) => (
-                                    <span key={i} className="text-[16px] font-nats text-[#351A12] uppercase tracking-widest">{area}</span>
-                                ))}
+                    <div key={project.id} className="project-section w-full">
+                        {/* Inner scrolling content */}
+                        <div className="project-content flex flex-col md:flex-row w-full items-center justify-center gap-8 md:gap-[80px] px-10 opacity-0 transform">
+                            {/* Thumbnails */}
+                            {project.displayImages.map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="w-[100px] h-[100px] md:w-[164px] md:h-[164px] bg-white flex-shrink-0"
+                                />
+                            ))}
+
+                            {/* Text Block */}
+                            <div className="flex-shrink-0 text-center order-first md:order-none">
+                                <div className="flex justify-center gap-2">
+                                    {project.page1.area.map((area, i) => (
+                                        <span
+                                            key={i}
+                                            className="text-[16px] font-nats text-[#351A12] uppercase tracking-widest"
+                                        >
+                                            {area}
+                                        </span>
+                                    ))}
+                                </div>
+                                <h2 className="font-normal text-[36px] md:text-[40px] font-monthis text-[#351A12] mt-4">
+                                    {project.page1.title}
+                                </h2>
                             </div>
-                            <h2 className="font-normal text-[36px] md:text-[40px] font-monthis text-[#351A12] mt-4">{project.page1.title}</h2>
                         </div>
                     </div>
                 ))}
             </div>
-        </section >
+        </section>
     );
-} 
+}
+
+
