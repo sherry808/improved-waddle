@@ -33,7 +33,7 @@ export default function PDP1() {
                 <img
                     src={data.page3.media[0]}
                     alt="Media"
-                    className="w-full h-[300px] object-cover md:w-[1440px] md:h-[738px]"
+                    className="w-full h-[400px] object-cover md:w-[1440px] md:h-[738px]"
                 />
             </section>
             <Foundations
@@ -48,7 +48,7 @@ export default function PDP1() {
                 <img
                     src={data.page5.image}
                     alt="Process"
-                    className="w-full h-[300px] object-cover md:w-[1440px] md:h-[738px]"
+                    className="w-full h-[400px] object-cover md:w-[1440px] md:h-[738px]"
                 />
             </section>
             <Strategy
@@ -62,8 +62,8 @@ export default function PDP1() {
                 finalDirection={data.page7.finalDirection}
             />
             {/* Page8 Media Section */}
-            <section className="hidden md:flex justify-center items-center pt-[95px] pb-[115px] px-[103px] bg-transparent">
-                <div className="relative w-[1231px] h-[778px]">
+            <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
+                <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
                     <img
                         src={data.page8.media}
                         alt="Media"

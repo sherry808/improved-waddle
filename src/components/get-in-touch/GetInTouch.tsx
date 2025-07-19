@@ -1,37 +1,55 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const GetInTouch: React.FC = () => {
     return (
-        <section className="w-full py-16 bg-[#351A12]">
-            <div className="px-[30px] text-left">
-                <div className="mb-16 pt-[50px] pb-[50px]">
-                    <h2 className="font-normal text-[64px] font-monthis text-[#D2ADCE] mb-4 whitespace-nowrap">
-                        Get in Touch
-                    </h2>
-                    <div className="mt-12">
-                        <div className="mt-[30px]">
-                            <p className="text-[15px] font-nats text-[#F7F5ED] uppercase leading-none">Email Address</p>
-                            <p className="text-[12px] font-nats text-[#F7F5ED] mt-[18px] leading-none">info@milibajaj.com</p>
+        <section className="w-full bg-[#351A12] py-0">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full">
+                {/* Left: GetInTouch content */}
+                <div className="flex-1 px-[30px] md:pl-[105px] md:pr-[100px] text-left flex flex-col justify-center order-2 md:order-1">
+                    <div className="pt-[55px] pb-[50px] md:pt-[105px] md:pb-0">
+                        <h2 className="font-normal text-[15px] md:text-[20px] font-nats text-[#F7F5ED] mb-[20px] md:mb-[25px] mt-0 m-0 p-0 uppercase">
+                            Contact
+                        </h2>
+                        <h2 className="font-normal text-[64px] md:text-[96px] font-monthis text-[#D2ADCE] mb-[30px] md:mb-[45px] mt-0 m-0 p-0 leading-none whitespace-nowrap">
+                            Get in Touch
+                        </h2>
+                        <div>
+                            <div className="flex flex-col md:flex-row md:gap-x-[100px]">
+                                <div>
+                                    <p className="text-[15px] md:text-[20px] font-nats text-[#F7F5ED] uppercase leading-none">Email Address</p>
+                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] leading-none">info@milibajaj.com</p>
+                                </div>
+                                <div className="mt-[30px] md:mt-0">
+                                    <p className="text-[15px] md:text-[20px] font-nats text-[#F7F5ED] uppercase leading-none">Phone Number</p>
+                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] pb-[25px] leading-none">+91 1234567890</p>
+                                </div>
+                            </div>
+                            <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] mt-0 md:mt-[50px]">
+                                Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry.
+                            </p>
+                            <button className="w-full md:w-[452px] h-[42px] bg-[#D2ADCE] text-[#351A12] font-nats text-[15px] md:text-[20px] uppercase border-none focus:outline-none mt-[25px] md:mt-[45px]">
+                                Schedule a consultation
+                            </button>
                         </div>
-                        <div className="mt-[30px]">
-                            <p className="text-[15px] font-nats text-[#F7F5ED] uppercase leading-none">Phone Number</p>
-                            <p className="text-[12px] font-nats text-[#F7F5ED] mt-[18px] leading-none">+91- 9958338850</p>
-                        </div>
-                        <p className="mt-[30px] text-[12px] font-nats text-[#F7F5ED]">
-                            Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry.
-                        </p>
-                        <button
-                            className="mt-[30px] w-full h-[32px] md:w-[300px] bg-[#D2ADCE] text-[#351A12] font-nats text-[15px] uppercase border-none focus:outline-none"
-                        >
-                            SCHEDULE A CONSULTATION
-                        </button>
                     </div>
+                </div>
+
+                {/* Right: Image */}
+                <div className="relative w-full h-[400px] md:w-[786px] md:h-[623px] md:ml-[40px] md:mt-0 shrink-0 order-1 md:order-2">
+                    <Image
+                        src="/images/get-in-touch.png"
+                        alt="Get in Touch"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
                 </div>
             </div>
         </section>
     );
 };
 
-export default GetInTouch; 
+export default GetInTouch;

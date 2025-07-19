@@ -2,37 +2,22 @@
 
 import Image from 'next/image';
 
-export default function MeetCreator() {
+export default function Hero() {
     return (
-        <section id="about" className="pt-[50px] pb-0 md:pt-[80px] md:pb-16 bg-[#351A12]">
+        <section id="about" className="pb-0 md:pt-[80px] md:pb-16">
+            {/* Mobile image, full width, no padding */}
+            <div className="md:hidden">
+                <div className="w-[360px] h-[360px] bg-white mx-auto"></div>
+            </div>
             <div className="px-[30px] md:px-[103px] pb-[50px] md:pb-[80px]">
-                <h2 className="font-normal text-[15px] md:text-[20px] font-nats text-tertiary mb-0 !mb-0 md:mb-0 md:pb-[40px] uppercase">Meet the Creator</h2>
-                <h3 className="m-0 p-0 pb-[15px] font-normal text-[64px] md:text-[128px] font-monthis text-[#D2ADCE] md:hidden">Mili Bajaj</h3>
-
                 {/* Mobile Layout */}
                 <div className="md:hidden">
-                    <div className="w-[300px] h-[290px] bg-white mx-auto mb-[25px] flex items-center justify-center">
-                        <Image
-                            src="/images/creator.jpg"
-                            alt="Mili Bajaj"
-                            width={300}
-                            height={290}
-                            className="object-cover"
-                            priority
-                        />
-                    </div>
-                    <div className="space-y-6">
-                        <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] mb-[25px]">
-                            Mili Bajaj is a Visual Designer and Strategic Branding Specialist with over 5 years of experience, most notably as Head of Design at Ocularity Analytics. She blends strategic thinking with creative execution, delivering impactful work across branding, UI/UX, packaging and visual storytelling. Having led multidisciplinary teams  across print
+                    <h2 className="font-normal text-[15px] font-nats text-[#351A12] pt-[50px] mb-[20px] mt-0 m-0 p-0 uppercase">Meet the Creator</h2>
+                    <h3 className="font-normal text-[64px] font-monthis text-[#351A12] leading-none mt-0 mb-[30px] m-0 pt-0 pb-0">Mili Bajaj</h3>
+                    <div className="space-y-6 pb-[50px]">
+                        <p className="text-[12px] font-nats text-[#351A12] mb-0">
+                            Mili Bajaj is a Visual Designer and Strategic Branding Specialist with over 5 years of experience, most notably as Head of Design at Ocularity Analytics. She blends strategic thinking with creative execution, delivering impactful work across branding, UI/UX, packaging and visual storytelling. Having led multidisciplinary teams across print and digital platforms, her solutions are both aesthetically refined and results-driven. She now partners with Sherry, a technologist working across the digital spectrum, from modern frameworks to emerging tech like AI and Web3. Together, they build websites and digital experiences that perform.
                         </p>
-                        <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] mb-[25px]">
-                            and digital platforms, her solutions are both aesthetically refined and results-driven. She now partners with Sherry, a technologist working across the digital spectrum, from modern frameworks to emerging tech like AI and Web3. Together, they build websites and digital experiences that perform.
-                        </p>
-                    </div>
-                    <div className="mt-[30px]">
-                        <button className="w-full h-[32px] md:w-[232px] md:h-[135px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] md:text-[20px] md:ml-[70px]">
-                            Get a closer look
-                        </button>
                     </div>
                 </div>
 
@@ -41,7 +26,7 @@ export default function MeetCreator() {
                     {/* First Column - Image */}
                     <div className="relative w-[425px] h-[410px] flex-shrink-0">
                         <div className="w-full h-full bg-white"></div>
-                        <h3 className="font-normal absolute top-[196px] left-[385px] text-[64px] md:text-[128px] font-monthis text-[#D2ADCE] whitespace-nowrap p-0 m-0 leading-none">Mili Bajaj</h3>
+                        <h3 className="font-normal absolute top-[196px] left-[385px] text-[64px] md:text-[128px] font-monthis text-[#351A12] whitespace-nowrap leading-none">Mili Bajaj</h3>
                     </div>
 
                     {/* Second Column - First Paragraph */}

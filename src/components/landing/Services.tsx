@@ -59,9 +59,46 @@ const services = [
 
 export default function Services() {
     const [hovered, setHovered] = useState(0);
+    const [scales, setScales] = useState(Array(services.length).fill(1));
+    const [centeredIndex, setCenteredIndex] = useState(0);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            const container = scrollRef.current as HTMLDivElement | null;
+            if (!container) return;
+            const containerRect = container.getBoundingClientRect();
+            const center = containerRect.left + containerRect.width / 2;
+            let maxScale = 0;
+            let maxIndex = 0;
+            const newScales = services.map((_, i) => {
+                const card = container.children[i] as HTMLDivElement | undefined;
+                if (!card) return 1;
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const distance = Math.abs(center - cardCenter);
+                // Reduce scale difference and round to two decimals
+                const scale = Math.round(Math.max(0.92, 1 - distance / 600) * 100) / 100;
+                if (scale > maxScale) {
+                    maxScale = scale;
+                    maxIndex = i;
+                }
+                return scale;
+            });
+            setScales(newScales);
+            setCenteredIndex(maxIndex);
+        };
+        const container = scrollRef.current as HTMLDivElement | null;
+        if (container) {
+            container.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+        }
+        return () => {
+            if (container) container.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <section id="services" className="pt-[50px] pb-[50px] md:pt-0 md:pb-[80px] bg-[#F0E5D6]">
+        <section id="services" className="pt-[50px] pb-0 md:pt-0 md:pb-[80px] bg-[#F0E5D6]">
             <div className="px-[30px] md:px-[103px]">
                 {/* Mobile Heading */}
                 <h2 className="m-0 font-normal text-[58px] font-monthis text-left text-[#351A12] md:hidden" style={{ fontFamily: 'Monthis, sans-serif' }}>
@@ -69,13 +106,21 @@ export default function Services() {
                 </h2>
 
                 {/* Mobile Layout */}
-                <div className="md:hidden">
+                <div className="md:hidden pb-[50px]">
                     <div
-                        className="flex overflow-x-auto overflow-y-hidden mt-[30px] no-scrollbar scroll-smooth snap-x snap-mandatory"
-                        style={{ WebkitOverflowScrolling: 'touch' }}
+                        ref={scrollRef}
+                        className="flex overflow-x-auto overflow-y-hidden mt-[30px] no-scrollbar scroll-smooth snap-x snap-proximity"
+                        style={{ WebkitOverflowScrolling: 'touch', willChange: 'transform', touchAction: 'pan-x' }}
                     >
                         {services.map((service, index) => (
-                            <div key={index} className={`w-[300px] flex-shrink-0 snap-start ${index > 0 ? 'ml-4' : ''}`} style={{ transform: 'translateZ(0)' }}>
+                            <div
+                                key={index}
+                                className={`w-[300px] flex-shrink-0 snap-start relative ${index > 0 ? 'ml-4' : ''}`}
+                                style={{
+                                    transform: `scale(${scales[index]}) translateZ(0)`,
+                                    transition: 'transform 0.3s cubic-bezier(.4,0,.2,1)'
+                                }}
+                            >
                                 {service.image ? (
                                     <img
                                         src={service.image}
@@ -85,19 +130,22 @@ export default function Services() {
                                 ) : (
                                     <div className="w-full h-[337px] bg-white"></div>
                                 )}
-                                <h3 className="font-normal text-[15px] font-nats text-[#351A12] uppercase mt-4">
-                                    {service.title}
-                                </h3>
-                                <p className="text-[12px] font-nats text-[#351A12] mt-[10px]">
-                                    {service.description}
-                                </p>
+                                {centeredIndex === index && (
+                                    <>
+                                        <h3 className="font-normal text-[15px] font-nats text-[#351A12] uppercase mt-4">
+                                            {service.title}
+                                        </h3>
+                                        <p className="text-[12px] font-nats text-[#351A12] mt-[10px]">
+                                            {service.description}
+                                        </p>
+                                        <button className="w-full h-[32px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] mt-[30px]">
+                                            Learn more
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         ))}
                     </div>
-
-                    <button className="w-full h-[32px] md:w-[232px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] mt-[30px]">
-                        Learn more
-                    </button>
                 </div>
 
                 {/* Desktop Layout */}
