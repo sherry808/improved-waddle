@@ -50,7 +50,7 @@ export default function Hero({ area, title, shortDescription, projectLink, image
                             href={projectLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full h-[30px] md:w-[444px] md:h-[32px] flex items-center justify-center text-[12px] md:text-[20px] font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
+                            className="w-full h-[30px] md:w-[444px] md:h-[32px] flex items-center justify-center text-[15px] md:text-[20px] font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
                         >
                             View Live Website
                         </a>
