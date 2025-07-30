@@ -20,15 +20,19 @@ const GetInTouch: React.FC = () => {
                             <div className="flex flex-col md:flex-row md:gap-x-[100px]">
                                 <div>
                                     <p className="text-[15px] md:text-[20px] font-nats text-[#F7F5ED] uppercase leading-none">Email Address</p>
-                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] leading-none">info@milibajaj.com</p>
+                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] leading-none">
+                                        <a href="mailto:milibajaj.work@gmail.com">milibajaj.work@gmail.com</a>
+                                    </p>
                                 </div>
                                 <div className="mt-[30px] md:mt-0">
                                     <p className="text-[15px] md:text-[20px] font-nats text-[#F7F5ED] uppercase leading-none">Phone Number</p>
-                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] pb-[25px] leading-none">+91 1234567890</p>
+                                    <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] pt-[18px] pb-[25px] leading-none">
+                                        <a href="tel:+919958338850">+91-9958338850</a>
+                                    </p>
                                 </div>
                             </div>
                             <p className="text-[12px] md:text-[16px] font-nats text-[#F7F5ED] mt-0 md:mt-[50px]">
-                                Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and typesetti industry. Lorem Ipsum has been the industry.
+                                Ready to bring your vision to life? Lets explore how strategic design and modern tech can move your business forward. The first step to building better starts here. Reach out to schedule a 30 minute discovery call.
                             </p>
                             <button className="w-full md:w-[452px] h-[42px] bg-[#D2ADCE] text-[#351A12] font-nats text-[15px] md:text-[20px] uppercase border-none focus:outline-none mt-[25px] md:mt-[45px]">
                                 Schedule a consultation
