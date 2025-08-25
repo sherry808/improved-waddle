@@ -22,6 +22,7 @@ export default function PDP1() {
                 image={data.page1.image}
             />
             <ClientInfo
+                pageTitle={data.page2.pageTitle}
                 clientBackground={data.page2.clientBackground}
                 role={data.page2.role}
                 image={data.page2.image}
@@ -37,10 +38,13 @@ export default function PDP1() {
                 />
             </section>
             <Foundations
+                pageTitle={data.page4.pageTitle}
                 brandPositioning={data.page4.brandPositioning}
                 stakeholderInterviews={data.page4.stakeholderInterviews}
                 marketAnalysis={data.page4.marketAnalysis}
                 targetAudience={data.page4.targetAudience}
+                theReality={data.page4.theReality}
+                theChallenge={data.page4.theChallenge}
                 image={data.page4.image}
             />
             {/* New Page5 Media Section */}
@@ -52,14 +56,18 @@ export default function PDP1() {
                 />
             </section>
             <Strategy
+                pageTitle={data.page6.pageTitle}
                 uxPlanning={data.page6.uxPlanning}
                 styleGuide={data.page6.styleGuide}
                 visualDirection={data.page6.visualDirection}
                 techPerformance={data.page6.techPerformance}
+                theSolution={data.page6.theSolution}
+                theVisualNarrative={data.page6.theVisualNarrative}
                 image={data.page6.image}
             />
             <DirectionAndExperience
                 finalDirection={data.page7.finalDirection}
+                image={data.page7.image}
             />
             {/* Page8 Media Section */}
             <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
