@@ -1,5 +1,7 @@
 'use client';
 
+import ExpandableContent from '@/components/common/ExpandableContent';
+
 interface StrategyProps {
     uxPlanning: string;
     styleGuide: string;
@@ -19,22 +21,14 @@ export default function Strategy({ uxPlanning, styleGuide, visualDirection, tech
                             Design And Experience Strategy
                         </h1>
                         <div className="flex flex-col">
-                            <div className="pb-[30px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    UI/ux and site structure planning
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {uxPlanning}
-                                </p>
-                            </div>
-                            <div className="pb-[50px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    style guide establishment
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {styleGuide}
-                                </p>
-                            </div>
+                            <ExpandableContent
+                                title="UI/UX and Site Structure Planning"
+                                content={uxPlanning}
+                            />
+                            <ExpandableContent
+                                title="Style Guide Establishment"
+                                content={styleGuide}
+                            />
                             {/* Image appears here on mobile, after Style Guide Establishment */}
                             <div className="md:hidden w-[300px] h-[400px] bg-white mb-[50px]">
                                 <img
@@ -43,22 +37,14 @@ export default function Strategy({ uxPlanning, styleGuide, visualDirection, tech
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="pb-[30px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    visual direction and design system
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {visualDirection}
-                                </p>
-                            </div>
-                            <div className="pb-[50px] md:mb-0">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    tech, performance and functionality
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {techPerformance}
-                                </p>
-                            </div>
+                            <ExpandableContent
+                                title="Visual Direction and Design System"
+                                content={visualDirection}
+                            />
+                            <ExpandableContent
+                                title="Tech, Performance and Functionality"
+                                content={techPerformance}
+                            />
                         </div>
                     </div>
                     {/* Image on the right for desktop */}

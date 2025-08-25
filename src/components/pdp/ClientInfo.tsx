@@ -15,7 +15,11 @@ export default function ClientInfo({ clientBackground, role, image, industry, te
                 <div className="md:flex md:flex-row md:gap-0">
                     <div className="flex flex-col md:flex-row md:flex-row md:gap-0">
                         <div className="flex-shrink-0 flex justify-center items-start md:w-[655px] md:h-[620px] bg-white order-0 md:order-1">
-                            <div className="w-full h-[400px] md:w-[655px] md:h-[620px] bg-white"></div>
+                            <img
+                                src={image}
+                                alt="Client Info"
+                                className="w-full h-[400px] md:w-[655px] md:h-[620px] object-cover"
+                            />
                         </div>
                         <div className="flex flex-col md:flex-1 px-[30px] md:px-[103px] md:w-[785px] pt-[40px] md:pt-[95px] md:pb-[100px] order-1 md:order-0">
                             <h1 className="m-0 p-0 font-normal font-monthis text-[32px] md:text-[54px] text-[#D2ADCE] pb-[35px] md:pb-[65px] leading-[47px] md:leading-[69px]">

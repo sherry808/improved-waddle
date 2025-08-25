@@ -29,9 +29,9 @@ export default function PDP1() {
                 team={data.page2.team}
             />
             {/* New Media Section */}
-            <section className="w-full flex justify-center items-center bg-white">
+            <section className="w-full flex justify-center items-center">
                 <img
-                    src={data.page3.media[0]}
+                    src={data.page3.media}
                     alt="Media"
                     className="w-full h-[400px] object-cover md:w-[1440px] md:h-[738px]"
                 />
