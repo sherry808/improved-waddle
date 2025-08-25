@@ -167,54 +167,54 @@ export const pdpData: Record<string, PDPData> = {
     pdp3: {
         id: "pdp3",
         displayImages: [
-            "/images/pdp3/main.jpg",
-            "/images/pdp3/overview.jpg",
-            "/images/pdp3/gallery1.jpg",
-            "/images/pdp3/gallery2.jpg",
-            "/images/pdp3/gallery3.jpg"
+            "/images/pdp/pdp3/main.png",
+            "/images/pdp/pdp3/main2.png",
+            "/images/pdp/pdp3/cover3.png",
+            "/images/pdp/pdp3/main4.png",
+            "/images/pdp/pdp3/cover5.png"
         ],
         page1: {
-            area: ["Web Design", "UX/UI Design"],
-            title: "Website Design",
-            shortDescription: "Modern and responsive website design for a creative agency",
-            projectLink: "/projects/website-design",
-            image: "/images/pdp3/main.jpg"
+            area: ["Brand Identity", "Web Design", "UI/UX Redesign"],
+            title: "FA Home",
+            shortDescription: "As a lifestyle brand that honours meticulous craftsmanship in home décor, FA Home sought to amplify its digital presence to complement the brand experience at its retail store in DLF Camellias.",
+            projectLink: "https://shopfahome.com/",
+            image: "/images/pdp/pdp3/main.png"
         },
         page2: {
-            pageTitle: "Project Overview",
-            industry: "Creative Agency",
-            team: "X",
-            role: "Y",
-            clientBackground: "A creative agency looking to enhance their online presence and user experience.",
-            image: "/images/pdp3/overview.jpg"
+            pageTitle: "Weaving FA Home's Identity – A House of Design, Rebuilt Digitally.",
+            industry: "B2C, Lifestyle & Home Décor",
+            team: "Ocularity Analytics",
+            role: "Head of Design",
+            clientBackground: "FA Home approached Ocularity Analytics to re-envision its digital ecosystem: from designing a flagship e-commerce store to crafting a uniquely positioned sub-brand, FA Home Junior. The result was a dual-site experience where both brands retained distinct identities, unified by a synergised design DNA.",
+            image: "/images/pdp/pdp3/main2.png"
         },
         page3: {
-            media: "/images/pdp3/gallery1.jpg"
+            media: "/images/pdp/pdp3/cover3.png"
         },
         page4: {
             pageTitle: "Brand, Audience And Market Foundations",
-            brandPositioning: "Positioning the brand as a leader in modern web design and user experience.",
-            stakeholderInterviews: "Conducted interviews with key stakeholders to understand brand vision and market needs.",
-            marketAnalysis: "Comprehensive analysis of market trends, competitor positioning, and industry opportunities.",
-            targetAudience: "Defined primary and secondary audience segments, their needs, behaviors, and pain points.",
-            image: "/images/pdp3/foundations.jpg"
+            brandPositioning: "A house is nothing if not personal. Rooted in artisanal heritage yet attuned to the cadence of contemporary living, each touchpoint at FA Home embodies the belief that a home should stand as the most unfeigned expression of self.",
+            stakeholderInterviews: "The discovery phase uncovered an untapped opportunity: rising sales of the children's line called for a standalone identity. This meant reinvigorating FA Home's e-commerce presence while defining the visual cues that would anchor both brands' shared design DNA, with the goal of boosting dwell time and conversions.",
+            marketAnalysis: "In a fragmented home décor market led by global names like H&M Home, West Elm, and Zara Home, FA Home stands apart by blending craftsmanship with storytelling, where others prioritise scale. Its dual-brand architecture extends this vision into the growing niche of design-conscious families and personalised gifting.",
+            targetAudience: "FA Home speaks to a community of aesthetes who see their living spaces as a true reflection of self, cherishing artisanal mastery. FA Home Junior carries this ethos to modern parents and thoughtful gift-givers, offering curated pieces for baby showers and children's spaces.",
+            image: "/images/pdp/pdp3/main4.png"
         },
         page5: {
-            image: "/images/pdp3/process1.jpg"
+            image: "/images/pdp/pdp3/cover5.png"
         },
         page6: {
             pageTitle: "Design And Experience Strategy",
-            uxPlanning: "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-            styleGuide: "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-            visualDirection: "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-            techPerformance: "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-            image: "/images/pdp3/strategy.jpg"
+            uxPlanning: "A fastidiously structured UI/UX framework, anchored by symmetrical, category-specific banners, ensured intuitive navigation. Strategically positioned service touchpoints, such as 'Schedule a Consultation' which reinforced the brand's role as a personalised lifestyle consultant and 'See In Person' which catalysed foot traffic, strengthened FA Home's hybrid retail paradigm. For FA Home Juniors, transparency and trust were paramount. Messaging around VOCs and rigorous chemical screening projected a veneer of sophistication while affirming the brand’s steadfast commitment to safety and instilling confidence at every digital touchpoint.",
+            styleGuide: "FA Home's website embodies a veneer of sophistication and accessibility. The colour palette combines neutral tone with subtle accents. Curated imagery within lifestyle contexts humanises the brand and enables online buyers to envision products organically integrated into their own thoughtfully styled homes. FA Home Junior builds on the same structural backbone while introducing playful watercolour illustrations, softened pastels, and child-friendly variations of type to resonate with a younger demographic.",
+            visualDirection: "The visual narrative of FA Home translates its structured UX into a rich, curation-centric experience. Collection showcases employ a collage-style design, featuring high-fidelity shoots to facilitate product discovery. FA Home Juniors builds on the same structural backbone while introducing playful watercolour animations and nuanced visual cues that resonate with a younger audience. Together, the dual-branding strategy leverages shared UX rigour while tailoring the design voice: FA Home appeals to the discerning, design-conscious connoisseur, and Juniors emphasises trust, safety, and everyday comfort.",
+            techPerformance: "Collaborating with the dev team, we maintained a responsive 12-column layout with margin-safe zones. Each feature was calibrated to optimise browsing speed, retention and conversion. The interface was structured to prioritise intuitive navigation and a streamlined checkout flow, enhancing user engagement and conversion rates while maintaining FA Home's premium brand experience.",
+            image: "/images/pdp/pdp3/main6.png"
         },
         page7: {
-            finalDirection: "The final design combines modern aesthetics with smooth animations, creating a distinctive and memorable website experience."
+            finalDirection: "FA Home now boasts a robust digital ecosystem with a seamlessly integrated Shopify and Salesforce framework. Our approach not only met predetermined objectives but also positioned FA Home & FA Home Junior as a formidable contender in the lifestyle & home décor sector, demonstrating that strategic design and operational rigour can drive both performance and brand resonance."
         },
         page8: {
-            media: "/images/pdp3/final1.jpg",
+            media: "/images/pdp/pdp3/final1.jpg",
         },
         page9: {
             moreProjects: "Explore more projects that showcase our approach to web design and user experience."

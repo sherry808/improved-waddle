@@ -19,7 +19,6 @@ export default function Hero({ area, title, shortDescription, projectLink, image
                                 src={image}
                                 alt={title || "Project image"}
                                 className="w-[360px] h-[393px] object-cover md:w-[785px] md:h-[803px] md:rounded-none"
-                                style={{ background: 'white' }}
                             />
                         )}
                     </div>
