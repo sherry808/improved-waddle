@@ -37,6 +37,7 @@ export default function PDP1() {
         />
       </div>
       <Foundations
+        pageTitle={data.page4.pageTitle}
         brandPositioning={data.page4.brandPositioning}
         stakeholderInterviews={data.page4.stakeholderInterviews}
         marketAnalysis={data.page4.marketAnalysis}
