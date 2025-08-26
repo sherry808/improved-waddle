@@ -11,14 +11,14 @@ interface HeroProps {
 export default function Hero(props: HeroProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
-      <div className="lg:w-[55%] w-full h-auto lg:h-full">
+      <div className="lg:w-[55%] w-full h-auto">
         <img
           src={props.image}
           alt={props.title}
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8 lg:p-0">
+      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8">
         <div className="max-w-[444px] w-full text-center lg:text-left">
           <div className="flex flex-wrap justify-between mb-2">
             {props.area.map((item, index) => (
