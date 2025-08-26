@@ -70,7 +70,7 @@ export const pdpData: Record<string, PDPData> = {
     page2: {
       pageTitle:
         "Painting a New Identity – A Makeover of Typsy Beauty's Digital Aisle",
-      industry: "B2C, beauty & cosmetics",
+      industry: "B2C, Beauty & Cosmetics",
       team: "Ocularity Analytics",
       role: "Senior Visual Designer",
       clientBackground:
