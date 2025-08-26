@@ -18,22 +18,24 @@ export default function Hero(props: HeroProps) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-10">
-        <div className="w-full text-left p-10">
-          <div className="flex flex-wrap justify-between mb-2">
+      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center mobile:p-8 xl:p-10">
+        <div className="w-full text-left mobile:p-0 xl:p-10">
+          <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 mb-2">
             {props.area.map((item, index) => (
               <span
                 key={index}
-                className="font-nats text-[#351A12] py-0 text-[20px] uppercase"
+                className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${
+                  index >= 2 ? "hidden lg:inline-block" : ""
+                }`}
               >
                 {item}
               </span>
             ))}
           </div>
-          <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight mb-6">
+          <h1 className="m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6">
             {props.title}
           </h1>
-          <p className="font-nats text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
+          <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
             {props.shortDescription}
           </p>
           {props.projectLink && (
