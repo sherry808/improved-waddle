@@ -18,8 +18,8 @@ export default function Hero(props: HeroProps) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center mobile:p-8 xl:p-10">
-        <div className="w-full text-left mobile:p-0 xl:p-10">
+      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8 xl:p-10">
+        <div className="w-full text-left p-0 xl:p-10">
           <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 mb-2">
             {props.area.map((item, index) => (
               <span
