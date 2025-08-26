@@ -19,7 +19,7 @@ export default function Hero(props: HeroProps) {
         />
       </div>
       <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8">
-        <div className="max-w-[444px] w-full text-center lg:text-left">
+        <div className="w-full text-left p-8">
           <div className="flex flex-wrap justify-between mb-2">
             {props.area.map((item, index) => (
               <span
