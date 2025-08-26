@@ -21,9 +21,9 @@ export default function Foundations(props: FoundationsProps) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8">
-        <div className="w-full text-left p-8">
-          <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight mb-6">
+      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-7">
+        <div className="w-full text-left p-7">
+          <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight">
             {props.pageTitle}
           </h1>
           <div className="flex flex-col">

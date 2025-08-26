@@ -52,6 +52,7 @@ export default function PDP1() {
         />
       </div>
       <Strategy
+        pageTitle={data.page6.pageTitle}
         uxPlanning={data.page6.uxPlanning}
         styleGuide={data.page6.styleGuide}
         visualDirection={data.page6.visualDirection}

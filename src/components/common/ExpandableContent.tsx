@@ -12,7 +12,7 @@ export default function ExpandableContent({
   content,
 }: ExpandableContentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const maxLength = 350;
+  const maxLength = 326;
   const showReadMore = content.length > maxLength;
 
   const shortContent = useMemo(() => {
@@ -26,21 +26,19 @@ export default function ExpandableContent({
       <h2 className="m-0 font-nats font-normal text-[20px] text-[#351A12] uppercase">
         {title}
       </h2>
-      <div className="space-y-4">
-        <p className="font-nats text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
-          {displayedContent}
+      <p className="font-nats text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
+        {displayedContent}
+      </p>
+      {showReadMore && (
+        <p className="font-nats text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0 mt-0">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-[#D2ADCE] hover:text-[#B89BB8] transition-colors cursor-pointer underline"
+          >
+            {isExpanded ? "read less" : "read more"}
+          </button>
         </p>
-        {showReadMore && (
-          <div>
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="font-nats text-[16px] leading-loose text-[#D2ADCE] hover:text-[#B89BB8] transition-colors cursor-pointer underline"
-            >
-              {isExpanded ? "read less" : "read more"}
-            </button>
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }
