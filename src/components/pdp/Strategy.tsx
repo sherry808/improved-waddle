@@ -14,8 +14,8 @@ interface StrategyProps {
 export default function Strategy(props: StrategyProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
-      <div className="lg:w-[55%] w-full flex items-center justify-center py-8 px-14">
-        <div className="w-full text-left py-8 px-14">
+      <div className="lg:w-[50%] w-full bg-[#F0E5D4] flex items-center justify-center py-8 px-9">
+        <div className="w-full text-left py-8 px-9">
           <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight">
             {props.pageTitle}
           </h1>
@@ -39,7 +39,7 @@ export default function Strategy(props: StrategyProps) {
           </div>
         </div>
       </div>
-      <div className="lg:w-[45%] w-full h-auto">
+      <div className="lg:w-[50%] w-full h-auto">
         <img
           src={props.image}
           alt={props.pageTitle}

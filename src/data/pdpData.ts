@@ -39,6 +39,7 @@ export interface PDPData {
     image: string;
   };
   page7: {
+    pageTitle?: string;
     finalDirection: string;
   };
   page8: {
@@ -108,6 +109,7 @@ export const pdpData: Record<string, PDPData> = {
       image: "/images/pdp/pdp1/main6.png",
     },
     page7: {
+      pageTitle: "Website As The Canvas",
       finalDirection:
         "Typsy Beautys digital transformation demystifies dramatic makeup looks by making them approachable and wearable, bridging the gap between high concept makeup and everyday glam. The result? Dwell time soared. Bounce rate plummeted. The sleek new website wooed with its user-friendly design.",
     },

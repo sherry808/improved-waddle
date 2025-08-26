@@ -59,7 +59,10 @@ export default function PDP1() {
         techPerformance={data.page6.techPerformance}
         image={data.page6.image}
       />
-      <DirectionAndExperience finalDirection={data.page7.finalDirection} />
+      <DirectionAndExperience
+        pageTitle={data.page7.pageTitle!}
+        finalDirection={data.page7.finalDirection}
+      />
       {/* Page8 Media Section */}
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
