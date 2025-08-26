@@ -29,14 +29,13 @@ export default function PDP1() {
         team={data.page2.team}
         image={data.page2.image}
       />
-      {/* New Media Section */}
-      <section className="w-full flex justify-center items-center">
+      <div className="flex justify-center w-full">
         <img
           src={data.page3.media}
           alt="Media"
-          className="w-full h-[400px] object-cover md:w-[1440px] md:h-[738px]"
+          className="w-full h-[400px] object-cover md:h-[738px] md:max-w-[1440px]"
         />
-      </section>
+      </div>
       <Foundations
         brandPositioning={data.page4.brandPositioning}
         stakeholderInterviews={data.page4.stakeholderInterviews}
@@ -44,14 +43,13 @@ export default function PDP1() {
         targetAudience={data.page4.targetAudience}
         image={data.page4.image}
       />
-      {/* New Page5 Media Section */}
-      <section className="w-full flex justify-center items-center bg-white">
+      <div className="flex justify-center w-full bg-white">
         <img
           src={data.page5.image}
           alt="Process"
-          className="w-full h-[400px] object-cover md:w-[1440px] md:h-[738px]"
+          className="w-full h-[400px] object-cover md:h-[738px] md:max-w-[1440px]"
         />
-      </section>
+      </div>
       <Strategy
         uxPlanning={data.page6.uxPlanning}
         styleGuide={data.page6.styleGuide}
