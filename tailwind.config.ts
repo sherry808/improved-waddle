@@ -8,25 +8,22 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-      'mobile': '375px',
-      'tablet': '768px',
-      'desktop': '1024px',
+      mobile: "375px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "desktop-xl": "1440px",
+      "2xl": "1536px",
     },
     extend: {
       fontFamily: {
-        monthis: ['Monthis', 'sans-serif'],
-        nats: ['Nats', 'sans-serif'],
+        monthis: ["Monthis", "sans-serif"],
+        nats: ["Nats", "sans-serif"],
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
 
-export default config; 
+export default config;
