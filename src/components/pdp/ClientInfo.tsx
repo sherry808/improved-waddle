@@ -12,8 +12,8 @@ interface ClientInfoProps {
 export default function ClientInfo(props: ClientInfoProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-hidden">
-      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-8">
-        <div className="w-full text-left p-8">
+      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-10">
+        <div className="w-full text-left p-10">
           <h1 className="m-0 font-monthis font-normal text-[54px] text-[#D2ADCE] leading-tight mb-12">
             {props.pageTitle}
           </h1>
