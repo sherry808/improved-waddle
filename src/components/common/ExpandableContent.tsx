@@ -5,14 +5,15 @@ import { useMemo, useState } from "react";
 interface ExpandableContentProps {
   title: string;
   content: string;
+  maxLength?: number;
 }
 
 export default function ExpandableContent({
   title,
   content,
+  maxLength = 326,
 }: ExpandableContentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const maxLength = 326;
   const showReadMore = content.length > maxLength;
 
   const shortContent = useMemo(() => {

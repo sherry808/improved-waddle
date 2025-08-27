@@ -6,6 +6,8 @@ interface HeroProps {
   shortDescription: string | null;
   projectLink: string | null;
   image: string;
+  paddingXl: string;
+  mobileTitle?: string | null;
 }
 
 export default function Hero(props: HeroProps) {
@@ -18,8 +20,10 @@ export default function Hero(props: HeroProps) {
           className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
-      <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8 xl:p-10">
-        <div className="w-full text-left p-0 xl:p-10">
+      <div
+        className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8 ${props.paddingXl}`}
+      >
+        <div className={`w-full text-left p-0 ${props.paddingXl}`}>
           <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 mb-2">
             {props.area.map((item, index) => (
               <span
@@ -33,7 +37,10 @@ export default function Hero(props: HeroProps) {
             ))}
           </div>
           <h1 className="m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6">
-            {props.title}
+            <span className="lg:hidden">
+              {props.mobileTitle || props.title}
+            </span>
+            <span className="hidden lg:inline-block">{props.title}</span>
           </h1>
           <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
             {props.shortDescription}
