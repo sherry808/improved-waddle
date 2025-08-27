@@ -53,7 +53,7 @@ export default function ClientInfo(props: ClientInfoProps) {
         <img
           src={props.image}
           alt="Client Info"
-          className="w-full h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
     </div>

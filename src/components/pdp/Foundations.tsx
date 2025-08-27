@@ -35,7 +35,7 @@ export default function Foundations(props: FoundationsProps) {
         <img
           src={props.image}
           alt={props.pageTitle}
-          className="w-full h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
       <div className="hidden lg:w-[45%] w-full bg-[#F0E5D4] lg:flex items-center justify-center p-7">

@@ -15,7 +15,7 @@ export default function Hero(props: HeroProps) {
         <img
           src={props.image}
           alt={props.title}
-          className="w-full h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
       <div className="lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-8 xl:p-10">

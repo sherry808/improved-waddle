@@ -60,7 +60,7 @@ export default function Strategy(props: StrategyProps) {
         <img
           src={props.image}
           alt={props.pageTitle}
-          className="w-full h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
       <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-8">
