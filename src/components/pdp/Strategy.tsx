@@ -38,7 +38,7 @@ export default function Strategy(props: StrategyProps) {
           </h1>
           <div className="flex flex-col">
             <ExpandableContent
-              title="UX/UI and Site Structure Planning"
+              title="UI/UX and Site Structure Planning"
               content={props.uxPlanning}
             />
             <ExpandableContent
