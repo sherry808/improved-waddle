@@ -66,7 +66,7 @@ export default function PDP1() {
   ];
 
   return (
-    <main className="pt-0">
+    <main className="pt-0 overflow-x-hidden">
       <Hero
         area={data.page1.area}
         title={data.page1.title}
