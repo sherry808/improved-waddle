@@ -15,18 +15,26 @@ export default function PDP1() {
     {
       title: "Brand Positioning And Values",
       content: data.page4.brandPositioning ?? null,
+      maxLength: 326,
+      mobileMaxLength: 326,
     },
     {
       title: "Stakeholder Interviews",
       content: data.page4.stakeholderInterviews ?? null,
+      maxLength: 326,
+      mobileMaxLength: 326,
     },
     {
       title: "Market And Competitor Analysis",
       content: data.page4.marketAnalysis ?? null,
+      maxLength: 326,
+      mobileMaxLength: 326,
     },
     {
       title: "Target Audience Establishment",
       content: data.page4.targetAudience ?? null,
+      maxLength: 326,
+      mobileMaxLength: 326,
     },
   ];
 
@@ -34,18 +42,26 @@ export default function PDP1() {
     {
       title: "UX/UI and Site Structure Planning",
       content: data.page6.uxPlanning ?? null,
+      maxLength: 325,
+      mobileMaxLength: 245,
     },
     {
       title: "Style Guide Establishment",
       content: data.page6.styleGuide ?? null,
+      maxLength: 310,
+      mobileMaxLength: 310,
     },
     {
       title: "Visual Direction and Design System",
       content: data.page6.visualDirection ?? null,
+      maxLength: 328,
+      mobileMaxLength: 258,
     },
     {
       title: "Tech, Performance and Functionality",
       content: data.page6.techPerformance ?? null,
+      maxLength: 326,
+      mobileMaxLength: 257,
     },
   ];
 

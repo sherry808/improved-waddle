@@ -1,17 +1,15 @@
 "use client";
 
-import ExpandableContent from "@/components/common/ExpandableContent";
+import ExpandableContent, {
+  ExpandableContentProps,
+} from "@/components/common/ExpandableContent";
 
 interface StrategyProps {
   pageTitle: string | null;
   image: string | null;
   imageClass: string;
   paddingXl: string;
-  contentSections: {
-    title: string;
-    content: string | null;
-    maxLength?: number;
-  }[];
+  contentSections: ExpandableContentProps[];
 }
 
 export default function Strategy(props: StrategyProps) {
@@ -39,6 +37,7 @@ export default function Strategy(props: StrategyProps) {
                 title={section.title}
                 content={section.content ?? ""}
                 maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
               />
             ))}
           </div>
@@ -60,6 +59,7 @@ export default function Strategy(props: StrategyProps) {
                 title={section.title}
                 content={section.content ?? ""}
                 maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
               />
             ))}
           </div>
@@ -82,6 +82,7 @@ export default function Strategy(props: StrategyProps) {
                   title={section.title}
                   content={section.content ?? ""}
                   maxLength={section.maxLength}
+                  mobileMaxLength={section.mobileMaxLength}
                 />
               ))}
             </div>

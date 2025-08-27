@@ -1,17 +1,15 @@
 "use client";
 
-import ExpandableContent from "@/components/common/ExpandableContent";
+import ExpandableContent, {
+  ExpandableContentProps,
+} from "@/components/common/ExpandableContent";
 
 interface FoundationsProps {
   pageTitle: string | null;
   image: string | null;
   imageClass: string;
   paddingXl: string;
-  contentSections: {
-    title: string;
-    content: string | null;
-    maxLength?: number;
-  }[];
+  contentSections: ExpandableContentProps[];
 }
 
 export default function Foundations(props: FoundationsProps) {
@@ -39,6 +37,7 @@ export default function Foundations(props: FoundationsProps) {
                 title={section.title}
                 content={section.content ?? ""}
                 maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
               />
             ))}
           </div>
@@ -67,6 +66,7 @@ export default function Foundations(props: FoundationsProps) {
                 title={section.title}
                 content={section.content ?? ""}
                 maxLength={section.maxLength}
+                mobileMaxLength={section.maxLength}
               />
             ))}
           </div>
@@ -82,6 +82,7 @@ export default function Foundations(props: FoundationsProps) {
                   title={section.title}
                   content={section.content ?? ""}
                   maxLength={section.maxLength}
+                  mobileMaxLength={section.mobileMaxLength}
                 />
               ))}
             </div>
