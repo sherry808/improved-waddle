@@ -40,7 +40,7 @@ export default function PDP1() {
 
   const strategyContent = [
     {
-      title: "UX/UI and Site Structure Planning",
+      title: "UI/UX and Site Structure Planning",
       content: data.page6.uxPlanning ?? null,
       maxLength: 325,
       mobileMaxLength: 245,
