@@ -7,6 +7,7 @@ interface ClientInfoProps {
   industry: string | null;
   team: string | null;
   image: string;
+  titleColor: string;
 }
 
 export default function ClientInfo(props: ClientInfoProps) {
@@ -14,11 +15,13 @@ export default function ClientInfo(props: ClientInfoProps) {
     <div className="flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden">
       <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-8 xl:p-10">
         <div className="w-full text-left p-0 xl:p-10">
-          <h1 className="m-0 font-monthis font-normal text-[32px] lg:text-[54px] text-[#D2ADCE] leading-tight mb-4 lg:mb-12">
+          <h1
+            className={`m-0 font-monthis font-normal text-[32px] lg:text-[54px] leading-tight mb-4 lg:mb-12 ${props.titleColor}`}
+          >
             {props.pageTitle}
           </h1>
-          <div className="flex flex-col md:flex-row flex-wrap gap-y-4 md:gap-x-8 lg:gap-x-16 mb-4 lg:mb-12">
-            <div className="flex-1">
+          <div className="flex flex-col md:flex-row gap-y-4 justify-between mb-4 lg:mb-12">
+            <div>
               <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
                 Industry
               </h2>
@@ -26,15 +29,19 @@ export default function ClientInfo(props: ClientInfoProps) {
                 {props.industry || "No industry information available."}
               </p>
             </div>
-            <div className="flex-1">
-              <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
-                Team
-              </h2>
-              <p className="font-nats font-normal text-[12px] lg:text-[16px] text-[#F7F5ED]">
-                {props.team || "No team information available."}
-              </p>
+            <div>
+              {props.team && (
+                <>
+                  <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
+                    Team
+                  </h2>
+                  <p className="font-nats font-normal text-[12px] lg:text-[16px] text-[#F7F5ED]">
+                    {props.team}
+                  </p>
+                </>
+              )}
             </div>
-            <div className="flex-1">
+            <div>
               <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
                 Role
               </h2>
