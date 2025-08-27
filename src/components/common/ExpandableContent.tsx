@@ -1,24 +1,36 @@
 "use client";
 
+import useIsMobile from "@/hooks/useIsMobile";
 import { useMemo, useState } from "react";
 
-interface ExpandableContentProps {
+export interface ExpandableContentProps {
   title: string;
-  content: string;
-  maxLength?: number;
+  content: string | null;
+  maxLength?: number | null;
+  mobileMaxLength?: number | null;
 }
 
 export default function ExpandableContent({
   title,
   content,
   maxLength = 326,
+  mobileMaxLength,
 }: ExpandableContentProps) {
+  if (!content || !maxLength) {
+    return null;
+  }
+
+  const isMobile = useIsMobile(380);
+  const currentMaxLength = isMobile ? mobileMaxLength : maxLength;
+
   const [isExpanded, setIsExpanded] = useState(false);
-  const showReadMore = content.length > maxLength;
+
+  const showReadMore = content.length > (currentMaxLength ?? 326);
 
   const shortContent = useMemo(() => {
-    return showReadMore ? `${content.substring(0, maxLength)}...` : content;
-  }, [content, showReadMore, maxLength]);
+    const finalLength = currentMaxLength ?? 326;
+    return showReadMore ? `${content.substring(0, finalLength)}...` : content;
+  }, [content, showReadMore, currentMaxLength]);
 
   const displayedContent = isExpanded ? content : shortContent;
 

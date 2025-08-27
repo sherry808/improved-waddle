@@ -16,11 +16,13 @@ export default function PDP2() {
       title: "The Reality",
       content: data.page4.theReality ?? null,
       maxLength: 450,
+      mobileMaxLength: 450,
     },
     {
       title: "The Challenge",
       content: data.page4.theChallenge ?? null,
       maxLength: 450,
+      mobileMaxLength: 450,
     },
   ];
 
@@ -29,11 +31,13 @@ export default function PDP2() {
       title: "The Solution",
       content: data.page6.theSolution ?? null,
       maxLength: 450,
+      mobileMaxLength: 450,
     },
     {
       title: "The Visual Narative",
       content: data.page6.theVisualNarrative ?? null,
       maxLength: 450,
+      mobileMaxLength: 450,
     },
   ];
 
