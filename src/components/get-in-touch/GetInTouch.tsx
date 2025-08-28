@@ -5,15 +5,15 @@ import React from "react";
 const GetInTouch: React.FC = () => {
   return (
     <div className="flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden">
-      <div className="lg:w-[48%] w-full bg-[#351A12] flex items-center justify-center p-8 lg:p-4 xl:p-9 desktop-xl:p-14">
-        <div className="w-full text-left p-0 lg:p-4 xl:p-9 desktop-xl:p-14">
-          <h1 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] leading-tight uppercase text-[#F7F5ED]">
+      <div className="lg:w-[655px] lg:h-[625px] w-full bg-[#351A12] flex items-center justify-center p-8 lg:p-4 xl:p-[52px]">
+        <div className="w-full text-left p-0 lg:p-4 xl:p-[47px]">
+          <h1 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] mb-4 uppercase text-[#F7F5ED]">
             Contact
           </h1>
-          <h1 className="m-0 font-monthis font-normal text-[64px] lg:text-[96px] leading-tight mb-4 text-[#D2ADCE]">
+          <h1 className="m-0 font-monthis font-normal text-[64px] lg:text-[96px] leading-none mb-6 text-[#D2ADCE]">
             Get In Touch
           </h1>
-          <div className="flex flex-col md:flex-row gap-y-4  md:gap-x-8 lg:gap-x-16 mb-6">
+          <div className="flex flex-col md:flex-row gap-y-4  md:gap-x-8 lg:gap-x-16 mb-8">
             <div>
               <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
                 Email Address
@@ -31,7 +31,7 @@ const GetInTouch: React.FC = () => {
               </p>
             </div>
           </div>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#F7F5ED]">
+          <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED]">
             Ready to bring your vision to life? Lets explore how strategic
             design and modern tech can move your business forward. The first
             step to building better starts here. Reach out to schedule a 30
@@ -49,7 +49,7 @@ const GetInTouch: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[52%] w-full h-auto">
+      <div className="lg:w-[785px] lg:h-[625px] w-full h-auto">
         <img
           src="/images/get-in-touch.png"
           alt="Get In Touch"
