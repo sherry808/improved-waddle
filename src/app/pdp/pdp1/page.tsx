@@ -60,7 +60,7 @@ export default function PDP1() {
     {
       title: "Tech, Performance and Functionality",
       content: data.page6.techPerformance ?? null,
-      maxLength: 326,
+      maxLength: 370,
       mobileMaxLength: 257,
     },
   ];
@@ -95,8 +95,8 @@ export default function PDP1() {
         pageTitle={data.page4.pageTitle ?? ""}
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
-        paddingXl="p-7"
-        imageClass="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        paddingXl="p-7 xl:py-0 xl:px-[38px]"
+        imageClass="w-full h-[400px] md:h-[738px] lg:h-[1050px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
@@ -109,8 +109,8 @@ export default function PDP1() {
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
-        paddingXl="py-8 px-9"
-        imageClass="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        paddingXl="py-8 px-9 xl:px-14"
+        imageClass="w-full h-[400px] md:h-[738px] lg:h-[1170px] object-cover"
       />
       <DirectionAndExperience
         pageTitle={data.page7.pageTitle ?? ""}

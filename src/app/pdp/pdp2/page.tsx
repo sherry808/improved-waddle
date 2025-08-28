@@ -72,8 +72,8 @@ export default function PDP2() {
         pageTitle={data.page4.pageTitle ?? ""}
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
-        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[30px]"
-        imageClass="w-full h-[400px] lg:h-full xl:h-[680px] object-cover"
+        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[32px]"
+        imageClass="w-full h-[400px] lg:h-full xl:h-[680px] xl:w-[760px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
