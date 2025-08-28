@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
 import GetInTouch from "@/components/get-in-touch/GetInTouch";
-import SignupBanner from "@/components/landing/SignupBanner";
 import Logos from "@/components/landing/Logos";
+import SignupBanner from "@/components/landing/SignupBanner";
 // import ContactForm from '@/components/get-in-touch/ContactForm';
 // import ContactInfo from '@/components/get-in-touch/ContactInfo';
 import Footer from "@/components/landing/Footer";
