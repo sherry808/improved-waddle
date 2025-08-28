@@ -116,7 +116,7 @@ export const pdpData: Record<string, PDPData> = {
     page7: {
       pageTitle: "Website As The Canvas",
       finalDirection:
-        "Typsy Beautys digital transformation demystifies dramatic makeup looks by making them approachable and wearable, bridging the gap between high concept makeup and everyday glam. The result? Dwell time soared. Bounce rate plummeted. The sleek new website wooed with its user-friendly design.",
+        "Typsy Beauty's digital transformation demystifies dramatic makeup looks by making them approachable and wearable, bridging the gap between high-concept makeup and everyday glam. The result? Dwell time soared. Bounce rate plummeted. The sleek new website wooed with its user-friendly design.",
     },
     page8: {
       media: "/images/pdp1/final1.jpg",
