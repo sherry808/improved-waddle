@@ -49,7 +49,7 @@ export default function PDP2() {
         shortDescription={data.page1.shortDescription}
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
-        paddingXl="xl:p-8"
+        paddingXl="xl:p-12"
         mobileTitle="NIMHANS"
       />
       <ClientInfo
@@ -73,7 +73,7 @@ export default function PDP2() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[32px]"
-        imageClass="w-full h-[400px] lg:h-full xl:h-[680px] xl:w-[760px] object-cover"
+        imageClass="w-full h-[400px] lg:h-full xl:h-[680px] xl:w-[750px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
