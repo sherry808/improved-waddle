@@ -13,7 +13,7 @@ interface ClientInfoProps {
 export default function ClientInfo(props: ClientInfoProps) {
   return (
     <div className="flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden">
-      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-8 xl:p-10">
+      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-6 py-8 md:p-8 xl:p-10">
         <div className="w-full text-left p-0 xl:p-10">
           <h1
             className={`m-0 font-monthis font-normal text-[32px] lg:text-[54px] leading-tight mb-4 lg:mb-12 ${props.titleColor}`}
@@ -50,7 +50,7 @@ export default function ClientInfo(props: ClientInfoProps) {
               </p>
             </div>
           </div>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#F7F5ED]">
+          <p className="font-nats text-[13px] lg:text-[16px] leading-loose text-[#F7F5ED]">
             {props.clientBackground ||
               "No client background information available."}
           </p>
