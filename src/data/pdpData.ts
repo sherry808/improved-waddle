@@ -1,52 +1,57 @@
 export interface PDPData {
-  id: string;
-  displayImages: string[];
+  id: string | null;
+  displayImages: (string | null)[];
   page1: {
-    area: string[];
-    title: string;
-    shortDescription: string;
+    area: (string | null)[];
+    title: string | null;
+    shortDescription: string | null;
     projectLink: string | null;
-    image: string;
+    image: string | null;
   };
   page2: {
-    pageTitle: string;
-    industry: string;
-    team: string;
-    role: string;
-    clientBackground: string;
-    image: string;
+    pageTitle: string | null;
+    industry: string | null;
+    team: string | null;
+    role: string | null;
+    clientBackground: string | null;
+    image: string | null;
   };
   page3: {
-    media: string;
+    media: string | null;
   };
   page4: {
-    pageTitle: string;
-    brandPositioning: string;
-    stakeholderInterviews: string;
-    marketAnalysis: string;
-    targetAudience: string;
-    image: string;
+    pageTitle: string | null;
+    brandPositioning?: string | null;
+    stakeholderInterviews?: string | null;
+    marketAnalysis?: string | null;
+    targetAudience?: string | null;
+    theReality?: string | null;
+    theChallenge?: string | null;
+    image: string | null;
   };
   page5: {
-    image: string;
+    image: string | null;
   };
   page6: {
-    pageTitle: string;
-    uxPlanning: string;
-    styleGuide: string;
-    visualDirection: string;
-    techPerformance: string;
-    image: string;
+    pageTitle: string | null;
+    uxPlanning?: string | null;
+    styleGuide?: string | null;
+    visualDirection?: string | null;
+    techPerformance?: string | null;
+    theSolution?: string | null;
+    theVisualNarrative?: string | null;
+    image: string | null;
   };
   page7: {
     pageTitle?: string;
-    finalDirection: string;
+    finalDirection?: string | null;
+    image?: string | null;
   };
   page8: {
-    media: string;
+    media: string | null;
   };
   page9: {
-    moreProjects: string;
+    moreProjects: string | null;
   };
 }
 
@@ -131,55 +136,48 @@ export const pdpData: Record<string, PDPData> = {
       "/images/pdp2/gallery3.jpg",
     ],
     page1: {
-      area: ["Packaging", "Design"],
-      title: "Packaging Design",
+      area: ["Authorship", "Book Design", "Mental Health"],
+      title: "Numbing Exhilaration",
       shortDescription:
-        "Innovative packaging solutions for a premium skincare brand",
-      projectLink: "/projects/packaging-design",
-      image: "/images/pdp2/main.jpg",
+        "Written and designed for the National Institute of Mental Health and Neurosciences (NIMHANS), Numbing Exhilaration discloses mysteries of a bipolar experience through a fictional narrative, highlighting the healing potential of adaptable lifestyle alternatives.",
+      projectLink: null,
+      image: "/images/pdp/pdp2/main.png",
     },
     page2: {
-      pageTitle: "Project Overview",
-      industry: "Skincare",
-      team: "X",
-      role: "Y",
+      pageTitle:
+        "Beyond Awareness: Tracing Bipolar Experiences with NIMHANS, Bangalore",
+      industry: "Public Sector, Healthcare, Education & Neuroscience Research",
+      team: null,
+      role: "Author & Designer",
       clientBackground:
-        "A premium skincare brand looking to enhance their product's appeal and sustainability.",
-      image: "/images/pdp2/overview.jpg",
+        "In collaboration with the Psychosis Department at NIMHANS and guided by patients’ lived experiences, I wrote Numbing Exhilaration, a graphic novel that uses experimental typography and fiction to reimagine how Bipolar Disorder is understood and spoken of in India. Displayed in the waiting room of Dr. Murali Dhawan, it offers pragmatic coping strategies, making clinical knowledge accessible. ",
+      image: "/images/pdp/pdp2/main2.png",
     },
     page3: {
-      media: "/images/pdp2/gallery1.jpg",
+      media: "/images/pdp/pdp2/cover3.png",
     },
     page4: {
-      pageTitle: "Brand, Audience And Market Foundations",
-      brandPositioning:
-        "Positioning the brand as a luxury and sustainable skincare leader.",
-      stakeholderInterviews:
-        "Conducted interviews with key stakeholders to understand brand vision and market needs.",
-      marketAnalysis:
-        "Comprehensive analysis of market trends, competitor positioning, and industry opportunities.",
-      targetAudience:
-        "Defined primary and secondary audience segments, their needs, behaviors, and pain points.",
-      image: "/images/pdp2/foundations.jpg",
+      pageTitle: null,
+      theReality:
+        "In our everyday lives, everyone experiences ups and downs every now and then. Transient periods of moodiness, unrelated to any psychiatric diagnosis, are common in most people.  But bipolar disorder is an amplification of these ordinary shifts. It is a chronic mood disorder that affects 0.4% to 0.6% of India’s population. Studies indicate that nearly 1 in 3 diagnosed have attempted suicide at least once. Yet, it remains shrouded in stigma.",
+      theChallenge:
+        "Bipolar disorder in India is not just under-diagnosed; it is perilously overlooked. Many still assume that medication alone can manage the condition, disregarding the effectiveness of therapies. This lack of awareness leaves patients and caregivers ill-equipped to navigate the disorder, and such persistent barriers underscore the urgent need to address stigma and interventions that translate clinical knowledge into accessible, practical guidance.",
+      image: "/images/pdp/pdp2/main4.png",
     },
     page5: {
-      image: "/images/pdp2/process1.jpg",
+      image: "/images/pdp/pdp2/cover5.png",
     },
     page6: {
-      pageTitle: "Design And Experience Strategy",
-      uxPlanning:
-        "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-      styleGuide:
-        "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-      visualDirection:
-        "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-      techPerformance:
-        "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s. client background- About the project brief in short. Lorem Ipsum is.",
-      image: "/images/pdp2/strategy.jpg",
+      pageTitle: null,
+      theSolution:
+        "Numbing Exhilaration seeks to counter that stigma. More than a guide, it is a bridge- equipping patients and caregivers with pragmatic coping mechanisms that can be adapted alongside therapy and medication. Displayed in the waiting room of Dr. Murali Dhawan at the Psychosis Department of NIMHANS, the book directly engages those for whom this knowledge is most urgent: patients, caregivers, and individuals seeking early recognition of symptoms.",
+      theVisualNarrative:
+        "Numbing Exhilaration unfolds through layered storytelling, bringing awareness to how symptoms manifest and episodes cycle, exploring both their terrors and their cruel allure alongside everyday struggles. The design incorporates experimental typography as voice and emotion, shifting through manipulated structures and hand-drawn compositions to mirror the disorder’s dualities.",
+      image: "/images/pdp/pdp2/main6.png",
     },
     page7: {
-      finalDirection:
-        "client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since the 1950s.  client background- About the project brief in short. Lorem Ipsum is. client background- About the project brief in short. Lorem Ipsum is simply dummy text of the print and typesetti industry. Lorem Ipsum has been the industry's since 1950s.",
+      finalDirection: null,
+      image: "/images/pdp/pdp2/cover7.png",
     },
     page8: {
       media: "/videos/pdp2/final.mp4",
