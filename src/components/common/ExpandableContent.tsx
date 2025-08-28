@@ -20,7 +20,7 @@ export default function ExpandableContent({
     return null;
   }
 
-  const isMobile = useIsMobile(380);
+  const isMobile = useIsMobile(360);
   const currentMaxLength = isMobile ? mobileMaxLength : maxLength;
 
   const [isExpanded, setIsExpanded] = useState(false);
