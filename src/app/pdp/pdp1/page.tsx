@@ -73,7 +73,7 @@ export default function PDP1() {
         shortDescription={data.page1.shortDescription}
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
-        paddingXl="xl:p-10"
+        paddingXl="xl:p-12"
       />
       <ClientInfo
         pageTitle={data.page2.pageTitle}
