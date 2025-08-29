@@ -137,7 +137,7 @@ export const pdpData: Record<string, PDPData> = {
     ],
     page1: {
       area: ["Authorship", "Book Design", "Mental Health"],
-      title: "Numbing Exhilaration",
+      title: "NIMHANS",
       shortDescription:
         "Written and designed for the National Institute of Mental Health and Neurosciences (NIMHANS), Numbing Exhilaration discloses mysteries of a bipolar experience through a fictional narrative, highlighting the healing potential of adaptable lifestyle alternatives.",
       projectLink: null,
