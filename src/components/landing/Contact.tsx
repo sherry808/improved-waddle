@@ -21,7 +21,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="flex flex-col mt-6 lg:mt-0 lg:mb-1 ">
-          <a href="/get-in-touch" className="w-full md:w-auto">
+          <a href="https://calendly.com/xyz" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
             <button
               type="button"
               className="inline-block w-full text-center px-3 py-[2px] font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
