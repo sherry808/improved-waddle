@@ -1,76 +1,94 @@
-'use client';
+"use client";
+
+import ExpandableContent, {
+  ExpandableContentProps,
+} from "@/components/common/ExpandableContent";
 
 interface FoundationsProps {
-    brandPositioning: string;
-    stakeholderInterviews: string;
-    marketAnalysis: string;
-    targetAudience: string;
-    image: string;
+  pageTitle: string | null;
+  image: string | null;
+  imageClass: string;
+  paddingXl: string;
+  contentSections: ExpandableContentProps[];
 }
 
-export default function Foundations({ brandPositioning, stakeholderInterviews, marketAnalysis, targetAudience, image }: FoundationsProps) {
-    return (
-        <section className="md:py-0">
-            <div className="px-0">
-                <div className="md:flex md:gap-0">
-                    {/* Content section */}
-                    <div className="flex flex-col md:flex-1 px-[30px] md:px-[103px] pt-[55px] md:pt-[55px] md:pb-[45px]">
-                        <h1 className="m-0 p-0 font-normal text-[32px] md:text-[54px] font-monthis text-[#351A12] pb-[30px] md:pb-[70px] leading-[47px] md:leading-[69px]">
-                            Brand, Audience And Market Foundations
-                        </h1>
-                        <div className="flex flex-col">
-                            <div className="pb-[30px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    Brand Positioning And Values
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {brandPositioning}
-                                </p>
-                            </div>
-                            <div className="pb-[50px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    Stakeholder Interviews
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {stakeholderInterviews}
-                                </p>
-                            </div>
-                            {/* Image appears here on mobile, after Stakeholder Interviews */}
-                            <div className="md:hidden w-[300px] h-[400px] bg-white mb-[50px]">
-                                <img
-                                    src={image}
-                                    alt="Foundations"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                            <div className="pb-[30px] md:mb-[50px]">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    Market And Competitor Analysis
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {marketAnalysis}
-                                </p>
-                            </div>
-                            <div className="pb-[50px] md:mb-0">
-                                <h2 className="m-0 p-0 font-normal font-nats text-[15px] md:text-[20px] text-[#351A12] uppercase pb-[20px] md:mb-[20px]">
-                                    Target Audience Establishment
-                                </h2>
-                                <p className="font-nats text-[12px] md:text-[16px] text-[#351A12]">
-                                    {targetAudience}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Image on the left for desktop only */}
-                    <div className="hidden md:flex md:w-[736px] md:h-[943px] flex-shrink-0 justify-center bg-white">
-                        <img
-                            src={image}
-                            alt="Foundations"
-                            className="w-full h-full object-cover md:rounded-none"
-                        />
-                    </div>
-                </div>
+export default function Foundations(props: FoundationsProps) {
+  const sectionsToRender = props.contentSections.filter(
+    (section) => section.content
+  );
+
+  const midpoint = Math.ceil(sectionsToRender.length / 2);
+  const mobileContentTop = sectionsToRender.slice(0, midpoint);
+  const mobileContentBottom = sectionsToRender.slice(midpoint);
+
+  return (
+    <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
+      <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+        <div className="w-full text-left">
+          {props.pageTitle && (
+            <h1 className="m-0 font-monthis font-normal text-[32px] leading-tight">
+              {props.pageTitle}
+            </h1>
+          )}
+          <div className="flex flex-col">
+            {mobileContentTop.map((section, index) => (
+              <ExpandableContent
+                key={index}
+                title={section.title}
+                content={section.content ?? ""}
+                maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="lg:w-[55%] w-full h-auto px-[30px] lg:p-0">
+        <img
+          src={props.image || ""}
+          alt={props.pageTitle || ""}
+          className={props.imageClass}
+        />
+      </div>
+      <div
+        className={`hidden lg:w-[45%] w-full bg-[#F0E5D4] lg:flex items-center justify-center ${props.paddingXl}`}
+      >
+        <div className={`w-full text-left ${props.paddingXl}`}>
+          {props.pageTitle && (
+            <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight">
+              {props.pageTitle}
+            </h1>
+          )}
+          <div className="flex flex-col">
+            {sectionsToRender.map((section, index) => (
+              <ExpandableContent
+                key={index}
+                title={section.title}
+                content={section.content ?? ""}
+                maxLength={section.maxLength}
+                mobileMaxLength={section.maxLength}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {mobileContentBottom.length > 0 && (
+        <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+          <div className="w-full text-left">
+            <div className="flex flex-col">
+              {mobileContentBottom.map((section, index) => (
+                <ExpandableContent
+                  key={index}
+                  title={section.title}
+                  content={section.content ?? ""}
+                  maxLength={section.maxLength}
+                  mobileMaxLength={section.mobileMaxLength}
+                />
+              ))}
             </div>
-        </section>
-    );
-} 
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
