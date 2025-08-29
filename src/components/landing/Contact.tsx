@@ -5,10 +5,10 @@ export default function Contact() {
     <div className="flex w-full bg-[#351A12] font-nats overflow-hidden px-[30px] py-[45px] lg:px-[50px] lg:py-[50px] xl:px-[40px] xl:py-[40x] desktop-xl:px-[100px] desktop-xl:py-[50px]">
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full">
         <div className="flex flex-col lg:mr-4">
-          <h2 className="font-normal text-[15px] md:text-[20px] font-nats text-[#F7F5ED] uppercase m-0 p-0">
+          <h2 className="font-normal text-[15px] lg:text-[20px] font-nats text-[#F7F5ED] uppercase m-0 p-0">
             Contact
           </h2>
-          <h2 className="font-normal text-[64px] md:text-[96px] font-monthis text-[#D2ADCE] m-0 p-0 whitespace-nowrap leading-none">
+          <h2 className="font-normal text-[64px] lg:text-[96px] font-monthis text-[#D2ADCE] m-0 p-0 whitespace-nowrap leading-none">
             Get in Touch
           </h2>
         </div>
