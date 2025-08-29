@@ -73,7 +73,7 @@ export default function PDP1() {
         shortDescription={data.page1.shortDescription}
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
-        paddingXl="xl:p-12"
+        paddingXl="xl:p-[50px]"
         areaLength={2}
         mobileTitleColor="text-[#351A12]"
       />
@@ -85,6 +85,7 @@ export default function PDP1() {
         industry={data.page2.industry}
         team={data.page2.team}
         titleColor="text-[#D2ADCE]"
+        paddingXl="xl:p-[57px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -118,6 +119,9 @@ export default function PDP1() {
         pageTitle={data.page7.pageTitle ?? ""}
         finalDirection={data.page7.finalDirection ?? ""}
         image={null}
+        titleClass="lg:w-1/3 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:mr-10"
+        contentClass="lg:w-2/3 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8"
+        paddingXl="xl:px-[100px] xl:py-[45px]"
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
