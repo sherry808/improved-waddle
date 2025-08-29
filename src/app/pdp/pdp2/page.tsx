@@ -73,7 +73,7 @@ export default function PDP2() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[32px]"
-        imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] xl:w-[750px] object-cover"
+        imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
@@ -86,8 +86,8 @@ export default function PDP2() {
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
-        paddingXl="lg:pt-3 lg:px-7 xl:px-[58px] xl:pb-[30px] lg:pb-[20px]"
-        imageClass="w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] object-cover"
+        paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] lg:pb-[20px]"
+        imageClass="w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"
       />
       <DirectionAndExperience
         pageTitle={null}

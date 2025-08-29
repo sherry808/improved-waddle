@@ -97,7 +97,7 @@ export default function PDP1() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         paddingXl="p-7 xl:py-0 xl:px-[38px]"
-        imageClass="w-full h-[400px] md:h-[738px] lg:h-[1050px] object-cover"
+        imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1050px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
@@ -110,8 +110,8 @@ export default function PDP1() {
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
-        paddingXl="py-8 px-9 xl:px-14"
-        imageClass="w-full h-[400px] md:h-[738px] lg:h-[1170px] object-cover"
+        paddingXl="py-8 px-9 xl:px-[47px] xl:py-0"
+        imageClass="w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1168px] object-cover"
       />
       <DirectionAndExperience
         pageTitle={data.page7.pageTitle ?? ""}
