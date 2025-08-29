@@ -7,9 +7,12 @@ interface HeroProps {
   projectLink: string | null;
   image: string;
   paddingXl: string;
+  areaLength?: number;
 }
 
 export default function Hero(props: HeroProps) {
+  const maxAreaItems = props.areaLength ?? 2;
+
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
       <div className="lg:w-[55%] w-full h-auto">
@@ -23,12 +26,12 @@ export default function Hero(props: HeroProps) {
         className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[30px] ${props.paddingXl}`}
       >
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
-          <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 mb-2">
+          <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 md:mb-2">
             {props.area.map((item, index) => (
               <span
                 key={index}
                 className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${
-                  index >= 2 ? "hidden lg:inline-block" : ""
+                  index >= maxAreaItems ? "hidden lg:inline-block" : ""
                 }`}
               >
                 {item}
@@ -38,7 +41,7 @@ export default function Hero(props: HeroProps) {
           <h1 className="m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6">
             {props.title}
           </h1>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
+          <p className="font-nats text-[12px] lg:text-[16px] leading-[25px] md:leading-loose text-[#351A12] mx-auto lg:mx-0">
             {props.shortDescription}
           </p>
           {props.projectLink && (

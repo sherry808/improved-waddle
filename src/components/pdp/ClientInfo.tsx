@@ -50,7 +50,7 @@ export default function ClientInfo(props: ClientInfoProps) {
               </p>
             </div>
           </div>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-[23px] text-[#F7F5ED]">
+          <p className="font-nats text-[12px] lg:text-[16px] leading-[23px] md:leading-loose text-[#F7F5ED]">
             {props.clientBackground ||
               "No client background information available."}
           </p>

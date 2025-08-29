@@ -21,7 +21,7 @@ const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = (
             </h2>
           </div>
           <div className="lg:w-1/2 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:pr-3">
-            <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] leading-[26px]">
+            <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] leading-[26px] md:leading-loose">
               {props.finalDirection}
             </p>
           </div>
