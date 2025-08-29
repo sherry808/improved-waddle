@@ -1,101 +1,94 @@
-'use client';
+"use client";
 
-import ExpandableContent from '@/components/common/ExpandableContent';
+import ExpandableContent, {
+  ExpandableContentProps,
+} from "@/components/common/ExpandableContent";
 
 interface StrategyProps {
-    pageTitle?: string | null;
-    uxPlanning?: string | null;
-    styleGuide?: string | null;
-    visualDirection?: string | null;
-    techPerformance?: string | null;
-    theSolution?: string | null;
-    theVisualNarrative?: string | null;
-    image: string | null;
+  pageTitle: string | null;
+  image: string | null;
+  imageClass: string;
+  paddingXl: string;
+  contentSections: ExpandableContentProps[];
 }
 
-export default function Strategy({ pageTitle, uxPlanning, styleGuide, visualDirection, techPerformance, theSolution, theVisualNarrative, image }: StrategyProps) {
-    // Check if this is a NIMHANS-style page (has theSolution and theVisualNarrative)
-    const isNimhansStyle = theSolution || theVisualNarrative;
+export default function Strategy(props: StrategyProps) {
+  const sectionsToRender = props.contentSections.filter(
+    (section) => section.content
+  );
 
-    return (
-        <section className="md:py-0">
-            <div className="px-0">
-                <div className="md:flex md:gap-0">
-                    {/* Content on the left for desktop */}
-                    <div className="flex flex-col md:flex-1 px-[30px] md:px-[103px] pt-[55px] md:pt-[55px] md:pb-[45px]">
-                        {pageTitle && (
-                            <h1 className="m-0 p-0 font-normal text-[32px] md:text-[54px] font-monthis text-[#351A12] pb-[30px] md:pb-[70px] leading-[47px] md:leading-[69px]">
-                                {pageTitle}
-                            </h1>
-                        )}
-                        <div className="flex flex-col">
-                            {isNimhansStyle ? (
-                                <>
-                                    {theSolution && (
-                                        <ExpandableContent
-                                            title="The Solution"
-                                            content={theSolution}
-                                        />
-                                    )}
-                                    {theVisualNarrative && (
-                                        <ExpandableContent
-                                            title="The Visual Narrative"
-                                            content={theVisualNarrative}
-                                        />
-                                    )}
-                                </>
-                            ) : (
-                                <>
-                                    {uxPlanning && (
-                                        <ExpandableContent
-                                            title="UI/UX and Site Structure Planning"
-                                            content={uxPlanning}
-                                        />
-                                    )}
-                                    {styleGuide && (
-                                        <ExpandableContent
-                                            title="Style Guide Establishment"
-                                            content={styleGuide}
-                                        />
-                                    )}
-                                    {visualDirection && (
-                                        <ExpandableContent
-                                            title="Visual Direction and Design System"
-                                            content={visualDirection}
-                                        />
-                                    )}
-                                    {techPerformance && (
-                                        <ExpandableContent
-                                            title="Tech, Performance and Functionality"
-                                            content={techPerformance}
-                                        />
-                                    )}
-                                </>
-                            )}
-                            {/* Image appears here on mobile, after content */}
-                            {image && (
-                                <div className="md:hidden w-[300px] h-[400px] bg-white mb-[50px]">
-                                    <img
-                                        src={image}
-                                        alt="Strategy"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                    {/* Image on the right for desktop */}
-                    {image && (
-                        <div className="hidden md:flex md:w-[736px] md:h-[943px] flex-shrink-0 justify-center bg-white">
-                            <img
-                                src={image}
-                                alt="Strategy"
-                                className="w-full h-[300px] object-cover md:w-[736px] md:h-[943px] md:rounded-none"
-                            />
-                        </div>
-                    )}
-                </div>
+  const midpoint = Math.ceil(sectionsToRender.length / 2);
+  const mobileContentTop = sectionsToRender.slice(0, midpoint);
+  const mobileContentBottom = sectionsToRender.slice(midpoint);
+
+  return (
+    <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
+      <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+        <div className="w-full text-left">
+          {props.pageTitle && (
+            <h1 className="m-0 font-monthis font-normal text-[32px] leading-tight">
+              {props.pageTitle}
+            </h1>
+          )}
+          <div className="flex flex-col">
+            {mobileContentTop.map((section, index) => (
+              <ExpandableContent
+                key={index}
+                title={section.title}
+                content={section.content ?? ""}
+                maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div
+        className={`hidden lg:w-[50%] w-full bg-[#F0E5D4] lg:flex items-center justify-center ${props.paddingXl}`}
+      >
+        <div className={`w-full text-left ${props.paddingXl}`}>
+          {props.pageTitle && (
+            <h1 className="mb-6 mt-0 font-monthis font-normal text-[54px] leading-tight">
+              {props.pageTitle}
+            </h1>
+          )}
+          <div className="flex flex-col">
+            {sectionsToRender.map((section, index) => (
+              <ExpandableContent
+                key={index}
+                title={section.title}
+                content={section.content ?? ""}
+                maxLength={section.maxLength}
+                mobileMaxLength={section.mobileMaxLength}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="lg:w-[54%] w-full h-auto px-[30px] lg:p-0">
+        <img
+          src={props.image || ""}
+          alt={props.pageTitle || ""}
+          className={props.imageClass}
+        />
+      </div>
+      {mobileContentBottom.length > 0 && (
+        <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+          <div className="w-full text-left">
+            <div className="flex flex-col">
+              {mobileContentBottom.map((section, index) => (
+                <ExpandableContent
+                  key={index}
+                  title={section.title}
+                  content={section.content ?? ""}
+                  maxLength={section.maxLength}
+                  mobileMaxLength={section.mobileMaxLength}
+                />
+              ))}
             </div>
-        </section>
-    );
-} 
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
