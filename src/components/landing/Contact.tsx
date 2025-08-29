@@ -13,7 +13,7 @@ export default function Contact() {
           </h2>
         </div>
         <div className="flex flex-col mt-6 lg:mt-0 lg:mb-1 lg:mr-4">
-          <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] max-w-sm">
+          <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] max-w-[340px]">
             Ready to bring your vision to life? Let's explore how strategic
             design and modern tech can move your business forward. The first
             step to building better starts here. Reach out to schedule a 30
