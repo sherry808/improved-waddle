@@ -50,6 +50,7 @@ export default function PDP2() {
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
         paddingXl="xl:p-12"
+        areaLength={3}
       />
       <ClientInfo
         pageTitle={data.page2.pageTitle}
