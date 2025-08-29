@@ -51,7 +51,7 @@ const MeetCreator: React.FC = () => {
           {allParagraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="font-nats text-[16px] leading-relaxed text-[#351A12] mb-4"
+              className="font-nats text-[16px] leading-relaxed text-[#351A12] mb-4 last:mb-0"
             >
               {paragraph}
             </p>
