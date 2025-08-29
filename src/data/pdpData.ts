@@ -245,6 +245,7 @@ export const pdpData: Record<string, PDPData> = {
       image: "/images/pdp/pdp3/main6.png",
     },
     page7: {
+      pageTitle: "Digital Experience Architecture",
       finalDirection:
         "FA Home now boasts a robust digital ecosystem with a seamlessly integrated Shopify and Salesforce framework. Our approach not only met predetermined objectives but also positioned FA Home & FA Home Junior as a formidable contender in the lifestyle & home décor sector, demonstrating that strategic design and operational rigour can drive both performance and brand resonance.",
     },
