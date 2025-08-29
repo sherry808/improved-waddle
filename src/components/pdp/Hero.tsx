@@ -51,7 +51,7 @@ export default function Hero(props: HeroProps) {
                 href={props.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center px-6 py-2 font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE] transition-all duration-300 hover:scale-105"
+                className="inline-block w-full text-center px-6 py-2 font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
               >
                 View Live Website
               </a>
