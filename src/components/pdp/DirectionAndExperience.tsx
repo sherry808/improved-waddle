@@ -1,52 +1,43 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface DirectionAndExperienceProps {
-    finalDirection?: string | null;
-    image?: string | null;
+  pageTitle: string | null;
+  finalDirection: string | null;
+  image: string | null;
 }
 
-const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = ({
-    finalDirection,
-    image
-}) => {
-    // Check if this is an image-only page (has image but no finalDirection)
-    const isImageOnly = image && !finalDirection;
-
-    return (
-        <section className="bg-[#351A12] py-16 md:py-0">
-            <div className="px-0">
-                {isImageOnly ? (
-                    // Image-only layout
-                    <div className="flex justify-center items-center">
-                        <img
-                            src={image}
-                            alt="Final Direction"
-                            className="w-full h-[400px] object-cover md:w-[1442px] md:h-[604px]"
-                        />
-                    </div>
-                ) : (
-                    // Text layout
-                    <div className="md:flex md:gap-[115px]">
-                        {/* Heading on the left for desktop */}
-                        <div className="flex flex-col px-[30px] md:px-[103px] md:pr-0 md:pt-[55px] md:pb-0 overflow-visible">
-                            <h2 className="m-0 p-0 font-normal text-[#D2ADCE] text-[32px] md:text-[54px] font-monthis pb-[35px] md:pb-[80px] leading-[47px] md:leading-[69px]">
-                                <span className="hidden md:inline">Final Creative Direction<br />& Web Experience</span>
-                                <span className="md:hidden">Final Creative Direction & Web Experience</span>
-                            </h2>
-                        </div>
-                        {/* Content on the right for desktop */}
-                        <div className="flex flex-col md:flex-1 px-[30px] md:px-[103px] md:pl-0 md:pt-[55px] md:pb-0">
-                            <p className="font-nats text-[12px] md:text-[16px] text-[#F7F5ED]">
-                                {finalDirection}
-                            </p>
-                        </div>
-                    </div>
-                )}
-            </div>
+const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = (
+  props
+) => {
+  return (
+    <>
+      {props.pageTitle && props.finalDirection && (
+        <div className="flex flex-col lg:flex-row w-full bg-[#351A12] font-nats overflow-x-hidden p-8 lg:p-12 xl:p-[65px]">
+          <div className="lg:w-1/2 w-full flex items-center justify-start lg:pl-8 xl:pr-3">
+            <h2 className="m-0 font-monthis font-normal text-[32px] lg:text-[54px] text-[#D2ADCE] leading-tight">
+              {props.pageTitle}
+            </h2>
+          </div>
+          <div className="lg:w-1/2 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:pr-3">
+            <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] leading-[26px] md:leading-loose">
+              {props.finalDirection}
+            </p>
+          </div>
+        </div>
+      )}
+      {props.image && (
+        <section className="w-full flex justify-center items-center bg-white">
+          <img
+            src={props.image ?? ""}
+            alt="Process"
+            className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          />
         </section>
-    );
+      )}
+    </>
+  );
 };
 
-export default DirectionAndExperience; 
+export default DirectionAndExperience;
