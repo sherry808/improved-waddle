@@ -8,6 +8,7 @@ interface HeroProps {
   image: string;
   paddingXl: string;
   areaLength?: number;
+  mobileTitleColor: string;
 }
 
 export default function Hero(props: HeroProps) {
@@ -38,7 +39,9 @@ export default function Hero(props: HeroProps) {
               </span>
             ))}
           </div>
-          <h1 className="m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6">
+          <h1
+            className={`m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6 ${props.mobileTitleColor} lg:text-[#52160D]`}
+          >
             {props.title}
           </h1>
           <p className="font-nats text-[12px] lg:text-[16px] leading-[25px] md:leading-loose text-[#351A12] mx-auto lg:mx-0">

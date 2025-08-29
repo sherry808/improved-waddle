@@ -75,6 +75,7 @@ export default function PDP1() {
         image={data.page1.image ?? ""}
         paddingXl="xl:p-12"
         areaLength={2}
+        mobileTitleColor="text-[#351A12]"
       />
       <ClientInfo
         pageTitle={data.page2.pageTitle}
