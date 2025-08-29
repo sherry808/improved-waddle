@@ -23,7 +23,7 @@ export default function Strategy(props: StrategyProps) {
 
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
-      <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-10">
+      <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
         <div className="w-full text-left">
           {props.pageTitle && (
             <h1 className="m-0 font-monthis font-normal text-[32px] leading-tight">
@@ -65,7 +65,7 @@ export default function Strategy(props: StrategyProps) {
           </div>
         </div>
       </div>
-      <div className="lg:w-[50%] w-full h-auto px-8 lg:p-0">
+      <div className="lg:w-[50%] w-full h-auto px-[30px] lg:p-0">
         <img
           src={props.image || ""}
           alt={props.pageTitle || ""}
@@ -73,7 +73,7 @@ export default function Strategy(props: StrategyProps) {
         />
       </div>
       {mobileContentBottom.length > 0 && (
-        <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-10">
+        <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
           <div className="w-full text-left">
             <div className="flex flex-col">
               {mobileContentBottom.map((section, index) => (
