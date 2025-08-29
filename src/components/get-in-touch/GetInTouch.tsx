@@ -39,7 +39,7 @@ const GetInTouch: React.FC = () => {
           </p>
           <div className="mt-7 lg:mt-12">
             <a
-              href={"/"}
+              href="https://calendly.com/xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block w-full text-center px-6 py-1 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
