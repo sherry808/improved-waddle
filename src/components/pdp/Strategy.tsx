@@ -48,7 +48,7 @@ export default function Strategy(props: StrategyProps) {
       >
         <div className={`w-full text-left ${props.paddingXl}`}>
           {props.pageTitle && (
-            <h1 className="m-0 font-monthis font-normal text-[54px] leading-tight">
+            <h1 className="mb-6 mt-0 font-monthis font-normal text-[54px] leading-tight">
               {props.pageTitle}
             </h1>
           )}
@@ -65,7 +65,7 @@ export default function Strategy(props: StrategyProps) {
           </div>
         </div>
       </div>
-      <div className="lg:w-[50%] w-full h-auto px-[30px] lg:p-0">
+      <div className="lg:w-[54%] w-full h-auto px-[30px] lg:p-0">
         <img
           src={props.image || ""}
           alt={props.pageTitle || ""}
