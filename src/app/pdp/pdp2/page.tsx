@@ -61,6 +61,7 @@ export default function PDP2() {
         industry={data.page2.industry}
         team={null}
         titleColor="text-[#F0E5D6]"
+        paddingXl="xl:p-[54px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -94,6 +95,9 @@ export default function PDP2() {
         pageTitle={null}
         finalDirection={null}
         image={data.page7.image ?? ""}
+        titleClass={null}
+        contentClass={null}
+        paddingXl={null}
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
