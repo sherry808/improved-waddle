@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning>
         <Header />
-        <main className="min-h-screen pt-[60]">
+        <main className="min-h-screen pt-[60px]">
           {children}
         </main>
       </body>
