@@ -111,7 +111,7 @@ export default function Header() {
                     <hr className="w-full h-[1px] bg-[#351A12] border-none relative z-10" />
 
                     {/* Menu Section */}
-                    <div className={`absolute top-[60px] left-0 right-0 bg-[#351A12] transform transition-transform duration-75 ease-linear z-20 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+                    <div className={`absolute top-[60px] left-0 right-0 bg-[#F0E5D6] md:bg-[#351A12] transform transition-transform duration-75 ease-linear z-10 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full pointer-events-none opacity-0'}`} style={{ display: isMenuOpen ? 'block' : 'none' }}>
                         <div className="h-[400px] px-[30px] md:px-[103px] py-[65px]">
                             <nav className="flex items-center h-full">
                                 <ul className="space-y-8">
@@ -120,7 +120,8 @@ export default function Header() {
                                             <Link
                                                 href={item.href}
                                                 onClick={closeMenu}
-                                                className="text-[20px] font-nats text-[#F0E5D6] hover:text-[#D2ADCE] transition-colors block"
+                                                className="text-[20px] font-nats text-[#351A12] md:text-[#F0E5D6] hover:text-[#D2ADCE] transition-colors block"
+                                                style={{ fontWeight: '200' }}
                                             >
                                                 {item.name}
                                             </Link>
