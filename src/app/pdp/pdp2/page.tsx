@@ -6,6 +6,7 @@ import DirectionAndExperience from "@/components/pdp/DirectionAndExperience";
 import Foundations from "@/components/pdp/Foundations";
 import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
+import PageFlipBook from "@/components/pdp/PageFlipBook";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
 import { useState } from "react";
@@ -111,14 +112,29 @@ export default function PDP2() {
         contentClass={null}
         paddingXl={null}
       />
-      <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
-        <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
-          <img
-            src={data.page8.media ?? ""}
-            alt="Media"
-            className="w-full h-full object-cover"
+      <section className="flex flex-col justify-center items-center pt-[20px] pb-[40px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
+        <div className="relative w-full md:w-[1231px]">
+          <PageFlipBook 
+            images={[
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili2.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili3.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili4.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili5.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili6.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili7.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili8.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili9.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili10.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili11.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili12.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili13.jpg",
+              "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili14.jpg",
+            ]}
+            width={1200}
+            height={700}
+            className="mx-auto"
           />
-          <div className="absolute inset-0 bg-white opacity-100 pointer-events-none" />
         </div>
       </section>
       <MoreProjects currentProjectId={data.id ?? ""} />
