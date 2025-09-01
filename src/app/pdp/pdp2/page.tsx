@@ -117,9 +117,6 @@ export default function PDP2() {
               "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili13.jpg",
               "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili14.jpg",
             ]}
-            width={1200}
-            height={700}
-            className="mx-auto"
           />
         </div>
       </section>
