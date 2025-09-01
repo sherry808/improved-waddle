@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 interface MenuProps {
+  isOpen: boolean;
   onClose: () => void;
 }
 
-export default function Menu({ onClose }: MenuProps) {
+export default function Menu({ onClose, isOpen }: MenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
@@ -24,18 +25,22 @@ export default function Menu({ onClose }: MenuProps) {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [onClose]);
+  }, [onClose, isOpen]);
 
   return (
-    <div className="fixed inset-0 z-40">
+    <div className="fixed inset-0 z-40 transition-all duration-500 ease-in-out">
       <nav
         ref={menuRef}
-        className="fixed top-[60px] w-full h-[460px] bg-[#351A12] z-50"
+        className={`fixed w-full h-[460px] bg-[#351A12] z-50 transition-transform duration-500 ease-in-out ${
+          isOpen ? "top-[60px] transform-none" : "top-[60px] -translate-y-full"
+        }`}
       >
         <div className="flex flex-col md:flex-row h-full px-[30px] md:px-[104px]">
           <ul className="flex flex-col space-y-8 justify-center md:w-1/3">
