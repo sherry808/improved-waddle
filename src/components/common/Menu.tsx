@@ -38,34 +38,36 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
     <div className="fixed inset-0 z-40 transition-all duration-500 ease-in-out">
       <nav
         ref={menuRef}
-        className={`fixed w-full h-[460px] bg-[#351A12] z-50 transition-transform duration-500 ease-in-out ${
-          isOpen ? "top-[60px] transform-none" : "top-[60px] -translate-y-full"
+        className={`fixed top-[61px] w-full md:h-[350px] xl:h-[460px] z-50 transition-transform duration-500 ease-in-out bg-[#F0E5D6] md:bg-[#351A12] ${
+          isOpen ? "transform-none" : "-translate-y-full"
         }`}
       >
-        <div className="flex flex-col md:flex-row h-full px-[30px] md:px-[104px]">
-          <ul className="flex flex-col space-y-8 justify-center md:w-1/3">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  onClick={onClose}
-                  className="text-[15px] md:text-[20px] font-nats text-[#F7F5ED] hover:text-[#D2ADCE] transition-colors block"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="hidden md:flex flex-row items-center justify-center md:w-2/3">
+        <div className="flex flex-col md:flex-row h-full">
+          <div className="flex flex-col justify-center h-full py-[60px] px-[32px] md:pl-[60px] md:pr-0 md:py-[40px] xl:pl-[104px] xl:pr-0 xl:py-[75px] md:w-1/3">
+            <ul className="flex flex-col space-y-[36px] md:space-y-[35px] xl:space-y-[55px]">
+              {menuItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className="text-[15px] md:text-[20px] font-nats text-[#351A12] md:text-[#F7F5ED] hover:text-[#D2ADCE] transition-colors block"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col items-center justify-center md:flex-row md:w-2/3 md:pr-[60px] xl:pr-[104px]">
             <img
               src="/images/menu/menu1.png"
               alt="Menu decorative image 1"
-              className="w-1/2 h-[328px] object-cover"
+              className="w-full h-[284px] md:w-[340px] xl:h-[328px] xl:w-[410px] object-cover"
             />
             <img
               src="/images/menu/menu2.png"
               alt="Menu decorative image 2"
-              className="w-1/2 h-[328px] object-cover"
+              className="hidden md:block w-[340px] h-[284px] xl:h-[328px] xl:w-[410px] object-cover"
             />
           </div>
         </div>
