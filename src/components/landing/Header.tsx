@@ -26,7 +26,10 @@ export default function Header() {
           >
             MENU
           </button>
-          <div className="w-[20px] h-[20px] bg-[#D2ADCE]"></div>
+          <div
+            className="w-[20px] h-[20px] bg-[#D2ADCE] hover:bg-[#B89BB8] transition-colors cursor-pointer"
+            onClick={toggleMenu}
+          ></div>
         </div>
       </div>
       {isMenuOpen && <Menu onClose={toggleMenu} isOpen={isMenuOpen} />}
