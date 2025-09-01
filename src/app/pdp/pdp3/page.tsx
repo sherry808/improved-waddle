@@ -8,7 +8,7 @@ import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
 
-export default function PDP1() {
+export default function PDP3() {
   const data = pdpData.pdp3;
 
   const foundationContent = [
