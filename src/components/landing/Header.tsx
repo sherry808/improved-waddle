@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Menu from "../common/Menu";
-import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Header() {
           ></div>
         </div>
       </div>
-      {isMenuOpen && <Menu onClose={toggleMenu} />}
+      {isMenuOpen && <Menu onClose={toggleMenu} isOpen={isMenuOpen} />}
     </header>
   );
 }
