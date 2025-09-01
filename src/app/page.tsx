@@ -1,17 +1,17 @@
-import Hero from '@/components/landing/Hero';
-import Launch from '@/components/landing/Launch';
-import Projects from '@/components/landing/Projects';
-import MeetCreator from '@/components/landing/MeetCreator';
-import Services from '@/components/landing/Services';
-import Contact from '@/components/landing/Contact';
-import SignupBanner from '@/components/landing/SignupBanner';
-import Footer from '@/components/landing/Footer';
-import Logos from '@/components/landing/Logos';
-import ProjectDisplay from '@/components/common/ProjectDisplay';
+import ProjectDisplay from "@/components/common/ProjectDisplay";
+import Contact from "@/components/landing/Contact";
+import Footer from "@/components/landing/Footer";
+import Hero from "@/components/landing/Hero";
+import Launch from "@/components/landing/Launch";
+import Logos from "@/components/landing/Logos";
+import MeetCreator from "@/components/landing/MeetCreator";
+import Projects from "@/components/landing/Projects";
+import Services from "@/components/landing/Services";
+import SignupBanner from "@/components/landing/SignupBanner";
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-0 overflow-x-hidden">
       <Hero />
       <Launch />
       <ProjectDisplay />
