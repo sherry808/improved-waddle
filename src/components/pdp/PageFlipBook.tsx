@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, ReactNode } from "react";
+import React, { useState, useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import useIsMobile from "@/hooks/useIsMobile";
 
@@ -9,11 +9,10 @@ interface PageProps {
   image?: string;
   alt?: string;
   number?: string;
-  children?: ReactNode;
 }
 
 const Page = React.forwardRef<HTMLDivElement, PageProps>(
-  ({ pageNumber, image, alt, number, children }, ref) => {
+  ({ pageNumber, image, alt, number }, ref) => {
     return (
       <div
         className="page relative"
@@ -30,28 +29,8 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
         ) : (
           <div className="w-full h-full p-4">
             {number && <div className="page-number">{number}</div>}
-            {children}
           </div>
         )}
-      </div>
-    );
-  }
-);
-
-interface PageCoverProps {
-  children?: ReactNode;
-}
-
-const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
-  ({ children }, ref) => {
-    return (
-      <div
-        className="page page-cover relative shadow-lg bg-[#D2ADCE] flex justify-center items-center"
-        ref={ref as React.RefObject<HTMLDivElement>}
-      >
-        <div className="w-full h-full flex justify-center items-center p-4 text-[#351A12] text-xl font-bold">
-          {children}
-        </div>
       </div>
     );
   }
@@ -68,53 +47,57 @@ const BlankPage = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
 });
 
 interface PageFlipBookProps {
-  images?: string[];
-  width: number;
-  height: number;
-  className?: string;
-  children?: ReactNode;
+  images: string[];
 }
 
-const PageFlipBook: React.FC<PageFlipBookProps> = ({
-  images,
-  width: propWidth,
-  height: propHeight,
-  className,
-  children,
-}) => {
+const PageFlipBook: React.FC<PageFlipBookProps> = ({ images }) => {
   const book = useRef<any>(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const contentPages = images ? images.length : React.Children.count(children);
-  const totalPages = contentPages; // Remove blank page from total count
+  const totalPages = images.length;
   const isMobile = useIsMobile(768);
 
-  const [dimensions, setDimensions] = useState({
-    width: propWidth,
-    height: propHeight,
-  });
+  // Touch/swipe state
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
 
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (isMobile) {
-        setDimensions({
-          width: Math.min(window.innerWidth - 40, 548),
-          height: Math.min(window.innerHeight - 200, 780),
-        });
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    setDragOffset(0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+
+    const currentTouch = e.targetTouches[0].clientX;
+    const diff = touchStart - currentTouch;
+    setDragOffset(diff);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+
+    const currentTouch = e.changedTouches[0].clientX;
+    const diff = touchStart - currentTouch;
+    const minSwipeDistance = 50; // Minimum distance for a swipe
+
+    setIsDragging(false);
+    setDragOffset(0);
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        // Swipe left - next page
+        nextButtonClick();
       } else {
-        setDimensions({
-          width: 548,
-          height: 780,
-        });
+        // Swipe right - previous page
+        prevButtonClick();
       }
-    };
+    }
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  }, [isMobile, propWidth, propHeight]);
+    setTouchStart(null);
+  };
 
   const nextButtonClick = () => {
     if (isMobile) {
@@ -172,7 +155,7 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
   };
 
   return (
-    <div className={`flex flex-col items-center ${className || ""}`}>
+    <div className="flex flex-col items-center mx-auto">
       {!isMobile ? (
         // Desktop View - Flip Book
         <div className="relative flex items-center">
@@ -217,11 +200,9 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
             ref={book}
           >
             <BlankPage />
-            {children ||
-              (images &&
-                images.map((image, index) => (
-                  <Page key={index} pageNumber={index + 1} image={image} />
-                )))}
+            {images.map((image, index) => (
+              <Page key={index} pageNumber={index + 1} image={image} />
+            ))}
           </HTMLFlipBook>
 
           {/* Right Navigation Button */}
@@ -238,53 +219,42 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
           ></button>
         </div>
       ) : (
-        // Mobile View - Single Page Display
+        // Mobile View - Single Page Display with Touch Support
         <div className="flex flex-col items-center">
-          {/* Single Page Display */}
+          {/* Single Page Display with Touch Events */}
           <div
-            className="relative shadow-lg bg-white overflow-hidden"
+            className="relative shadow-lg bg-white overflow-hidden touch-pan-y"
             style={{
-              width: Math.min(window.innerWidth - 40, 548),
-              height: Math.min(window.innerHeight - 200, 780),
+              width: 339,
+              height: 481,
               marginBottom: "75px",
             }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div
               className="w-full h-full transition-transform duration-300 ease-in-out"
               style={{
-                transform: `translateX(-${currentPage * 100}%)`,
+                transform: `translateX(calc(-${currentPage * (100 + 4)}% + ${
+                  isDragging ? dragOffset : 0
+                }px))`,
               }}
             >
-              {images &&
-                images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full absolute top-0 left-0"
-                    style={{ left: `${index * 100}%` }}
-                  >
-                    <img
-                      src={image}
-                      alt={`Page ${index + 1}`}
-                      className="w-full h-full object-cover"
-                      style={{ display: "block" }}
-                    />
-                  </div>
-                ))}
-              {children &&
-                React.Children.map(children, (child, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full absolute top-0 left-0"
-                    style={{ left: `${index * 100}%` }}
-                  >
-                    {child}
-                  </div>
-                ))}
-              {!images && !children && (
-                <div className="w-full h-full p-4 flex items-center justify-center">
-                  <span className="text-gray-500">Page {currentPage + 1}</span>
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="w-full h-full absolute top-0 left-0"
+                  style={{ left: `${index * (100 + 4)}%` }}
+                >
+                  <img
+                    src={image}
+                    alt={`Page ${index + 1}`}
+                    className="w-full h-full object-cover"
+                    style={{ display: "block" }}
+                  />
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
@@ -322,9 +292,8 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
   );
 };
 
-// Add display names for better debugging
+// Add display name for better debugging
 Page.displayName = "Page";
-PageCover.displayName = "PageCover";
 
-export { PageFlipBook, Page, PageCover };
+export { PageFlipBook, Page };
 export default PageFlipBook;
