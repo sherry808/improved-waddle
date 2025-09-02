@@ -31,12 +31,18 @@ export default function ProjectsList({ excludeId, layout = 'horizontal' }: Proje
                 >
                     <Link href={`/pdp/${project.id}`}>
                         <div className="relative h-64">
-                            <Image
-                                src={project.page1.image}
-                                alt={project.page1.title}
-                                fill
-                                className="object-cover"
-                            />
+                            {project.page1.image ? (
+                                <Image
+                                    src={project.page1.image}
+                                    alt={project.page1.title || ''}
+                                    fill
+                                    className="object-cover"
+                                />
+                            ) : (
+                                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                    <span className="text-gray-500 text-sm">No image available</span>
+                                </div>
+                            )}
                         </div>
                         <div className="p-6">
                             <div className="flex gap-2 mb-2">
