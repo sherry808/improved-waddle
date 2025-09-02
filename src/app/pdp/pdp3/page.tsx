@@ -1,3 +1,5 @@
+"use client";
+
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import ClientInfo from "@/components/pdp/ClientInfo";
@@ -7,34 +9,40 @@ import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
+import { useState } from "react";
 
 export default function PDP3() {
   const data = pdpData.pdp3;
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleExpandChange = (isExpandedNow: any) => {
+    setIsExpanded(isExpandedNow);
+  };
   const foundationContent = [
     {
       title: "Brand Positioning And Values",
       content: data.page4.brandPositioning ?? null,
       maxLength: 230,
-      mobileMaxLength: 326,
+      mobileMaxLength: 230,
     },
     {
       title: "Client Insights",
       content: data.page4.stakeholderInterviews ?? null,
       maxLength: 234,
-      mobileMaxLength: 326,
+      mobileMaxLength: 249,
     },
     {
       title: "Market And Competitor Analysis",
       content: data.page4.marketAnalysis ?? null,
       maxLength: 243,
-      mobileMaxLength: 326,
+      mobileMaxLength: 247,
     },
     {
       title: "Target Audience Establishment",
       content: data.page4.targetAudience ?? null,
       maxLength: 243,
-      mobileMaxLength: 326,
+      mobileMaxLength: 251,
     },
   ];
 
@@ -43,25 +51,25 @@ export default function PDP3() {
       title: "UI/UX and Site Structure Planning",
       content: data.page6.uxPlanning ?? null,
       maxLength: 238,
-      mobileMaxLength: 245,
+      mobileMaxLength: 243,
     },
     {
       title: "Style Guide Establishment",
       content: data.page6.styleGuide ?? null,
       maxLength: 234,
-      mobileMaxLength: 310,
+      mobileMaxLength: 255,
     },
     {
       title: "Visual Direction and Design System",
       content: data.page6.visualDirection ?? null,
       maxLength: 244,
-      mobileMaxLength: 258,
+      mobileMaxLength: 264,
     },
     {
       title: "Tech, Performance and Functionality",
       content: data.page6.techPerformance ?? null,
       maxLength: 235,
-      mobileMaxLength: 257,
+      mobileMaxLength: 264,
     },
   ];
 
@@ -98,7 +106,7 @@ export default function PDP3() {
         pageTitle={data.page4.pageTitle ?? ""}
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
-        paddingXl="p-7 xl:py-0 xl:px-[39px]"
+        paddingXl="p-7 xl:py-0 xl:pl-[27px] xl:pr-[53px]"
         imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1024px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
@@ -112,8 +120,13 @@ export default function PDP3() {
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
-        paddingXl="py-8 px-9 xl:px-[51px] xl:py-0"
-        imageClass="w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1472px] object-cover"
+        paddingXl="py-8 px-9 xl:px-[51px] xl:py-[23px]"
+        imageClass={
+          isExpanded
+            ? "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1550px] object-cover"
+            : "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1059px] object-cover"
+        }
+        onExpandChange={handleExpandChange}
       />
       <DirectionAndExperience
         pageTitle={data.page7.pageTitle ?? ""}
