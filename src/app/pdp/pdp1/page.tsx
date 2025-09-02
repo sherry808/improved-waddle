@@ -1,3 +1,5 @@
+"use client";
+
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import ClientInfo from "@/components/pdp/ClientInfo";
@@ -7,10 +9,16 @@ import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
+import { useState } from "react";
 
 export default function PDP1() {
   const data = pdpData.pdp1;
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleExpandChange = (isExpandedNow: any) => {
+    setIsExpanded(isExpandedNow);
+  };
   const foundationContent = [
     {
       title: "Brand Positioning And Values",
@@ -113,7 +121,12 @@ export default function PDP1() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         paddingXl="py-8 px-9 xl:px-[47px] xl:py-0"
-        imageClass="w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1168px] object-cover"
+        imageClass={
+          isExpanded
+            ? "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1337px] object-cover"
+            : "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1168px] object-cover"
+        }
+        onExpandChange={handleExpandChange}
       />
       <DirectionAndExperience
         pageTitle={data.page7.pageTitle ?? ""}

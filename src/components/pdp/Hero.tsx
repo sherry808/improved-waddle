@@ -20,11 +20,11 @@ export default function Hero(props: HeroProps) {
         <img
           src={props.image}
           alt={props.title || ""}
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
         />
       </div>
       <div
-        className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[30px] ${props.paddingXl}`}
+        className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[28px] ${props.paddingXl}`}
       >
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
           <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 md:mb-2">
