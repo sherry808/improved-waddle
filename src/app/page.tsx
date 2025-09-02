@@ -1,6 +1,5 @@
 import ProjectDisplay from "@/components/common/ProjectDisplay";
 import Contact from "@/components/landing/Contact";
-import Footer from "@/components/landing/Footer";
 import Hero from "@/components/landing/Hero";
 import Launch from "@/components/landing/Launch";
 import Logos from "@/components/landing/Logos";
@@ -21,7 +20,6 @@ export default function Home() {
       <Contact />
       <Logos />
       <SignupBanner />
-      <Footer />
     </main>
   );
 }

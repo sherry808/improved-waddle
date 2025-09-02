@@ -4,7 +4,7 @@ import { SocialIcons } from "../common/SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F0E5D6] h-[173px] p-[32px] md:h-[242px] md:px-[87px] md:pt-[60px]">
+    <footer className="bg-[#F0E5D6] h-[173px] p-[32px] md:h-[242px] md:px-[102px] md:py-[60px]">
       <div className="flex flex-row justify-between items-start md:items-center gap-4">
         <div className="flex flex-col items-start md:w-auto">
           <h2 className="m-0 p-0 font-normal text-[36px] md:text-[128px] font-nats text-[#351A12] whitespace-nowrap leading-none">
