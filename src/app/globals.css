@@ -18,6 +18,7 @@
 
 /* Global Nats font styling */
 .font-nats {
+  font-weight: 100;
   font-synthesis: weight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,6 +26,7 @@
 
 /* Global Monthis font styling */
 .font-monthis {
+  font-weight: 100;
   font-synthesis: weight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
