@@ -4,12 +4,28 @@ import { useState } from 'react';
 
 export default function SignupBanner() {
     const [email, setEmail] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+      const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle newsletter subscription here
-        console.log('Newsletter subscription:', email);
-    };
+        // Set loading state to disable button
+        setIsSubmitting(true);
+        try {
+          // Handle subscription here
+          const res = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          });
+          await res.json();
+          alert("Thanks for subscribing!");
+        } catch (error) {
+          console.error("Subscription error:", error);
+          alert("Failed to subscribe. Please try again.");
+        } finally {
+          setIsSubmitting(false);
+        }
+      };
 
     return (
         <section className="w-full bg-[#351A12] py-[50px] md:py-[78px]">
@@ -57,6 +73,7 @@ export default function SignupBanner() {
                                 />
                                 <button
                                     type="submit"
+                                    disabled={isSubmitting}
                                     className="absolute left-[370px] bottom-[1px] w-[40px] h-[40px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center border-0"
                                 />
                             </div>
