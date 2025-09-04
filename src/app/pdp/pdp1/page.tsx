@@ -1,7 +1,6 @@
 "use client";
 
 import Contact from "@/components/landing/Contact";
-import Footer from "@/components/landing/Footer";
 import ClientInfo from "@/components/pdp/ClientInfo";
 import DirectionAndExperience from "@/components/pdp/DirectionAndExperience";
 import Foundations from "@/components/pdp/Foundations";
@@ -149,7 +148,6 @@ export default function PDP1() {
       <MoreProjects currentProjectId={data.id ?? ""} />
       {/* <ProjectsList excludeId="pdp1" layout="vertical" /> */}
       <Contact />
-      <Footer />
     </main>
   );
 }
