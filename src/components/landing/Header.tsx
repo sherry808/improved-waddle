@@ -1,70 +1,73 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Menu from "../common/Menu";
 
 export default function Header() {
-    const [mounted, setMounted] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - hide header
-                setIsVisible(false);
-            } else {
-                // Scrolling up - show header
-                setIsVisible(true);
-            }
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
 
-            setLastScrollY(currentScrollY);
-        };
+      setLastScrollY(currentScrollY);
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-    if (!mounted) {
-        return (
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#F0E5D6] w-screen h-[60px] transition-transform duration-300">
-                <div className="w-full h-full">
-                    <div className="flex items-center justify-between h-full px-[30px] md:px-[103px]">
-                        <div className="flex items-center gap-4">
-                            <h2 className="font-normal text-primary font-nats text-[36px]">MILI BAJAJ</h2>
-                            <div className="h-[1px] w-20 bg-primary"></div>
-                        </div>
-                        {/* TODO: Add navigation menu later */}
-                    </div>
-                    <hr className="w-full h-[1px] bg-[#351A12] border-none absolute bottom-0" />
-                </div>
-            </header>
-        );
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
 
-    return (
-        <header className={`fixed top-0 left-0 right-0 z-50 bg-[#F0E5D6] w-screen h-[60px] transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="w-full h-full">
-                <div className="flex items-center justify-between h-full px-[30px] md:px-[103px]">
-                    {/* Logo and Line */}
-                    <div className="flex items-center gap-4">
-                        <h2 className="font-normal text-primary font-nats text-[36px]">MILI BAJAJ</h2>
-                        <div className="h-[1px] w-20 bg-primary"></div>
-                    </div>
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
 
-                    {/* Mobile Menu Button */}
-                    {/* <button className="md:hidden"> */}
-                    <div className="w-[20px] h-[20px] bg-[#D2ADCE]"></div>
-                    {/* </button> */}
-                </div>
-                {/* Horizontal Line */}
-                <hr className="w-full h-[1px] bg-[#351A12] border-none absolute bottom-0" />
-            </div>
-        </header>
-    );
-} 
+  return (
+    <header
+      className={`fixed top-0 w-full z-50 bg-[#F0E5D6] border-b border-[#351A12] ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="flex items-center justify-between px-[30px] md:px-[104px] md:py-[3px] h-[60px]">
+        <Link href="/" passHref>
+          <div className="font-nats text-[36px] text-[#351A12] cursor-pointer">
+            MILI BAJAJ
+          </div>
+        </Link>
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={toggleMenu}
+            className="hidden md:flex text-[#351A12] text-[24px] font-nats"
+          >
+            MENU
+          </button>
+          <div
+            className="w-[20px] h-[20px] bg-[#D2ADCE] transition-colors cursor-pointer"
+            onClick={toggleMenu}
+          ></div>
+        </div>
+      </div>
+      {isMenuOpen && <Menu onClose={toggleMenu} isOpen={isMenuOpen} />}
+    </header>
+  );
+}
