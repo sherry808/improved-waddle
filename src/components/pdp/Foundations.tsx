@@ -55,7 +55,7 @@ export default function Foundations(props: FoundationsProps) {
       >
         <div className={`w-full text-left ${props.paddingXl}`}>
           {props.pageTitle && (
-            <h1 className="mb-6 mt-0 font-monthis font-normal text-[54px] leading-tight">
+            <h1 className="mb-4 mt-0 font-monthis font-normal text-[54px] leading-tight">
               {props.pageTitle}
             </h1>
           )}
