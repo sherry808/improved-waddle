@@ -15,9 +15,9 @@ export default function Hero() {
     }
 
     return (
-        <section className="py-16 bg-[#F0E5D6]">
+        <section className="pt-[76px] pb-16 bg-[#F0E5D6]">
             <div className="px-[30px] md:px-[103px]">
-                <section className='flex flex-col items-start justify-center h-screen'>
+                <section className='flex flex-col items-start justify-center min-h-[calc(100vh-60px)]'>
                     <div>
                         <section>
                             <h1 className='font-normal text-primary font-monthis w-[255px] h-[77px] desktop:w-[450px] desktop:h-[154px] text-[48px] desktop:text-[96px] leading-tight'>
