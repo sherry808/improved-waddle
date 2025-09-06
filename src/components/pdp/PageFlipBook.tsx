@@ -1,7 +1,5 @@
 "use client";
 
-import React, { useState, useRef, useEffect, ReactNode } from "react";
-import HTMLFlipBook from "react-pageflip";
 import useIsMobile from "@/hooks/useIsMobile";
 import useResponsiveDimensions from "@/hooks/useResponsiveDimensions";
 import { FC, forwardRef, useRef, useState } from "react";
@@ -11,12 +9,17 @@ interface PageProps {
   pageNumber?: number;
   image?: string;
   alt?: string;
-  number?: string;
-  children?: ReactNode;
 }
 
-const Page = React.forwardRef<HTMLDivElement, PageProps>(
-  ({ pageNumber, image, alt, number, children }, ref) => {
+interface BlankPageProps {}
+
+interface PageFlipBookProps {
+  images: string[];
+}
+
+const Page = forwardRef<HTMLDivElement, PageProps>(
+  ({ image, alt, pageNumber }, ref) => {
+    const { width, height } = useResponsiveDimensions();
     return (
       <div
         className="page relative"
@@ -30,37 +33,15 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
             className="w-full h-full object-cover"
             style={{ width: `${width}px`, height: `${height}px` }}
           />
-        ) : (
-          <div className="w-full h-full p-4">
-            {number && <div className="page-number">{number}</div>}
-            {children}
-          </div>
         )}
       </div>
     );
   }
 );
+Page.displayName = "Page";
 
-interface PageCoverProps {
-  children?: ReactNode;
-}
-
-const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
-  ({ children }, ref) => {
-    return (
-      <div
-        className="page page-cover relative shadow-lg bg-[#D2ADCE] flex justify-center items-center"
-        ref={ref as React.RefObject<HTMLDivElement>}
-      >
-        <div className="w-full h-full flex justify-center items-center p-4 text-[#351A12] text-xl font-bold">
-          {children}
-        </div>
-      </div>
-    );
-  }
-);
-
-const BlankPage = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+const BlankPage = forwardRef<HTMLDivElement, BlankPageProps>((_, ref) => {
+  const { width, height } = useResponsiveDimensions();
   return (
     <div
       className="page relative shadow-lg bg-white"
@@ -69,85 +50,15 @@ const BlankPage = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
     />
   );
 });
+BlankPage.displayName = "BlankPage";
 
-interface PageFlipBookProps {
-  images?: string[];
-  width: number;
-  height: number;
-  className?: string;
-  children?: ReactNode;
-}
-
-const PageFlipBook: React.FC<PageFlipBookProps> = ({
-  images,
-  width: propWidth,
-  height: propHeight,
-  className,
-  children,
-}) => {
+const PageFlipBook: FC<PageFlipBookProps> = ({ images }) => {
   const book = useRef<any>(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const contentPages = images ? images.length : React.Children.count(children);
-  const totalPages = contentPages; // Remove blank page from total count
-  const isMobile = useIsMobile(768);
+  const totalPages = images.length;
+  const isMobile = useIsMobile(360);
 
-  const [dimensions, setDimensions] = useState({
-    width: propWidth,
-    height: propHeight,
-  });
-
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (isMobile) {
-        setDimensions({
-          width: Math.min(window.innerWidth - 40, 548),
-          height: Math.min(window.innerHeight - 200, 780),
-        });
-      } else {
-        setDimensions({
-          width: 548,
-          height: 780,
-        });
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  }, [isMobile, propWidth, propHeight]);
-
-  const nextButtonClick = () => {
-    if (isMobile) {
-      // Mobile: Direct page change without animation
-      const maxPage = totalPages - 2;
-      if (currentPage < maxPage) {
-        setCurrentPage(currentPage + 1);
-      }
-    } else {
-      // Desktop: Use flip book animation
-      const maxPage = totalPages - 3;
-      if (book.current && currentPage < maxPage) {
-        book.current.pageFlip().flipNext();
-      }
-    }
-  };
-
-  const prevButtonClick = () => {
-    if (isMobile) {
-      // Mobile: Direct page change without animation
-      if (currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-      }
-    } else {
-      // Desktop: Use flip book animation
-      if (book.current) {
-        book.current.pageFlip().flipPrev();
-      }
-    }
-  };
+  const { width, height } = useResponsiveDimensions();
 
   const onFlip = (e: any) => {
     const newPage = e.data;
@@ -174,9 +85,38 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
       : "bg-[#D2ADCE] hover:bg-[#c79bc3]";
 
   return (
-    <div className={`flex flex-col items-center ${className || ""}`}>
-      {!isMobile ? (
-        // Desktop View - Flip Book
+    <div className="flex flex-col items-center mx-auto">
+      {isMobile ? (
+        // Mobile View
+        <div className="flex flex-col items-center w-full">
+          <div
+            className="overflow-x-scroll snap-x snap-mandatory no-scrollbar"
+            style={{
+              width: `${width}px`,
+            }}
+          >
+            <div className="flex flex-nowrap gap-1">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 snap-center shadow-lg"
+                  style={{
+                    width: `${width}px`,
+                    height: `${height}px`,
+                  }}
+                >
+                  <img
+                    src={image}
+                    alt={`Page ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        // Desktop View
         <div className="relative flex items-center">
           <button
             onClick={() => book.current?.pageFlip().flipPrev()}
@@ -227,96 +167,12 @@ const PageFlipBook: React.FC<PageFlipBookProps> = ({
               nextButtonDisabled
             )}`}
             aria-label="Next page"
-          ></button>
-        </div>
-      ) : (
-        // Mobile View - Single Page Display
-        <div className="flex flex-col items-center">
-          {/* Single Page Display */}
-          <div
-            className="relative shadow-lg bg-white overflow-hidden"
-            style={{
-              width: Math.min(window.innerWidth - 40, 548),
-              height: Math.min(window.innerHeight - 200, 780),
-              marginBottom: "75px",
-            }}
-          >
-            <div
-              className="w-full h-full transition-transform duration-300 ease-in-out"
-              style={{
-                transform: `translateX(-${currentPage * 100}%)`,
-              }}
-            >
-              {images &&
-                images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full absolute top-0 left-0"
-                    style={{ left: `${index * 100}%` }}
-                  >
-                    <img
-                      src={image}
-                      alt={`Page ${index + 1}`}
-                      className="w-full h-full object-cover"
-                      style={{ display: "block" }}
-                    />
-                  </div>
-                ))}
-              {children &&
-                React.Children.map(children, (child, index) => (
-                  <div
-                    key={index}
-                    className="w-full h-full absolute top-0 left-0"
-                    style={{ left: `${index * 100}%` }}
-                  >
-                    {child}
-                  </div>
-                ))}
-              {!images && !children && (
-                <div className="w-full h-full p-4 flex items-center justify-center">
-                  <span className="text-gray-500">Page {currentPage + 1}</span>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Navigation Buttons at Bottom */}
-          <div className="flex justify-center items-center gap-4">
-            {/* Left Navigation Button */}
-            <button
-              onClick={prevButtonClick}
-              disabled={currentPage === 0}
-              className={`${
-                currentPage === 0
-                  ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-[#D2ADCE] hover:bg-[#c79bc3]"
-              } text-[#351A12] transition-all duration-200`}
-              style={{ width: "18px", height: "18px" }}
-              aria-label="Previous page"
-            ></button>
-
-            {/* Right Navigation Button */}
-            <button
-              onClick={nextButtonClick}
-              disabled={currentPage >= totalPages - 2}
-              className={`${
-                currentPage >= totalPages - 2
-                  ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-[#D2ADCE] hover:bg-[#c79bc3]"
-              } text-[#351A12] transition-all duration-200`}
-              style={{ width: "18px", height: "18px" }}
-              aria-label="Next page"
-            ></button>
-          </div>
+          />
         </div>
       )}
     </div>
   );
 };
 
-// Add display names for better debugging
-Page.displayName = "Page";
-PageCover.displayName = "PageCover";
-
-export { PageFlipBook, Page, PageCover };
+export { BlankPage, Page, PageFlipBook };
 export default PageFlipBook;
