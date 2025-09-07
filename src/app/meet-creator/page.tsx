@@ -1,9 +1,8 @@
 "use client";
 
 import Contact from "@/components/landing/Contact";
-import Footer from "@/components/landing/Footer";
 import Logos from "@/components/landing/Logos";
-import MeetCreator from "@/components/landing/MeetCreator";
+import MeetCreator from "@/components/meet-creator/MeetCreator";
 
 export default function MeetCreatorPage() {
   return (
@@ -18,7 +17,6 @@ export default function MeetCreatorPage() {
       </section>
       <Logos />
       <Contact />
-      <Footer />
     </main>
   );
 }

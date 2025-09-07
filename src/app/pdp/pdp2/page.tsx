@@ -1,5 +1,6 @@
+"use client";
+
 import Contact from "@/components/landing/Contact";
-import Footer from "@/components/landing/Footer";
 import ClientInfo from "@/components/pdp/ClientInfo";
 import DirectionAndExperience from "@/components/pdp/DirectionAndExperience";
 import Foundations from "@/components/pdp/Foundations";
@@ -7,10 +8,16 @@ import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
+import { useState } from "react";
 
 export default function PDP2() {
   const data = pdpData.pdp2;
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleExpandChange = (isExpandedNow: any) => {
+    setIsExpanded(isExpandedNow);
+  };
   const foundationContent = [
     {
       title: "The Reality",
@@ -61,6 +68,7 @@ export default function PDP2() {
         industry={data.page2.industry}
         team={null}
         titleColor="text-[#F0E5D6]"
+        paddingXl="xl:p-[54px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -88,12 +96,20 @@ export default function PDP2() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] lg:pb-[20px]"
-        imageClass="w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"
+        imageClass={
+          isExpanded
+            ? "w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"
+            : "w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"
+        }
+        onExpandChange={handleExpandChange}
       />
       <DirectionAndExperience
         pageTitle={null}
         finalDirection={null}
         image={data.page7.image ?? ""}
+        titleClass={null}
+        contentClass={null}
+        paddingXl={null}
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
@@ -108,7 +124,6 @@ export default function PDP2() {
       <MoreProjects currentProjectId={data.id ?? ""} />
       {/* <ProjectsList excludeId="pdp1" layout="vertical" /> */}
       <Contact />
-      <Footer />
     </main>
   );
 }
