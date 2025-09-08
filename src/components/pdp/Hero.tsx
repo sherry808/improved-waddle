@@ -20,11 +20,11 @@ export default function Hero(props: HeroProps) {
         <img
           src={props.image}
           alt={props.title || ""}
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
         />
       </div>
       <div
-        className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[30px] ${props.paddingXl}`}
+        className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[28px] ${props.paddingXl}`}
       >
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
           <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 md:mb-2">
@@ -53,7 +53,7 @@ export default function Hero(props: HeroProps) {
                 href={props.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center px-6 py-2 font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
+                className="inline-block w-full text-center px-6 py-1 font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
               >
                 View Live Website
               </a>
