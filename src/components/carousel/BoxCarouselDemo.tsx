@@ -13,7 +13,7 @@ const carouselItems: CarouselItem[] = [
     {
         id: "1",
         type: "image",
-        src: "/images/carousel/carousel1.gif",
+        src: "/images/carousel/carousel1.png",
         alt: "Carousel image 1"
     },
     {
@@ -25,7 +25,7 @@ const carouselItems: CarouselItem[] = [
     {
         id: "3",
         type: "image",
-        src: "/images/carousel/carousel3.gif",
+        src: "/images/carousel/carousel3.png",
         alt: "Carousel image 3"
     },
     {
@@ -37,7 +37,7 @@ const carouselItems: CarouselItem[] = [
     {
         id: "5",
         type: "image",
-        src: "/images/carousel/carousel5.gif",
+        src: "/images/carousel/carousel5.png",
         alt: "Carousel image 5"
     },
     {
@@ -45,12 +45,6 @@ const carouselItems: CarouselItem[] = [
         type: "image",
         src: "/images/carousel/carousel6.png",
         alt: "Carousel image 6"
-    },
-    {
-        id: "7",
-        type: "image",
-        src: "/images/carousel/carousel7.png",
-        alt: "Carousel image 7"
     },
 ]
 
