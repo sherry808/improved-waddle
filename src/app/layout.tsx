@@ -1,5 +1,6 @@
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import AppWrapper from "@/components/common/AppWrapper";
 import type { Metadata } from "next";
 import "./fonts.css";
 import "./globals.css";
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <Header />
-        <main className="min-h-screen pt-[60px]">{children}</main>
-        <Footer />
+        <AppWrapper>
+          <Header />
+          <main className="min-h-screen pt-[60px]">{children}</main>
+          <Footer />
+        </AppWrapper>
       </body>
     </html>
   );

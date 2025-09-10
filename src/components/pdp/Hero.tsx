@@ -31,9 +31,8 @@ export default function Hero(props: HeroProps) {
             {props.area.map((item, index) => (
               <span
                 key={index}
-                className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${
-                  index >= maxAreaItems ? "hidden lg:inline-block" : ""
-                }`}
+                className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${index >= maxAreaItems ? "hidden lg:inline-block" : ""
+                  }`}
               >
                 {item}
               </span>
