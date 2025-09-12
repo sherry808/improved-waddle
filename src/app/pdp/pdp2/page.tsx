@@ -77,7 +77,12 @@ export default function PDP2() {
         <img
           src={data.page3.media ?? ""}
           alt="Media"
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        />
+        <img
+          src={data.page3.mediaMobile || data.page3.media || ""}
+          alt="Media"
+          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
       <Foundations
