@@ -7,6 +7,7 @@ interface ClientInfoProps {
   industry: string | null;
   team: string | null;
   image: string;
+  imageMobile?: string;
   titleColor: string;
   paddingXl: string;
 }
@@ -61,7 +62,12 @@ export default function ClientInfo(props: ClientInfoProps) {
         <img
           src={props.image}
           alt="Client Info"
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        />
+        <img
+          src={props.imageMobile || props.image}
+          alt="Client Info"
+          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </div>
     </div>

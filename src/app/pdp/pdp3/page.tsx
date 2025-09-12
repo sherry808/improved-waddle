@@ -90,6 +90,7 @@ export default function PDP3() {
         clientBackground={data.page2.clientBackground}
         role={data.page2.role}
         image={data.page2.image ?? ""}
+        imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={data.page2.team}
         titleColor="text-[#D2ADCE]"
