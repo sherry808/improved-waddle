@@ -53,7 +53,12 @@ const GetInTouch: React.FC = () => {
         <img
           src="/images/get-in-touch.png"
           alt="Get In Touch"
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        />
+        <img
+          src="/images/mobile-get-in-touch.png"
+          alt="Get In Touch"
+          className="lg:hidden w-full h-[400px] md:h-[738px] object-cover"
         />
       </div>
     </div>
