@@ -15,7 +15,7 @@ interface ClientInfoProps {
 export default function ClientInfo(props: ClientInfoProps) {
   return (
     <div className="flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden">
-      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center p-[29px] py-8 xl:p-[54px]">
+      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center py-[35px] px-[31px] xl:p-[54px]">
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
           <h1
             className={`m-0 font-monthis font-normal text-[32px] lg:text-[54px] leading-tight mb-4 lg:mb-12 ${props.titleColor}`}

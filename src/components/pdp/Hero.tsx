@@ -16,17 +16,17 @@ export default function Hero(props: HeroProps) {
   const maxAreaItems = props.areaLength ?? 2;
 
   return (
-    <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row w-full h-[400px] md:h-[680px] font-nats overflow-x-hidden">
       <div className="lg:w-[55%] w-full h-auto">
         <img
           src={props.image}
           alt={props.title || ""}
-          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[680px] object-cover"
         />
         <img
           src={props.imageMobile || props.image}
           alt={props.title || ""}
-          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
+          className="lg:hidden w-full h-[400px] md:h-[680px] object-cover"
         />
       </div>
       <div
