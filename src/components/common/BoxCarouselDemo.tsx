@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Bug, BugOff } from "lucide-react";
 import BoxCarousel, {
   type BoxCarouselRef,
   type CarouselItem,
 } from "@/components/common/BoxCarousel";
 import useScreenSize from "@/hooks/use-screen-size";
+import { Bug, BugOff } from "lucide-react";
+import { useRef, useState } from "react";
 
 const carouselItems: CarouselItem[] = [
   {
@@ -63,6 +63,10 @@ export default function BoxCarouselDemo() {
     if (screenSize.lessThan("md")) {
       // Mobile: 283px width, 213px height
       return { width: 283, height: 213 };
+    } else if (screenSize.lessThan("lg")) {
+      return { width: 350, height: 300 };
+    } else if (screenSize.lessThan("xl")) {
+      return { width: 500, height: 400 };
     }
     // Desktop: 593px width, 428px height
     return { width: 593, height: 428 };
@@ -95,7 +99,7 @@ export default function BoxCarouselDemo() {
       >
         {debug ? <Bug size={10} /> : <BugOff size={10} />}
       </button>
-      <div className="w-full space-y-[110px] lg:space-y-[104px]">
+      <div className="w-full space-y-[110px] lg:space-y-[105px]">
         <div className="flex justify-center">
           <BoxCarousel
             ref={carouselRef}
@@ -110,19 +114,19 @@ export default function BoxCarouselDemo() {
             autoPlay
           />
         </div>
-        <div className="flex gap-2 justify-center">
-          <button
+        <div className="flex gap-6 lg:gap-4 justify-center items-center">
+          <img
             onClick={handlePrev}
-            className="px-2 py-0.5 text-xs border border-black text-black rounded-full cursor-pointer transition-all duration-300 ease-out hover:bg-gray-100 active:scale-95"
-          >
-            Prev
-          </button>
-          <button
+            src="/images/Arrow-Left.png"
+            alt="Previous"
+            className="w-[38px] lg:w-[82px] cursor-pointer"
+          />
+          <img
             onClick={handleNext}
-            className="px-2 py-0.5 text-xs border border-black text-black rounded-full cursor-pointer transition-all duration-300 ease-out hover:bg-gray-100 active:scale-95"
-          >
-            Next
-          </button>
+            src="/images/Arrow-Right.png"
+            alt="Next"
+            className="w-[38px] lg:w-[82px] cursor-pointer"
+          />
         </div>
       </div>
     </div>
