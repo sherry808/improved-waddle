@@ -7,6 +7,7 @@ import ExpandableContent, {
 interface FoundationsProps {
   pageTitle: string | null;
   image: string | null;
+  imageMobile?: string;
   imageClass: string;
   paddingXl: string;
   contentSections: ExpandableContentProps[];
@@ -47,7 +48,12 @@ export default function Foundations(props: FoundationsProps) {
         <img
           src={props.image || ""}
           alt={props.pageTitle || ""}
-          className={props.imageClass}
+          className={`${props.imageClass} hidden lg:block`}
+        />
+        <img
+          src={props.imageMobile || props.image || ""}
+          alt={props.pageTitle || ""}
+          className={`${props.imageClass} lg:hidden`}
         />
       </div>
       <div
