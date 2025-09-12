@@ -6,6 +6,7 @@ interface HeroProps {
   shortDescription: string | null;
   projectLink: string | null;
   image: string;
+  imageMobile?: string;
   paddingXl: string;
   areaLength?: number;
   mobileTitleColor: string;
@@ -20,7 +21,12 @@ export default function Hero(props: HeroProps) {
         <img
           src={props.image}
           alt={props.title || ""}
-          className="w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
+        />
+        <img
+          src={props.imageMobile || props.image}
+          alt={props.title || ""}
+          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-[803px] object-cover"
         />
       </div>
       <div
