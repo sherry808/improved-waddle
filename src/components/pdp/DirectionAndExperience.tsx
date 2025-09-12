@@ -6,6 +6,7 @@ interface DirectionAndExperienceProps {
   pageTitle: string | null;
   finalDirection: string | null;
   image: string | null;
+  imageMobile?: string;
   titleClass: string | null;
   contentClass: string | null;
   paddingXl: string | null;
@@ -37,7 +38,12 @@ const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = (
           <img
             src={props.image ?? ""}
             alt="Process"
-            className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+            className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          />
+          <img
+            src={props.imageMobile || props.image || ""}
+            alt="Process"
+            className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
           />
         </section>
       )}
