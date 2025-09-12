@@ -122,6 +122,7 @@ export default function PDP2() {
         pageTitle={null}
         finalDirection={null}
         image={data.page7.image ?? ""}
+        imageMobile={data.page7.imageMobile ?? ""}
         titleClass={null}
         contentClass={null}
         paddingXl={null}
