@@ -132,6 +132,7 @@ export default function PDP1() {
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
+        imageMobile={data.page6.imageMobile ?? ""}
         paddingXl="py-8 px-9 xl:px-[47px] xl:py-0"
         imageClass={
           isExpanded
