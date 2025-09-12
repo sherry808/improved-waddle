@@ -112,6 +112,7 @@ export default function PDP3() {
         pageTitle={data.page4.pageTitle ?? ""}
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
+        imageMobile={data.page4.imageMobile ?? ""}
         paddingXl="p-7 xl:py-0 xl:pl-[27px] xl:pr-[53px]"
         imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1024px] object-cover"
       />
