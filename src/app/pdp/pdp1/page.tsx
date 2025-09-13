@@ -88,13 +88,15 @@ export default function PDP1() {
       <ClientInfo
         pageTitle={data.page2.pageTitle}
         clientBackground={data.page2.clientBackground}
+        height="h-[690px]"
+        itemGap="gap-x-[91px]"
         role={data.page2.role}
         image={data.page2.image ?? ""}
         imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={data.page2.team}
         titleColor="text-[#D2ADCE]"
-        paddingXl="xl:p-[54px]"
+        paddingXl="xl:p-[52px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -113,7 +115,7 @@ export default function PDP1() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         imageMobile={data.page4.imageMobile ?? ""}
-        paddingXl="p-7 xl:py-0 xl:px-[38px]"
+        paddingXl="p-7 xl:py-0 xl:px-[32px] xl:mr-[20px] xl:mb-[8px]"
         imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1050px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
@@ -133,7 +135,7 @@ export default function PDP1() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         imageMobile={data.page6.imageMobile ?? ""}
-        paddingXl="py-8 px-9 xl:px-[47px] xl:py-0"
+        paddingXl="py-8 px-9 xl:px-[51px] xl:py-0 xl:mb-[16px]"
         imageClass={
           isExpanded
             ? "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1337px] object-cover"

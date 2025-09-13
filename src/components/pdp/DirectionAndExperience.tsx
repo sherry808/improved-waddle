@@ -22,7 +22,7 @@ const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = (
           className={`flex flex-col lg:flex-row w-full h-[266px] lg:h-[229px] bg-[#351A12] font-nats overflow-x-hidden px-8 py-[45px] lg:p-12 ${props.paddingXl}`}
         >
           <div className={props.titleClass ?? ""}>
-            <h2 className="m-0 font-monthis font-normal text-[32px] lg:text-[54px] text-[#D2ADCE] leading-tight">
+            <h2 className="m-0 font-monthis font-normal text-[32px] lg:text-[54px] text-[#D2ADCE] leading-[1.23] [word-spacing:1.5px]">
               {props.pageTitle}
             </h2>
           </div>

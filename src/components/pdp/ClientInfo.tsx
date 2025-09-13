@@ -3,6 +3,8 @@
 interface ClientInfoProps {
   pageTitle: string | null;
   clientBackground: string | null;
+  height: string | null;
+  itemGap: string | null;
   role: string | null;
   industry: string | null;
   team: string | null;
@@ -14,17 +16,23 @@ interface ClientInfoProps {
 
 export default function ClientInfo(props: ClientInfoProps) {
   return (
-    <div className="flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden">
-      <div className="lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center py-[35px] px-[31px] xl:p-[54px]">
+    <div
+      className={`flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden ${props.height}`}
+    >
+      <div
+        className={`lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center py-[35px] px-[31px] ${props.paddingXl}`}
+      >
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
           <h1
-            className={`m-0 font-monthis font-normal text-[32px] lg:text-[54px] leading-tight mb-4 lg:mb-12 ${props.titleColor}`}
+            className={`m-0 font-monthis font-normal text-[32px] lg:text-[54px] leading-[1.25] mb-4 lg:mb-[52px] ${props.titleColor} [word-spacing:1.5px]`}
           >
             {props.pageTitle}
           </h1>
-          <div className="flex flex-col md:flex-row gap-y-[12px] md:gap-y-4 justify-between mb-4 lg:mb-12">
+          <div
+            className={`flex flex-col md:flex-row gap-y-[12px] md:gap-y-4 mb-4 lg:mb-[51px] ${props.itemGap}`}
+          >
             <div>
-              <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
+              <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-[10px]">
                 Industry
               </h2>
               <p className="font-nats font-normal text-[12px] lg:text-[16px] text-[#F7F5ED]">
@@ -34,7 +42,7 @@ export default function ClientInfo(props: ClientInfoProps) {
             <div>
               {props.team && (
                 <>
-                  <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
+                  <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-[10px]">
                     Team
                   </h2>
                   <p className="font-nats font-normal text-[12px] lg:text-[16px] text-[#F7F5ED]">
@@ -44,7 +52,7 @@ export default function ClientInfo(props: ClientInfoProps) {
               )}
             </div>
             <div>
-              <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-2">
+              <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#F7F5ED] uppercase mb-[10px]">
                 Role
               </h2>
               <p className="font-nats font-normal text-[12px] lg:text-[16px] text-[#F7F5ED]">
@@ -52,7 +60,7 @@ export default function ClientInfo(props: ClientInfoProps) {
               </p>
             </div>
           </div>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-[23px] md:leading-loose text-[#F7F5ED]">
+          <p className="font-nats text-[12px] lg:text-[16px] leading-[23px] md:leading-[34px] text-[#F7F5ED]">
             {props.clientBackground ||
               "No client background information available."}
           </p>

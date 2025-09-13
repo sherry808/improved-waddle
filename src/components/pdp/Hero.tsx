@@ -33,7 +33,7 @@ export default function Hero(props: HeroProps) {
         className={`lg:w-[45%] w-full bg-[#F0E5D4] flex items-center justify-center p-[28px] ${props.paddingXl}`}
       >
         <div className={`w-full text-left p-0 ${props.paddingXl}`}>
-          <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-8 md:mb-2">
+          <div className="flex flex-wrap justify-start gap-x-2 mobile:gap-x-4 xl:gap-x-[42px] md:mb-[5px]">
             {props.area.map((item, index) => (
               <span
                 key={index}
@@ -46,20 +46,20 @@ export default function Hero(props: HeroProps) {
             ))}
           </div>
           <h1
-            className={`m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-tight mb-6 ${props.mobileTitleColor} lg:text-[#52160D]`}
+            className={`m-0 font-monthis font-normal text-[48px] lg:text-[54px] leading-[1.23] mb-[30px] ${props.mobileTitleColor} lg:text-[#52160D] [word-spacing:1.5px]`}
           >
             {props.title}
           </h1>
-          <p className="font-nats text-[12px] lg:text-[16px] leading-[25px] md:leading-loose text-[#351A12] mx-auto lg:mx-0">
+          <p className="font-nats text-[12px] lg:text-[16px] leading-[25px] md:leading-[34px] text-[#351A12] mx-auto lg:mx-0">
             {props.shortDescription}
           </p>
           {props.projectLink && (
-            <div className="mt-8">
+            <div className="mt-[34px]">
               <a
                 href={props.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full text-center px-6 py-1 font-nats font-normal text-[#351A12] uppercase bg-[#D2ADCE]"
+                className="inline-block w-full h-[32px] text-center px-6 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
               >
                 View Live Website
               </a>

@@ -4,10 +4,10 @@ import { SocialIcons } from "../common/SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F0E5D6] h-[173px] p-[32px] md:h-[242px] md:px-[102px] md:py-[60px]">
-      <div className="flex flex-row justify-between items-start md:items-center gap-4">
+    <footer className="bg-[#F0E5D6] h-[173px] p-[32px] md:h-[242px] md:pl-[98px] md:pr-[102px] md:py-[55px]">
+      <div className="flex flex-row justify-between items-start md:items-center">
         <div className="flex flex-col items-start md:w-auto">
-          <h2 className="m-0 p-0 font-normal text-[36px] md:text-[128px] font-nats text-[#351A12] whitespace-nowrap leading-none">
+          <h2 className="m-0 p-0 lg:mb-[38px] font-normal text-[36px] md:text-[128px] font-nats text-[#351A12] whitespace-nowrap leading-none">
             MILI BAJAJ
           </h2>
           <div className="flex gap-4 mt-6 md:hidden">
@@ -15,11 +15,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="hidden md:flex flex-grow justify-center">
-          <div className="flex md:gap-[42px]">
+          <div className="flex md:gap-[42px] md:mr-3 md:mb-7">
             <SocialIcons />
           </div>
         </div>
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-end md:-mt-8">
           <a
             href="#projects"
             className="m-0 p-0 font-normal text-[15px] md:text-[24px] font-nats text-[#351A12] hover:text-[#D2ADCE] transition-colors text-right"

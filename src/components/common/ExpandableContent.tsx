@@ -44,7 +44,7 @@ export default function ExpandableContent({
   };
 
   return (
-    <div className="mt-4 xl:mt-10">
+    <div className="mt-4 xl:mt-[42px]">
       <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase">
         {title}
       </h2>

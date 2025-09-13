@@ -230,7 +230,7 @@ export const pdpData: Record<string, PDPData> = {
     },
     page2: {
       pageTitle:
-        "Weaving FA Home's Identity – A House of Design, Rebuilt Digitally.",
+        "Weaving FA Home's Identity- A House of Design, Rebuilt Digitally.",
       industry: "B2C, Lifestyle & Home Décor",
       team: "Ocularity Analytics",
       role: "Head of Design",
