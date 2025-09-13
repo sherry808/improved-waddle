@@ -88,13 +88,15 @@ export default function PDP3() {
       <ClientInfo
         pageTitle={data.page2.pageTitle}
         clientBackground={data.page2.clientBackground}
+        height="h-[690px]"
+        itemGap="gap-x-[70px]"
         role={data.page2.role}
         image={data.page2.image ?? ""}
         imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={data.page2.team}
         titleColor="text-[#D2ADCE]"
-        paddingXl="xl:p-[57px]"
+        paddingXl="xl:px-[54px] xl:py-0"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -133,7 +135,7 @@ export default function PDP3() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         imageMobile={data.page6.imageMobile ?? ""}
-        paddingXl="py-8 px-9 xl:px-[51px] xl:py-[23px]"
+        paddingXl="py-8 px-9 xl:px-[51px] xl:py-0 xl:-mt-[14px]"
         imageClass={
           isExpanded
             ? "w-full h-[400px] lg:w-[763px] md:h-[738px] lg:h-[1550px] object-cover"
@@ -145,8 +147,8 @@ export default function PDP3() {
         pageTitle={data.page7.pageTitle ?? ""}
         finalDirection={data.page7.finalDirection ?? ""}
         image={null}
-        titleClass="lg:w-1/3 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:mr-10"
-        contentClass="lg:w-2/3 w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8"
+        titleClass="lg:w-[500px] w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:mr-12"
+        contentClass="lg:w-[940px] w-full flex items-center justify-start pt-4 lg:pt-0"
         paddingXl="xl:px-[100px] xl:py-[45px]"
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">

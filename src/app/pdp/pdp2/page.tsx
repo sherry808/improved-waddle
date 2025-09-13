@@ -65,13 +65,15 @@ export default function PDP2() {
       <ClientInfo
         pageTitle={data.page2.pageTitle}
         clientBackground={data.page2.clientBackground}
+        height="h-[720px]"
+        itemGap="gap-x-[40px]"
         role={data.page2.role}
         image={data.page2.image ?? ""}
         imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={null}
         titleColor="text-[#F0E5D6]"
-        paddingXl="xl:p-[54px]"
+        paddingXl="xl:px-[54px] xl:py-[52px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
@@ -90,7 +92,7 @@ export default function PDP2() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         imageMobile={data.page4.imageMobile ?? ""}
-        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[32px]"
+        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-[34px] xl:mr-[15px] xl:pb-[12px] xl:-mt-[25px]"
         imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
