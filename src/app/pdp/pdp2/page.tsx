@@ -92,7 +92,7 @@ export default function PDP2() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         imageMobile={data.page4.imageMobile ?? ""}
-        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-[34px] xl:mr-[15px] xl:pb-[12px] xl:-mt-[25px]"
+        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-[32px] xl:mr-[21px] xl:-mt-[28px]"
         imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
@@ -112,7 +112,7 @@ export default function PDP2() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         imageMobile={data.page6.imageMobile ?? ""}
-        paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] lg:pb-[20px]"
+        paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] xl:-mt-[5px] lg:pb-[20px]"
         imageClass={
           isExpanded
             ? "w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"

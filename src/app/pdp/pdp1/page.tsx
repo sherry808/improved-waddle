@@ -147,8 +147,8 @@ export default function PDP1() {
         pageTitle={data.page7.pageTitle ?? ""}
         finalDirection={data.page7.finalDirection ?? ""}
         image={null}
-        titleClass="lg:w-[690px] w-full flex items-center justify-start"
-        contentClass="lg:w-[750px] w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:pr-1"
+        titleClass="lg:w-[670px] w-full flex items-center justify-start"
+        contentClass="lg:w-[770px] w-full flex items-center justify-start pt-4 lg:pt-0 lg:pr-8 xl:pr-1"
         paddingXl="xl:px-[100px] xl:py-[65px]"
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
