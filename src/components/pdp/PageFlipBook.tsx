@@ -56,7 +56,7 @@ const PageFlipBook: FC<PageFlipBookProps> = ({ images }) => {
   const book = useRef<any>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = images.length;
-  const isMobile = useIsMobile(360);
+  const isMobile = useIsMobile(768);
 
   const { width, height } = useResponsiveDimensions();
 
@@ -76,8 +76,8 @@ const PageFlipBook: FC<PageFlipBookProps> = ({ images }) => {
 
   const navButtonBaseClass =
     "text-[#351A12] transition-all duration-200 w-[18px] h-[18px]";
-  const leftButtonClasses = `${navButtonBaseClass} absolute left-[-30px] md:left-[-40px] lg:left-[70px] desktop-xl:left-[-95px] top-1/2 transform -translate-y-1/2`;
-  const rightButtonClasses = `${navButtonBaseClass} absolute right-[-30px] md:right-[-40px] lg:right-[-70px] desktop-xl:right-[-95px] top-1/2 transform -translate-y-1/2`;
+  const leftButtonClasses = `${navButtonBaseClass} absolute left-[-30px] md:left-[-30px] lg:left-[-55px] xl:left-[-95px] top-1/2 transform -translate-y-1/2`;
+  const rightButtonClasses = `${navButtonBaseClass} absolute right-[-30px] md:right-[-30px] lg:right-[-55px] xl:right-[-95px] top-1/2 transform -translate-y-1/2`;
 
   const getButtonColorClass = (disabled: boolean) =>
     disabled
