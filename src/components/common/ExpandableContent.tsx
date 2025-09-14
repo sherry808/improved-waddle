@@ -44,11 +44,11 @@ export default function ExpandableContent({
   };
 
   return (
-    <div className="mt-4 xl:mt-[42px]">
-      <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase">
+    <div className="mt-5 xl:mt-[42px]">
+      <h2 className="m-0 font-nats font-normal text-[15px] lg:text-[20px] leading-[15px] lg:leading-normal text-[#351A12] uppercase">
         {title}
       </h2>
-      <p className="font-nats text-[12px] lg:text-[16px] leading-loose text-[#351A12] mx-auto lg:mx-0">
+      <p className="font-nats text-[12px] lg:text-[16px] leading-[26px] lg:leading-loose text-[#351A12] mx-auto lg:mx-0">
         {displayedContent}
       </p>
       {showReadMore && (

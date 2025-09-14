@@ -55,24 +55,28 @@ export default function PDP2() {
         area={data.page1.area}
         title={data.page1.title}
         shortDescription={data.page1.shortDescription}
+        descMarginBottom="mb-0"
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
         imageMobile={data.page1.imageMobile ?? ""}
+        paddingMobile="px-[30px] py-[35px]"
         paddingXl="xl:p-12"
         areaLength={3}
+        itemGap="gap-x-5"
         mobileTitleColor="text-[#351A12]"
       />
       <ClientInfo
         pageTitle={data.page2.pageTitle}
         clientBackground={data.page2.clientBackground}
-        height="h-[720px]"
-        itemGap="gap-x-[40px]"
+        height="lg:h-[720px]"
+        itemGap="gap-y-[9px] md:gap-y-4 lg:gap-x-[40px]"
         role={data.page2.role}
         image={data.page2.image ?? ""}
         imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={null}
         titleColor="text-[#F0E5D6]"
+        paddingMobile="py-[35px] px-[29.9px]"
         paddingXl="xl:px-[54px] xl:py-[52px]"
       />
       <section className="w-full flex justify-center items-center">
@@ -92,6 +96,8 @@ export default function PDP2() {
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
         imageMobile={data.page4.imageMobile ?? ""}
+        paddingMobileUpper="px-[30px] py-[29px] pb-[40px]"
+        paddingMobileLower="px-[30px] pt-[26px] pb-[40px]"
         paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-[32px] xl:mr-[21px] xl:-mt-[28px]"
         imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
@@ -112,6 +118,8 @@ export default function PDP2() {
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
         imageMobile={data.page6.imageMobile ?? ""}
+        paddingMobileUpper="px-[30px] pt-[25px] pb-[38px]"
+        paddingMobileLower="px-[30px] pt-[25px] pb-[38px]"
         paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] xl:-mt-[5px] lg:pb-[20px]"
         imageClass={
           isExpanded
@@ -123,6 +131,8 @@ export default function PDP2() {
       <DirectionAndExperience
         pageTitle={null}
         finalDirection={null}
+        mobileFinalDirection={null}
+        height={null}
         image={data.page7.image ?? ""}
         imageMobile={data.page7.imageMobile ?? ""}
         titleClass={null}
