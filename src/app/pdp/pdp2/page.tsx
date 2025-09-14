@@ -139,8 +139,8 @@ export default function PDP2() {
         contentClass={null}
         paddingXl={null}
       />
-      <section className="flex flex-col justify-center items-center px-[11px] py-[49px] md:py-[75px] xl:py-[94px] xl:px-[172px] bg-transparent">
-        <div className="relative w-full md:w-[900px] xl:w-[1096px]">
+      <section className="flex flex-col justify-center items-center px-[11px] py-[49px] md:p-[45px] lg:py-[75px] lg:px-[62px] xl:py-[94px] xl:px-[172px] bg-transparent">
+        <div className="relative w-full lg:w-[900px] xl:w-[1096px]">
           <PageFlipBook
             images={[
               "/images/pdp/pdp2/book/THESIS BOOK A5 PRINT_mili.jpg",

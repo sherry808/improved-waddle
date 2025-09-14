@@ -15,7 +15,7 @@ const useResponsiveDimensions = () => {
           width: 548,
           height: 780,
         });
-      } else if (window.innerWidth >= 768) {
+      } else if (window.innerWidth >= 1024) {
         setDimensions({
           width: 450,
           height: 570,
