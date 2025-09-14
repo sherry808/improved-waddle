@@ -1,32 +1,22 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import BoxCarouselDemo from "@/components/common/BoxCarouselDemo";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
-    const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-    if (!isMounted) {
-        return null;
-    }
+  if (!isMounted) {
+    return null;
+  }
 
-    return (
-        <section className="pt-[76px] pb-16 bg-[#F0E5D6]">
-            <div className="px-[30px] md:px-[103px]">
-                <section className='flex flex-col items-start justify-center min-h-[calc(100vh-60px)]'>
-                    <div>
-                        <section>
-                            <h1 className='font-normal text-primary font-monthis w-[255px] h-[77px] desktop:w-[450px] desktop:h-[154px] text-[48px] desktop:text-[96px] leading-tight'>
-                                <span className='block text-[48px] desktop:text-[96px]'>Branding</span>
-                            </h1>
-                        </section>
-                    </div>
-                </section>
-            </div>
-        </section>
-    );
-} 
+  return (
+    <div className="px-[38px] md:px-[103px] xl:px-[424px] pt-[168px] md:pt-[100px] xl:pt-[104px] pb-[58px] xl:pb-[55px] h-[549px] lg:h-[693px] bg-[#F0E5D6]">
+      <BoxCarouselDemo />
+    </div>
+  );
+}
