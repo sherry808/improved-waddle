@@ -8,11 +8,11 @@ export default function Contact() {
           <h2 className="font-normal text-[15px] lg:text-[20px] font-nats text-[#F7F5ED] uppercase m-0 p-0 leading-none lg:-mt-2 lg:ml-1">
             Contact
           </h2>
-          <h2 className="font-normal text-[64px] lg:text-[96px] font-monthis text-[#D2ADCE] m-0 p-0 whitespace-nowrap leading-none lg:mt-4 lg:ml-1">
+          <h2 className="font-normal text-[64px] lg:text-[96px] font-monthis text-[#D2ADCE] m-0 p-0 whitespace-nowrap leading-none mt-2 lg:mt-4 lg:ml-1">
             Get In Touch
           </h2>
         </div>
-        <div className="flex flex-col mt-6 lg:mt-0 lg:mb-3 lg:mr-4">
+        <div className="flex flex-col mt-4 lg:mt-0 lg:mb-3 lg:mr-4">
           <p className="font-nats text-[12px] lg:text-[16px] text-[#F7F5ED] max-w-[340px]">
             Ready to bring your vision to life? Let's explore how strategic
             design and modern tech can move your business forward. The first
@@ -20,7 +20,7 @@ export default function Contact() {
             minute discovery call.
           </p>
         </div>
-        <div className="flex flex-col mt-6 lg:mt-0 lg:mb-6">
+        <div className="flex flex-col mt-6 lg:mt-0 mb-1 lg:mb-6">
           <a
             href="https://calendly.com/milibajaj-work/30min"
             target="_blank"
@@ -29,7 +29,7 @@ export default function Contact() {
           >
             <button
               type="button"
-              className="inline-block w-full text-center px-3 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
+              className="inline-block w-full text-center px-3 py-1 lg:py-0 font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
             >
               Schedule a consultation
             </button>

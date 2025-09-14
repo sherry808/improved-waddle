@@ -51,6 +51,7 @@ export interface PDPData {
   page7: {
     pageTitle?: string;
     finalDirection?: string | null;
+    mobileFinalDirection?: string | null;
     image?: string | null;
     imageMobile?: string | null;
   };
@@ -84,7 +85,7 @@ export const pdpData: Record<string, PDPData> = {
     },
     page2: {
       pageTitle:
-        "Painting a New Identity – A Makeover of Typsy Beauty's Digital Aisle",
+        "Painting a New Identity– A Makeover of Typsy Beauty's Digital Aisle",
       industry: "B2C, Beauty & Cosmetics",
       team: "Ocularity Analytics",
       role: "Senior Visual Designer",
@@ -277,6 +278,8 @@ export const pdpData: Record<string, PDPData> = {
       pageTitle: "Digital Experience Architecture",
       finalDirection:
         "FA Home now boasts a robust digital ecosystem with a seamlessly integrated Shopify and Salesforce framework. Our approach not only met predetermined objectives but also positioned FA Home & FA Home Junior as a formidable contender in the lifestyle & home décor sector, demonstrating that strategic design and operational rigour can drive both performance and brand resonance.",
+      mobileFinalDirection:
+        "FA Home now boasts a robust digital ecosystem with a seamlessly integrated Shopify and Salesforce framework. Together, we were more than collaborators; we were architects of impact, building an e-commerce empire exceeding expectations. Our approach not only met predetermined objectives but also positioned FA Home & FA Home Junior as a formidable contender in the lifestyle & home décor sector.",
     },
     page8: {
       media: "/images/pdp/pdp3/final1.png",
