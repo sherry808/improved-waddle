@@ -43,8 +43,8 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         }`}
       >
         <div className="flex flex-col md:flex-row h-full">
-          <div className="flex flex-col justify-center h-full py-[60px] px-[32px] md:pl-[60px] md:pr-0 md:py-[40px] xl:pl-[104px] xl:pr-0 xl:py-[75px] md:w-1/3">
-            <ul className="flex flex-col space-y-[36px] md:space-y-[35px] xl:space-y-[55px]">
+          <div className="flex flex-col justify-center h-full py-[49px] px-[30px] md:pl-[60px] md:pr-0 md:py-[40px] xl:pl-[110px] md:w-[520px]">
+            <ul className="flex flex-col space-y-[44px] md:space-y-[35px] xl:space-y-[52px]">
               {menuItems.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -58,7 +58,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col items-center justify-center md:flex-row md:w-2/3 md:pr-[60px] xl:pr-[104px]">
+          <div className="flex flex-col items-center justify-start md:flex-row md:w-[920px] md:pr-[60px]">
             <img
               src="/images/menu/menu1.png"
               alt="Menu decorative image 1"

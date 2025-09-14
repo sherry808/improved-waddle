@@ -55,48 +55,72 @@ export default function PDP2() {
         area={data.page1.area}
         title={data.page1.title}
         shortDescription={data.page1.shortDescription}
+        descMarginBottom="mb-0"
         projectLink={data.page1.projectLink}
         image={data.page1.image ?? ""}
+        imageMobile={data.page1.imageMobile ?? ""}
+        paddingMobile="px-[30px] py-[35px]"
         paddingXl="xl:p-12"
         areaLength={3}
+        itemGap="gap-x-5"
         mobileTitleColor="text-[#351A12]"
       />
       <ClientInfo
         pageTitle={data.page2.pageTitle}
         clientBackground={data.page2.clientBackground}
+        height="lg:h-[720px]"
+        itemGap="gap-y-[9px] md:gap-y-4 lg:gap-x-[40px]"
         role={data.page2.role}
         image={data.page2.image ?? ""}
+        imageMobile={data.page2.imageMobile ?? ""}
         industry={data.page2.industry}
         team={null}
         titleColor="text-[#F0E5D6]"
-        paddingXl="xl:p-[54px]"
+        paddingMobile="py-[35px] px-[29.9px]"
+        paddingXl="xl:px-[54px] xl:py-[52px]"
       />
       <section className="w-full flex justify-center items-center">
         <img
           src={data.page3.media ?? ""}
           alt="Media"
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        />
+        <img
+          src={data.page3.mediaMobile || data.page3.media || ""}
+          alt="Media"
+          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
       <Foundations
         pageTitle={data.page4.pageTitle ?? ""}
         contentSections={foundationContent}
         image={data.page4.image ?? ""}
-        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-10 xl:pb-[32px]"
+        imageMobile={data.page4.imageMobile ?? ""}
+        paddingMobileUpper="px-[30px] py-[29px] pb-[40px]"
+        paddingMobileLower="px-[30px] pt-[26px] pb-[40px]"
+        paddingXl="lg:pt-3 lg:pb-[12px] lg:px-7 xl:px-[32px] xl:mr-[21px] xl:-mt-[28px]"
         imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
         <img
           src={data.page5.image ?? ""}
           alt="Process"
-          className="w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+          className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
+        />
+        <img
+          src={data.page5.imageMobile || data.page5.image || ""}
+          alt="Process"
+          className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
       <Strategy
         pageTitle={data.page6.pageTitle ?? ""}
         contentSections={strategyContent}
         image={data.page6.image ?? ""}
-        paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] lg:pb-[20px]"
+        imageMobile={data.page6.imageMobile ?? ""}
+        paddingMobileUpper="px-[30px] pt-[25px] pb-[38px]"
+        paddingMobileLower="px-[30px] pt-[25px] pb-[38px]"
+        paddingXl="lg:pt-3 lg:px-7 xl:px-[51px] xl:pb-[30px] xl:-mt-[5px] lg:pb-[20px]"
         imageClass={
           isExpanded
             ? "w-full h-[255px] md:h-[400px] lg:h-full xl:h-[640px] xl:w-[746px] object-cover"
@@ -107,7 +131,10 @@ export default function PDP2() {
       <DirectionAndExperience
         pageTitle={null}
         finalDirection={null}
+        mobileFinalDirection={null}
+        height={null}
         image={data.page7.image ?? ""}
+        imageMobile={data.page7.imageMobile ?? ""}
         titleClass={null}
         contentClass={null}
         paddingXl={null}

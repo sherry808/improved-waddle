@@ -7,7 +7,10 @@ import ExpandableContent, {
 interface StrategyProps {
   pageTitle: string | null;
   image: string | null;
+  imageMobile?: string;
   imageClass: string;
+  paddingMobileUpper: string;
+  paddingMobileLower: string;
   paddingXl: string;
   contentSections: ExpandableContentProps[];
   onExpandChange: (isExpanded: boolean) => void;
@@ -24,7 +27,9 @@ export default function Strategy(props: StrategyProps) {
 
   return (
     <div className="flex flex-col lg:flex-row w-full font-nats overflow-x-hidden">
-      <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+      <div
+        className={`lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center ${props.paddingMobileUpper}`}
+      >
         <div className="w-full text-left">
           {props.pageTitle && (
             <h1 className="m-0 font-monthis font-normal text-[32px] leading-tight">
@@ -50,7 +55,7 @@ export default function Strategy(props: StrategyProps) {
       >
         <div className={`w-full text-left ${props.paddingXl}`}>
           {props.pageTitle && (
-            <h1 className="mb-4 mt-0 font-monthis font-normal text-[54px] leading-tight">
+            <h1 className="mb-[14px] mt-0 font-monthis font-normal text-[54px] leading-[1.23] [word-spacing:1.5px]">
               {props.pageTitle}
             </h1>
           )}
@@ -72,11 +77,18 @@ export default function Strategy(props: StrategyProps) {
         <img
           src={props.image || ""}
           alt={props.pageTitle || ""}
-          className={props.imageClass}
+          className={`${props.imageClass} hidden lg:block`}
+        />
+        <img
+          src={props.imageMobile || props.image || ""}
+          alt={props.pageTitle || ""}
+          className={`${props.imageClass} lg:hidden`}
         />
       </div>
       {mobileContentBottom.length > 0 && (
-        <div className="lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center p-[30px]">
+        <div
+          className={`lg:hidden w-full bg-[#F0E5D4] flex items-center justify-center ${props.paddingMobileLower}`}
+        >
           <div className="w-full text-left">
             <div className="flex flex-col">
               {mobileContentBottom.map((section, index) => (
