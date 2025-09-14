@@ -111,7 +111,6 @@ export default function BoxCarouselDemo() {
             debug={debug}
             enableDrag
             perspective={1000}
-            autoPlay
           />
         </div>
         <div className="flex gap-6 lg:gap-4 justify-center items-center">
