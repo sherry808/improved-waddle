@@ -7,7 +7,7 @@ export function useImageLoader() {
   const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll("img");
     const totalImages = images.length;
     let loadedImages = 0;
 
@@ -20,7 +20,7 @@ export function useImageLoader() {
       loadedImages++;
       const progress = (loadedImages / totalImages) * 100;
       setLoadingProgress(progress);
-      
+
       if (loadedImages === totalImages) {
         setImagesLoaded(true);
       }
@@ -31,16 +31,16 @@ export function useImageLoader() {
       if (img.complete && img.naturalHeight !== 0) {
         updateProgress();
       } else {
-        img.addEventListener('load', updateProgress);
-        img.addEventListener('error', updateProgress); // Count errors as "loaded"
+        img.addEventListener("load", updateProgress);
+        img.addEventListener("error", updateProgress); // Count errors as "loaded"
       }
     });
 
     // Cleanup event listeners
     return () => {
       images.forEach((img) => {
-        img.removeEventListener('load', updateProgress);
-        img.removeEventListener('error', updateProgress);
+        img.removeEventListener("load", updateProgress);
+        img.removeEventListener("error", updateProgress);
       });
     };
   }, []);
@@ -91,4 +91,3 @@ export function usePreloadImages(imageUrls: string[]) {
 
   return { preloadedImages, allPreloaded };
 }
-
