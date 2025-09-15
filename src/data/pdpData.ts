@@ -134,8 +134,8 @@ export const pdpData: Record<string, PDPData> = {
         "Typsy Beauty's digital transformation demystifies dramatic makeup looks by making them approachable and wearable, bridging the gap between high-concept makeup and everyday glam. The result? Dwell time soared. Bounce rate plummeted. The sleek new website wooed with its user-friendly design.",
     },
     page8: {
-      media: "/images/pdp/pdp1/final1.png",
-      mediaMobile: "/images/pdp/pdp1/final1.png",
+      media: "/videos/pdp-desktop.mov",
+      mediaMobile: "/videos/pdp-mobile.mov",
     },
     page9: {
       moreProjects:
@@ -282,8 +282,8 @@ export const pdpData: Record<string, PDPData> = {
         "FA Home now boasts a robust digital ecosystem with a seamlessly integrated Shopify and Salesforce framework. Together, we were more than collaborators; we were architects of impact, building an e-commerce empire exceeding expectations. Our approach not only met predetermined objectives but also positioned FA Home & FA Home Junior as a formidable contender in the lifestyle & home décor sector.",
     },
     page8: {
-      media: "/images/pdp/pdp3/final1.png",
-      mediaMobile: "/images/pdp/pdp3/final1.png",
+      media: "/videos/pdp-desktop.mov",
+      mediaMobile: "/videos/pdp-mobile.mov",
     },
     page9: {
       moreProjects:
