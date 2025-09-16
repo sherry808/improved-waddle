@@ -109,7 +109,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="pt-[26px] pb-0 md:pt-0 md:pb-[80px] bg-[#F0E5D6]"
+      className="pt-[26px] pb-0 md:pt-0 md:pb-[78px] bg-[#F0E5D6] overflow-x-hidden"
     >
       <div className="px-[29px] md:pl-[110px]">
         {/* Mobile Heading */}
@@ -120,7 +120,7 @@ export default function Services() {
           Services
         </h2>
         {/* Mobile Layout */}
-        <div className="md:hidden pb-[50px]">
+        <div className="md:hidden pb-[45px]">
           <div
             ref={scrollRef}
             className="flex overflow-x-auto overflow-y-hidden mt-[10px] no-scrollbar scroll-smooth snap-x snap-proximity"
@@ -158,9 +158,6 @@ export default function Services() {
                     <p className="text-[12px] font-nats text-[#351A12]">
                       {service.description}
                     </p>
-                    <button className="w-full h-[32px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] mt-[24px]">
-                      Learn more
-                    </button>
                   </>
                 )}
               </div>

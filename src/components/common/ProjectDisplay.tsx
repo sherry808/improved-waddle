@@ -55,7 +55,10 @@ export default function ProjectDisplay({
   }, [firstProject]);
 
   return (
-    <section ref={containerRef} className="w-full bg-[#F0E5D6]">
+    <section
+      ref={containerRef}
+      className="w-full bg-[#F0E5D6] overflow-x-hidden"
+    >
       {firstProject && (
         <div id="first-project-container" className="relative h-[300vh]">
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">

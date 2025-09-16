@@ -12,7 +12,7 @@ export default function SignupBanner() {
   };
 
   return (
-    <div className="w-full bg-[#351A12] px-[30px] md:px-[103px]">
+    <div className="w-full bg-[#351A12] px-[30px] md:px-[103px] overflow-x-hidden">
       {/* Mobile Layout - Single Column */}
       <div className="md:hidden h-[155px]">
         <div className="pt-[33px]">

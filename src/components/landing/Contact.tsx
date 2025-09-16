@@ -2,7 +2,7 @@
 
 export default function Contact() {
   return (
-    <div className="flex w-full bg-[#351A12] font-nats overflow-hidden px-[30px] py-[45px] lg:px-[50px] lg:py-[50px] xl:px-[40px] xl:py-[40x] desktop-xl:px-[100px] desktop-xl:py-[50px]">
+    <div className="flex w-full bg-[#351A12] font-nats overflow-x-hidden px-[30px] py-[45px] lg:px-[50px] lg:py-[50px] xl:px-[40px] xl:py-[40x] desktop-xl:px-[100px] desktop-xl:py-[50px]">
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full">
         <div className="flex flex-col lg:mr-6">
           <h2 className="font-normal text-[15px] lg:text-[20px] font-nats text-[#F7F5ED] uppercase m-0 p-0 leading-none lg:-mt-2 lg:ml-1">
