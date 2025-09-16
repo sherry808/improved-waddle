@@ -48,7 +48,7 @@ export default function Header() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex items-center justify-between px-[30px] md:px-[104px] md:py-[3px] h-[60px]">
+      <div className="flex items-center justify-between px-[29px] md:px-[103px] h-[60px] md:h-[57px]">
         <Link href="/" passHref>
           <div className="font-nats text-[36px] text-[#351A12] cursor-pointer">
             MILI BAJAJ

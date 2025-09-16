@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-[#F0E5D6]">
+    <section id="projects" className="py-20 bg-[#F0E5D6] overflow-x-hidden">
       <div className="px-[30px] md:px-[103px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

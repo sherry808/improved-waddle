@@ -8,7 +8,7 @@ interface MoreProjectsProps {
 
 export default function MoreProjects({ currentProjectId }: MoreProjectsProps) {
   return (
-    <section className="bg-[#F0E5D6] py-16">
+    <section className="bg-[#F0E5D6] py-16 overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-row items-center gap-8 mb-12">
           <div className="w-[100px] h-[100px] relative">
