@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function useLoader(initialLoading = true) {
   const [isLoading, setIsLoading] = useState(initialLoading);
@@ -44,4 +44,3 @@ export function usePageLoader() {
     endPageTransition,
   };
 }
-

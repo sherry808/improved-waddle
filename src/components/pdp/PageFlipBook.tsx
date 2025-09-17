@@ -11,7 +11,7 @@ interface PageProps {
   alt?: string;
 }
 
-interface BlankPageProps { }
+interface BlankPageProps {}
 
 interface PageFlipBookProps {
   images: string[];

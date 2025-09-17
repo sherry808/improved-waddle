@@ -161,16 +161,6 @@ export default function PDP3() {
         contentClass="lg:w-[940px] w-full flex items-center justify-start pt-4 lg:pt-0"
         paddingXl="px-8 py-[25px] lg:p-12 xl:px-[100px] xl:py-[45px]"
       />
-      <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
-        <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
-          <img
-            src={data.page8.media ?? ""}
-            alt="Media"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-white opacity-100 pointer-events-none" />
-        </div>
-      </section>
       <MoreProjects currentProjectId={data.id ?? ""} />
       {/* <ProjectsList excludeId="pdp1" layout="vertical" /> */}
       <Contact />
