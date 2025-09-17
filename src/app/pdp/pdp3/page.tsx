@@ -8,7 +8,7 @@ import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function PDP3() {
   const data = pdpData.pdp3;
@@ -71,18 +71,6 @@ export default function PDP3() {
       mobileMaxLength: 264,
     },
   ];
-
-  const desktopVideoRef = useRef<HTMLVideoElement>(null);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (desktopVideoRef.current) {
-      desktopVideoRef.current.playbackRate = 2;
-    }
-    if (mobileVideoRef.current) {
-      mobileVideoRef.current.playbackRate = 2;
-    }
-  }, []);
 
   return (
     <main className="pt-0 overflow-x-hidden">
@@ -173,28 +161,6 @@ export default function PDP3() {
         contentClass="lg:w-[940px] w-full flex items-center justify-start pt-4 lg:pt-0"
         paddingXl="px-8 py-[25px] lg:p-12 xl:px-[100px] xl:py-[45px]"
       />
-      <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
-        <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
-          <video
-            ref={desktopVideoRef}
-            src={data.page8.media ?? ""}
-            className="hidden md:block w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <video
-            ref={mobileVideoRef}
-            src={data.page8.mediaMobile ?? ""}
-            className="md:hidden w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        </div>
-      </section>
       <MoreProjects currentProjectId={data.id ?? ""} />
       {/* <ProjectsList excludeId="pdp1" layout="vertical" /> */}
       <Contact />
