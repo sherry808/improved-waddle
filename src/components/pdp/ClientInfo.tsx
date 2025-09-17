@@ -18,7 +18,7 @@ interface ClientInfoProps {
 export default function ClientInfo(props: ClientInfoProps) {
   return (
     <div
-      className={`flex flex-col-reverse lg:flex-row w-full font-nats overflow-hidden ${props.height}`}
+      className={`flex flex-col-reverse lg:flex-row w-full font-nats overflow-x-hidden ${props.height}`}
     >
       <div
         className={`lg:w-[55%] w-full bg-[#351A12] flex items-center justify-center ${props.paddingMobile} ${props.paddingXl}`}

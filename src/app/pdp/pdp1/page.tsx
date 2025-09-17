@@ -8,7 +8,7 @@ import Hero from "@/components/pdp/Hero";
 import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function PDP1() {
   const data = pdpData.pdp1;
@@ -71,6 +71,18 @@ export default function PDP1() {
       mobileMaxLength: 257,
     },
   ];
+
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.playbackRate = 2;
+    }
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.playbackRate = 2;
+    }
+  }, []);
 
   return (
     <main className="pt-0 overflow-x-hidden">
@@ -163,12 +175,24 @@ export default function PDP1() {
       />
       <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
-          <img
+          <video
+            ref={desktopVideoRef}
             src={data.page8.media ?? ""}
-            alt="Media"
-            className="w-full h-full object-cover"
+            className="hidden md:block w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
-          <div className="absolute inset-0 bg-white opacity-100 pointer-events-none" />
+          <video
+            ref={mobileVideoRef}
+            src={data.page8.mediaMobile ?? ""}
+            className="md:hidden w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
         </div>
       </section>
       <MoreProjects currentProjectId={data.id ?? ""} />

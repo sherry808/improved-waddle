@@ -4,7 +4,7 @@ import React from "react";
 
 const Logos: React.FC = () => {
   return (
-    <section className="w-full py-[54px] md:py-0 bg-[#F0E5D6]">
+    <section className="w-full py-[54px] md:py-0 bg-[#F0E5D6] overflow-x-hidden">
       <div className="px-[30px] md:px-[103px]">
         {/* Mobile Layout */}
         <div className="md:hidden -mx-[30px] mobile:h-[96px]">
