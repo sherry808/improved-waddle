@@ -22,7 +22,10 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      const isHeaderButton = (target as Element)?.closest('header button');
+
+      if (menuRef.current && !menuRef.current.contains(target) && !isHeaderButton) {
         onClose();
       }
     };
@@ -37,10 +40,10 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
   }, [onClose, isOpen]);
 
   return (
-    <div className="fixed inset-0 z-40 transition-all duration-500 ease-in-out bg-[#F0E5D6] md:bg-transparent" style={{ backgroundColor: isOpen ? '#F0E5D6' : 'transparent' }}>
+    <div className="fixed top-[60px] md:top-[57px] left-0 right-0 bottom-0 z-40 transition-all duration-500 ease-in-out bg-transparent" style={{ backgroundColor: isOpen ? 'transparent' : 'transparent' }}>
       <nav
         ref={menuRef}
-        className={`fixed top-[60px] md:top-[57px] w-full md:h-[350px] xl:h-[460px] z-50 transition-transform duration-500 ease-in-out bg-[#F0E5D6] md:bg-[#351A12] safe-area-inset-top ${isOpen ? "transform-none" : "-translate-y-full"
+        className={`fixed top-[60px] md:top-[57px] w-full md:h-[350px] xl:h-[460px] z-50 transition-transform duration-500 ease-in-out bg-[#F0E5D6] md:bg-[#351A12] border-t border-[#351A12] md:border-t-0 safe-area-inset-top ${isOpen ? "transform-none" : "-translate-y-full"
           }`}
       >
         <div className="flex flex-col md:flex-row h-full">

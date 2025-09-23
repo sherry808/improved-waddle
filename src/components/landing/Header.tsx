@@ -60,10 +60,11 @@ export default function Header() {
           >
             MENU
           </button>
-          <div
-            className="w-[20px] h-[20px] md:w-[18px] md:h-[18px] bg-[#D2ADCE] transition-colors cursor-pointer"
+          <button
+            className="w-[20px] h-[20px] md:w-[18px] md:h-[18px] bg-[#D2ADCE] transition-colors cursor-pointer border-none p-0"
             onClick={toggleMenu}
-          ></div>
+            aria-label="Toggle menu"
+          ></button>
         </div>
       </div>
       {isMenuOpen && <Menu onClose={toggleMenu} isOpen={isMenuOpen} />}
