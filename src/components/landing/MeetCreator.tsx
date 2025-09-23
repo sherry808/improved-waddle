@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MeetCreator() {
   return (
@@ -8,7 +9,7 @@ export default function MeetCreator() {
       id="about"
       className="pt-[42px] pb-0 md:pt-[55px] md:pb-16 bg-[#351A12] overflow-x-hidden"
     >
-      <div className="px-[30px] md:px-[103px] pb-[50px] md:pb-[20px]">
+      <div className="px-[30px] md:px-[104px] pb-[50px] md:pb-[20px]">
         <h2 className="m-0 p-0 font-normal text-[15px] md:text-[20px] font-nats text-tertiary md:mb-[30px] uppercase">
           Meet the Creator
         </h2>
@@ -45,9 +46,11 @@ export default function MeetCreator() {
             </p>
           </div>
           <div className="mt-[25px]">
-            <button className="w-full h-[30px] md:w-[232px] md:h-[135px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] md:text-[20px] md:ml-[70px]">
-              Get a closer look
-            </button>
+            <Link href="/meet-creator">
+              <button className="w-full h-[30px] md:w-[232px] md:h-[135px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] md:text-[20px] md:ml-[70px] cursor-pointer">
+                Get a closer look
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -93,9 +96,11 @@ export default function MeetCreator() {
                 they build websites and digital experiences that perform.
               </p>
             </div>
-            <button className="absolute top-[276px] left-[150px] w-[300px] h-[32px] md:w-[177px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] md:text-[20px]">
-              Get a closer look
-            </button>
+            <Link href="/meet-creator">
+              <button className="absolute top-[276px] left-[150px] w-[300px] h-[32px] md:w-[177px] bg-[#D2ADCE] text-[#351A12] font-nats uppercase text-[15px] md:text-[20px] cursor-pointer">
+                Get a closer look
+              </button>
+            </Link>
           </div>
         </div>
       </div>

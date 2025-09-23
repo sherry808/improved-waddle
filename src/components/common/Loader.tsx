@@ -20,24 +20,15 @@ export default function Loader({
     if (isLoading) {
       setShowLoader(true);
     } else {
-      // Add a small delay before hiding to ensure smooth transition
-      const timer = setTimeout(() => {
-        setShowLoader(false);
-        onComplete?.();
-      }, 500);
-      return () => clearTimeout(timer);
+      setShowLoader(false);
+      onComplete?.();
     }
   }, [isLoading, onComplete]);
 
   return (
-    <AnimatePresence>
+    <>
       {showLoader && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#F0E5D6]"
-        >
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F0E5D6]">
           <div className="loader">
             <div className="square">
               <div className="mini_square sq-1"></div>
@@ -46,8 +37,8 @@ export default function Loader({
               <div className="mini_square sq-4"></div>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 }

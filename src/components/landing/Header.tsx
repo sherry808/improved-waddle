@@ -44,17 +44,16 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 bg-[#F0E5D6] border-b border-[#351A12] ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 w-full z-50 bg-[#F0E5D6] border-b border-[#351A12] ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
-      <div className="flex items-center justify-between px-[29px] md:px-[103px] h-[60px] md:h-[57px]">
+      <div className="flex items-center justify-between px-[30px] md:px-[104px] h-[60px] md:h-[57px]">
         <Link href="/" passHref>
           <div className="font-nats text-[36px] text-[#351A12] cursor-pointer">
             MILI BAJAJ
           </div>
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 md:space-x-[22px]">
           <button
             onClick={toggleMenu}
             className="hidden md:flex text-[#351A12] text-[24px] font-nats"
@@ -62,7 +61,7 @@ export default function Header() {
             MENU
           </button>
           <div
-            className="w-[20px] h-[20px] bg-[#D2ADCE] transition-colors cursor-pointer"
+            className="w-[20px] h-[20px] md:w-[18px] md:h-[18px] bg-[#D2ADCE] transition-colors cursor-pointer"
             onClick={toggleMenu}
           ></div>
         </div>

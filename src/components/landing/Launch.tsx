@@ -1,9 +1,12 @@
 "use client";
 
+import Image from "next/image";
+
+
 export default function Launch() {
   return (
     <section className="h-[456px] lg:h-[529px] pt-[52px] md:pt-[102px] bg-[#351A12]">
-      <div className="px-[30px] md:px-[105px] text-left md:flex md:justify-between">
+      <div className="px-[30px] md:px-[104px] text-left md:flex md:justify-between">
         {/* Left Column: Text Content */}
         <div className="md:w-[410px] md:flex md:flex-col md:justify-center">
           <div>
@@ -42,14 +45,18 @@ export default function Launch() {
 
         {/* Right Column: Image Placeholders */}
         <div className="hidden md:flex md:flex-row md:gap-[98px] md:-mr-[104px] md:-mt-[102px] md:-mb-[54px]">
-          <img
+          <Image
             src="/images/dote.png"
             alt="Dote"
+            width={365}
+            height={365}
             className="w-[365px] h-[365px] object-cover md:self-end"
           />
-          <img
+          <Image
             src="/images/typsy.png"
             alt="Typsy"
+            width={370}
+            height={367}
             className="w-[370px] h-[367px] object-cover"
           />
         </div>

@@ -10,6 +10,7 @@ import PageFlipBook from "@/components/pdp/PageFlipBook";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function PDP2() {
   const data = pdpData.pdp2;
@@ -80,14 +81,18 @@ export default function PDP2() {
         paddingXl="xl:px-[54px] xl:py-[52px]"
       />
       <section className="w-full flex justify-center items-center">
-        <img
+        <Image
           src={data.page3.media ?? ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page3.mediaMobile || data.page3.media || ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
@@ -102,14 +107,18 @@ export default function PDP2() {
         imageClass="w-full h-[275px] md:h-[400px] lg:h-full xl:h-[680px] lg:w-[746px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
-        <img
+        <Image
           src={data.page5.image ?? ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page5.imageMobile || data.page5.image || ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
@@ -139,7 +148,7 @@ export default function PDP2() {
         contentClass={null}
         paddingXl={null}
       />
-      <section className="flex flex-col justify-center items-center px-[11px] py-[49px] md:p-[45px] lg:py-[75px] lg:px-[62px] xl:py-[94px] xl:px-[172px] bg-transparent">
+      <section className="flex flex-col justify-center items-center px-[11px] py-[49px] md:p-[45px] lg:py-[75px] lg:px-[62px] xl:py-[94px] xl:px-[104px] bg-transparent">
         <div className="relative w-full lg:w-[900px] xl:w-[1096px]">
           <PageFlipBook
             images={[

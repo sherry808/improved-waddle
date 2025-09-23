@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-[#F0E5D6] overflow-x-hidden">
-      <div className="px-[30px] md:px-[103px]">
+      <div className="px-[30px] md:px-[104px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <Link
-            href="/projects"
+            href="/#projects"
             className="w-[300px] h-[32px] md:w-[232px] md:h-[42px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center uppercase text-[15px] md:text-[20px]"
           >
             Browse All Projects

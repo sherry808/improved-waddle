@@ -1,66 +1,67 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const services = [
   {
     title: "Brand Identity & Strategy",
     description:
-      "Clients across independent & studio projects: 4 Points by Sheraton, India Wyn Gaming, Ocularity Analytics, FA Home, FA Home Junior, Kyphie, Assago, Suneja Towers, Plylam Centre, Ping OEM, Toshana and Equity Planners.",
+      "Clients across independent & studio projects:\nFour Points by Sheraton, India Wyn Gaming, Ocularity Analytics, FA Home, FA Home Junior, Kyphie, Assago, Suneja Towers, Plylam Centre, Ping OEM, Toshana and Equity Planners.",
     image: "/images/services/brand-identity-strategy.png",
   },
   {
     title: "Website Design & Development",
     description:
-      "Clients across independent & studio projects: Sennheiser, Mercari India, Grazitti Interactive, NCR Corporation, Typsy Beauty, FA Home, Assago, Redbelly Network, Powr of You and Thingify.",
+      "Clients across independent & studio projects:\nSennheiser, Mercari India, Grazitti Interactive, NCR Corporation, Typsy Beauty, FA Home, Assago, Redbelly Network, Powr of You and Thingify.",
     image: "/images/services/website-design-development.png",
   },
   {
     title: "Packaging Design",
     description:
-      "Clients across independent & studio projects: Longbottom Coffee & Tea, Walden, The Brown Box Bakery, YLG Salon, When Miss Flo Is In Town, FA Home, FA Home Junior and Kyphie.",
+      "Clients across independent & studio projects:\nLongbottom Coffee & Tea, Walden, The Brown Box Bakery, YLG Salon, When Miss Flo Is In Town, FA Home, FA Home Junior and Kyphie.",
     image: "/images/services/packaging.png",
   },
   {
     title: "Illustration & Visual Assets",
     description:
-      "Clients across independent & studio Projects: YLG Salon, Janavi India, Typsy Beauty, The Brown Box Bakery, FA Home Junior, Kyphie, Walden and Aditya Shukla- Album Artwork.",
+      "Clients across independent & studio projects:\nYLG Salon, Janavi India, Typsy Beauty, The Brown Box Bakery, FA Home Junior, Kyphie, Walden and Aditya Shukla- Album Artwork.",
     image: "/images/services/illustrations-visual-assets.png",
   },
   {
     title: "Editorial Design",
     description:
-      "Clients across independent & studio projects: NIMHANS Bangalore, 4 Points by Sheraton, Janavi India, FA Home, Dote Gifts, Titliyan and Casa Amber.",
+      "Clients across independent & studio projects:\nNIMHANS Bangalore, Four Points by Sheraton, Janavi India, FA Home, Dote Gifts, Titliyan and Casa Amber.",
     image: "/images/services/editorial-design.png",
   },
   {
     title: "Custom Invitations",
     description:
-      "Clients across independent & studio projects: Wedding Invitations for Devika Reddy & Anirudh Reddy, Wedding Invitations for Rajkirat Singh Chug & Jasmine Kaur Gupta, Janavi India, Ocularity Analytics, Nitika Gujral and AMP Motors.",
+      "Clients across independent & studio projects:\nWedding Invitations for Devika Reddy & Anirudh Reddy, Wedding Invitations for Rajkirat Singh Chug & Jasmine Kaur Gupta, Janavi India, Ocularity Analytics, Nitika Gujral and AMP Motors.",
     image: "/images/services/custom-invitation.png",
   },
   {
     title: "Digital Ads & Campaign Assets",
     description:
-      "Clients across independent & studio projects: Janavi India, Longbottom Coffee & Tea, AMP Motors, Skin Q, Aayna Skin Clinic, Sancha Tea, FA Home, FA Home Junior, Mauli Cashmere, Casa Amber, Delicut, Dote Gifts, Anata, Décor Remedy, Home Baker, 7 Bazaari and Siddhant Agrawal.",
+      "Clients across independent & studio projects:\nJanavi India, Longbottom Coffee & Tea, AMP Motors, Skin Q, Aayna Skin Clinic, Sancha Tea, FA Home, FA Home Junior, Mauli Cashmere, Casa Amber, Delicut, Dote Gifts, Anata, Décor Remedy, Home Baker, 7 Bazaari and Siddhant Agrawal.",
     image: "/images/services/digital-ads.png",
   },
   {
     title: "Social Media Creatives",
     description:
-      "Clients across independent & studio projects: ITC, DLF Emporio, Luxor Nano, Sancha Tea, Skin Q, Punjab Jewellers, Organ India, IVWS, Chanakya, Décor Remedy, Home Baker, FA Home, FA Home Junior, Siddhant Agrawal, Anata, Aayna Skin Clinic, Namaskar Ayurved, Saan Design, Janavi India, Dote Gifts, Ocularity Analytics, Titliyan, Casa Amber, Halwasiya Avenue, Nitika Gujral and AMP Motors.",
+      "Clients across independent & studio projects:\nITC, DLF Emporio, Luxor Nano, Sancha Tea, Skin Q, Punjab Jewellers, Organ India, IVWS, Chanakya, Décor Remedy, Home Baker, FA Home, FA Home Junior, Siddhant Agrawal, Anata, Aayna Skin Clinic, Namaskar Ayurved, Saan Design, Janavi India, Dote Gifts, Ocularity Analytics, Titliyan, Casa Amber, Halwasiya Avenue, Nitika Gujral and AMP Motors.",
     image: "/images/services/social-media.png",
   },
   {
     title: "Commissioned Paintings",
     description:
-      "Clients: IHG (InterContinental Hotels Group), Holiday Inn, 4 Points by Sheraton and Anant Raj.",
+      "Clients across independent & studio projects:\nIHG (InterContinental Hotels Group), Holiday Inn, Four Points by Sheraton and Anant Raj.",
     image: "/images/services/comissioned-paintings.png",
   },
   {
     title: "Creative Direction & Consulting",
     description:
-      "Clients: 4 Points by Sheraton, Holiday Inn Dhaka City Centre and Marium Niloy Group, Bangkok.",
+      "Clients across independent & studio projects:\nFour Points by Sheraton, Holiday Inn Dhaka City Centre and Marium Niloy Group, Bangkok.",
     image: "/images/services/creative-direction.png",
   },
 ];
@@ -111,7 +112,7 @@ export default function Services() {
       id="services"
       className="pt-[26px] pb-0 md:pt-0 md:pb-[78px] bg-[#F0E5D6] overflow-x-hidden"
     >
-      <div className="px-[29px] md:pl-[110px]">
+      <div className="px-[29px] md:px-[104px]">
         {/* Mobile Heading */}
         <h2
           className="m-0 font-normal text-[58px] font-monthis text-left text-[#351A12] md:hidden"
@@ -133,19 +134,21 @@ export default function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`w-[300px] flex-shrink-0 snap-start relative ${
-                  index > 0 ? "ml-4" : ""
-                }`}
+                className={`w-[300px] flex-shrink-0 snap-start relative ${index > 0 ? "ml-4" : ""
+                  }`}
                 style={{
                   transform: `scale(${scales[index]}) translateZ(0)`,
                   transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
                 }}
               >
                 {service.image ? (
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-[337px] object-cover"
+                    width={400}
+                    height={337}
+                    className="w-full h-[337px] object-cover shadow-none drop-shadow-none filter-none !shadow-none !drop-shadow-none"
+                    style={{ boxShadow: 'none', filter: 'none' }}
                   />
                 ) : (
                   <div className="w-full h-[337px] bg-white"></div>
@@ -155,7 +158,7 @@ export default function Services() {
                     <h3 className="font-normal text-[15px] font-nats text-[#351A12] uppercase mt-[23px] mb-[1px]">
                       {service.title}
                     </h3>
-                    <p className="text-[12px] font-nats text-[#351A12]">
+                    <p className="text-[12px] font-nats text-[#351A12] whitespace-pre-line">
                       {service.description}
                     </p>
                   </>
@@ -171,11 +174,9 @@ export default function Services() {
             {services.map((service, index) => (
               <li
                 key={index}
-                className={`text-[20px] font-nats uppercase cursor-pointer leading-[19px] transition-colors duration-200 ${
-                  index > 0 ? "pt-[35px]" : ""
-                } ${
-                  hovered === index ? "text-[#D2ADCE]" : "text-[#351A12]"
-                } hover:text-[#D2ADCE]`}
+                className={`text-[20px] font-nats uppercase cursor-pointer leading-[19px] transition-colors duration-200 ${index > 0 ? "pt-[35px]" : ""
+                  } ${hovered === index ? "text-[#D2ADCE]" : "text-[#351A12]"
+                  } hover:text-[#D2ADCE]`}
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(hovered)}
               >
@@ -193,17 +194,20 @@ export default function Services() {
               >
                 Services
               </h2>
-              <p className="text-[16px] font-nats mr-[23px]">
+              <p className="text-[16px] font-nats mr-[23px] whitespace-pre-line">
                 {services[hovered].description}
               </p>
             </div>
             {/* Column 3: Image */}
-            <div className="w-[533px] pt-[6px]">
+            <div className="w-[533px]">
               {services[hovered].image ? (
-                <img
+                <Image
                   src={services[hovered].image}
                   alt={services[hovered].title}
-                  className="w-[533px] h-[597px] object-cover"
+                  width={533}
+                  height={597}
+                  className="w-[533px] h-[597px] object-cover shadow-none drop-shadow-none filter-none !shadow-none !drop-shadow-none"
+                  style={{ boxShadow: 'none', filter: 'none' }}
                 />
               ) : (
                 <div className="w-[533px] h-[597px] bg-white"></div>

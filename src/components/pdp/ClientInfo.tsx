@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface ClientInfoProps {
   pageTitle: string | null;
   clientBackground: string | null;
@@ -68,14 +70,18 @@ export default function ClientInfo(props: ClientInfoProps) {
         </div>
       </div>
       <div className="lg:w-[45%] w-full h-auto">
-        <img
+        <Image
           src={props.image}
           alt="Client Info"
+          width={800}
+          height={738}
           className="hidden lg:block w-full md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={props.imageMobile || props.image}
           alt="Client Info"
+          width={800}
+          height={738}
           className="lg:hidden w-full h-[405px] md:h-[738px] object-cover"
         />
       </div>

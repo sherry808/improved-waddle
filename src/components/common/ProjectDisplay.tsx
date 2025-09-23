@@ -3,6 +3,8 @@ import { pdpData, PDPData } from "@/data/pdpData";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
+
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +61,7 @@ export default function ProjectDisplay({
       {firstProject && (
         <div id="first-project-container" className="relative h-[300vh]">
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <div className="absolute top-0 left-0 w-full z-10 px-8 md:px-[105px] pt-[75px] md:pt-[90px]">
+            <div className="absolute top-0 left-0 w-full z-10 px-8 md:px-[104px] pt-[75px] md:pt-[90px]">
               {!excludeProjectId && (
                 <div className="mb-16 md:mb-[90px]">
                   <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-[85px] text-left">
@@ -68,9 +70,11 @@ export default function ProjectDisplay({
                         <p className="font-nats text-[15px] md:text-[20px] uppercase text-[#351A12] md:order-2 md:pt-[35px] md:whitespace-nowrap">
                           Projects that brought ideas to life
                         </p>
-                        <img
+                        <Image
                           src="/images/Arrow.png"
                           alt="arrow"
+                          width={82}
+                          height={82}
                           className="w-6 h-6 md:h-[82px] md:w-auto md:order-1"
                           style={{
                             filter:

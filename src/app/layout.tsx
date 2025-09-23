@@ -1,13 +1,12 @@
 import AppWrapper from "@/components/common/AppWrapper";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import { generateFontPreloadLinks } from "@/lib/font-optimization";
 import type { Metadata } from "next";
 import "./fonts.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mili Bajaj",
-  description: "Portfolio website of Mili Bajaj",
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -37,8 +36,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontPreloadLinks = generateFontPreloadLinks();
+
   return (
     <html lang="en">
+      <head>
+        {fontPreloadLinks.map((link, index) => (
+          <link key={index} {...link} />
+        ))}
+      </head>
       <body suppressHydrationWarning>
         <AppWrapper>
           <Header />

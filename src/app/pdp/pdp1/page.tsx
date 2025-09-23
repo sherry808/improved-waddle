@@ -9,6 +9,7 @@ import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function PDP1() {
   const data = pdpData.pdp1;
@@ -115,14 +116,18 @@ export default function PDP1() {
         paddingXl="xl:p-[52px]"
       />
       <section className="w-full flex justify-center items-center">
-        <img
+        <Image
           src={data.page3.media ?? ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page3.mediaMobile || data.page3.media || ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
@@ -137,14 +142,18 @@ export default function PDP1() {
         imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1050px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
-        <img
+        <Image
           src={data.page5.image ?? ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page5.imageMobile || data.page5.image || ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="lg:hidden w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
       </section>
@@ -173,7 +182,7 @@ export default function PDP1() {
         contentClass="lg:w-[770px] w-full flex items-center justify-start pt-5 lg:pt-0 lg:pr-8 xl:pr-1"
         paddingXl="px-8 py-[40px] lg:p-12 xl:px-[100px] xl:py-[65px]"
       />
-      <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[103px] bg-transparent">
+      <section className="flex justify-center items-center pt-[20px] pb-[20px] px-[20px] md:pt-[95px] md:pb-[115px] md:px-[104px] bg-transparent">
         <div className="relative w-full h-[569px] md:w-[1231px] md:h-[778px]">
           <video
             ref={desktopVideoRef}

@@ -3,6 +3,7 @@
 import ExpandableContent, {
   ExpandableContentProps,
 } from "@/components/common/ExpandableContent";
+import Image from "next/image";
 
 interface FoundationsProps {
   pageTitle: string | null;
@@ -49,14 +50,18 @@ export default function Foundations(props: FoundationsProps) {
         </div>
       </div>
       <div className="lg:w-[55%] w-full h-auto px-[30px] lg:p-0">
-        <img
+        <Image
           src={props.image || ""}
           alt={props.pageTitle || ""}
+          width={800}
+          height={600}
           className={`${props.imageClass} hidden lg:block`}
         />
-        <img
+        <Image
           src={props.imageMobile || props.image || ""}
           alt={props.pageTitle || ""}
+          width={800}
+          height={600}
           className={`${props.imageClass} lg:hidden`}
         />
       </div>
