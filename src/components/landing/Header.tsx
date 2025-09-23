@@ -49,7 +49,7 @@ export default function Header() {
     >
       <div className="flex items-center justify-between px-[30px] md:px-[104px] h-[60px] md:h-[57px]">
         <Link href="/" passHref>
-          <div className="font-nats text-[36px] text-[#351A12] cursor-pointer">
+          <div className="font-nats text-[36px] text-[#351A12] cursor-pointer md:-ml-[2px]">
             MILI BAJAJ
           </div>
         </Link>

@@ -37,14 +37,14 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
   }, [onClose, isOpen]);
 
   return (
-    <div className="fixed inset-0 z-40 transition-all duration-500 ease-in-out">
+    <div className="fixed inset-0 z-40 transition-all duration-500 ease-in-out bg-[#F0E5D6] md:bg-transparent" style={{ backgroundColor: isOpen ? '#F0E5D6' : 'transparent' }}>
       <nav
         ref={menuRef}
-        className={`fixed top-[60px] md:top-[57px] w-full md:h-[350px] xl:h-[460px] z-50 transition-transform duration-500 ease-in-out bg-[#F0E5D6] md:bg-[#351A12] ${isOpen ? "transform-none" : "-translate-y-full"
+        className={`fixed top-[60px] md:top-[57px] w-full md:h-[350px] xl:h-[460px] z-50 transition-transform duration-500 ease-in-out bg-[#F0E5D6] md:bg-[#351A12] safe-area-inset-top ${isOpen ? "transform-none" : "-translate-y-full"
           }`}
       >
         <div className="flex flex-col md:flex-row h-full">
-          <div className="flex flex-col justify-center h-full py-[49px] px-[30px] md:pl-[104px] md:pr-[104px] md:py-[40px] xl:pl-[104px] xl:pr-[104px] md:w-[520px]">
+          <div className="flex flex-col justify-center h-full py-[49px] px-[30px] md:pl-[104px] md:pr-[104px] md:py-[40px] xl:pl-[104px] xl:pr-[104px] md:w-[520px] md:-ml-[1px]">
             <ul className="flex flex-col space-y-[44px] md:space-y-[35px] xl:space-y-[52px]">
               {menuItems.map((item) => (
                 <li key={item.name}>

@@ -1,0 +1,103 @@
+{
+    "headers": [
+        {
+            "source": "/static/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"static-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/images/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"image-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/favicon/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"favicon-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/fonts/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"font-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.(js|css|woff|woff2|ttf|otf|eot))",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"asset-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.(jpg|jpeg|png|gif|webp|avif|svg|ico))",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"media-{{hash}}\""
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=3600, s-maxage=3600"
+                },
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "index, follow"
+                },
+                {
+                    "key": "ETag",
+                    "value": "W/\"page-{{hash}}\""
+                }
+            ]
+        }
+    ]
+}
