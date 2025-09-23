@@ -47,7 +47,7 @@ export default function Header() {
       className={`fixed top-0 w-full z-50 bg-[#F0E5D6] border-b border-[#351A12] ${isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
-      <div className="flex items-center justify-between px-[30px] md:px-[104px] h-[60px] md:h-[57px]">
+      <div className="flex items-center justify-between pl-[27px] pr-[30px] md:px-[104px] h-[60px] md:h-[57px]">
         <Link href="/" passHref>
           <div className="font-nats text-[36px] text-[#351A12] cursor-pointer md:-ml-[2px]">
             MILI BAJAJ
