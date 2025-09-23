@@ -57,6 +57,13 @@
             ]
         },
         {
+                {
+                    "key": "ETag",
+                    "value": "W/\"asset-{{hash}}\""
+                }
+            ]
+        },
+        {
             "source": "/(.*\\.(js|css|woff|woff2|ttf|otf|eot))",
             "headers": [
                 {
