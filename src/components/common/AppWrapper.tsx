@@ -14,23 +14,23 @@ export default function AppWrapper({ children }: AppWrapperProps) {
   const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
 
-  // Handle initial page load - 3 seconds
+  // Handle initial page load - 10 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 3000); // 3 seconds
+    }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Handle route changes - 3 seconds
+  // Handle route changes - 10 seconds
   useEffect(() => {
     if (currentPath && currentPath !== pathname) {
       setIsRouteChanging(true);
       const timer = setTimeout(() => {
         setIsRouteChanging(false);
         setCurrentPath(pathname);
-      }, 3000); // 3 seconds
+      }, 10000); // 10 seconds
 
       return () => clearTimeout(timer);
     } else if (!currentPath) {

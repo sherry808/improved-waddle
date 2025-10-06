@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color management for consistent image rendering */
+img {
+  color-scheme: light;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 
 .loader {
   display: flex;
@@ -14,36 +21,36 @@
 .square {
   display: flex;
   flex-wrap: wrap;
-  width: 100px;
-  height: 100px;
+  width: 49px;
+  height: 49px;
   box-sizing: content-box;
-  animation: load-big 4s infinite;
-  transform-origin: 0px 100px;
+  animation: load-big 10s infinite ease-in-out;
+  transform-origin: 0px 49px;
 }
 
 .mini_square {
   box-sizing: border-box;
-  height: 50px;
-  width: 50px;
+  height: 24.5px;
+  width: 24.5px;
   background-color: #D2ADCE;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .sq-1 {
-  animation: load-left-top 4s infinite;
+  animation: load-left-top 10s infinite;
 }
 
 .sq-2 {
-  animation: load-right-top 4s infinite;
+  animation: load-right-top 10s infinite;
 }
 
 .sq-4 {
-  animation: load-right-bottom 4s infinite;
+  animation: load-right-bottom 10s infinite;
 }
 
 @keyframes load-right-bottom {
   0% {
-    translate: -50px 0px;
+    translate: -24.5px 0px;
   }
 
   25% {
@@ -57,11 +64,11 @@
 
 @keyframes load-right-top {
   0% {
-    translate: -50px 50px;
+    translate: -24.5px 24.5px;
   }
 
   25% {
-    translate: 0px 50px;
+    translate: 0px 24.5px;
   }
 
   50% {
@@ -75,15 +82,15 @@
 
 @keyframes load-left-top {
   0% {
-    translate: 0px 50px;
+    translate: 0px 24.5px;
   }
 
   25% {
-    translate: 50px 50px;
+    translate: 24.5px 24.5px;
   }
 
   50% {
-    translate: 50px 0px;
+    translate: 24.5px 0px;
   }
 
   75% {
@@ -127,6 +134,7 @@
   .mini_square {
     height: 40px;
     width: 40px;
+    border-radius: 0;
   }
 
   @keyframes load-right-bottom {
@@ -186,18 +194,20 @@
 
 @media (max-width: 480px) {
   .square {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    animation: load-big 10s infinite;
   }
 
   .mini_square {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
+    border-radius: 0;
   }
 
   @keyframes load-right-bottom {
     0% {
-      translate: -30px 0px;
+      translate: -20px 0px;
     }
 
     25% {
@@ -211,11 +221,11 @@
 
   @keyframes load-right-top {
     0% {
-      translate: -30px 30px;
+      translate: -20px 20px;
     }
 
     25% {
-      translate: 0px 30px;
+      translate: 0px 20px;
     }
 
     50% {
@@ -229,15 +239,15 @@
 
   @keyframes load-left-top {
     0% {
-      translate: 0px 30px;
+      translate: 0px 20px;
     }
 
     25% {
-      translate: 30px 30px;
+      translate: 20px 20px;
     }
 
     50% {
-      translate: 30px 0px;
+      translate: 20px 0px;
     }
 
     75% {
@@ -415,4 +425,32 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Override browser autofill styling for subscribe form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: #351A12 !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Subscribe form input styling - remove curves and keep only bottom line */
+input[type="email"] {
+  border: none !important;
+  border-bottom: 1px solid #D2ADCE !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input[type="email"]:focus {
+  border: none !important;
+  border-bottom: 1px solid #D2ADCE !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }

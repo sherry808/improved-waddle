@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Launch() {
@@ -37,9 +38,11 @@ export default function Launch() {
                 </p>
               </div>
             </div>
-            <button className="w-full h-[30px] md:h-[32px] md:w-[194px] bg-[#D2ADCE] text-[#351A12] font-nats text-[15px] md:text-[20px] mt-[25px] md:mt-[28px] md:mb-[46px] uppercase">
-              Elevate Your Brand
-            </button>
+            <Link href="/get-in-touch">
+              <button className="w-full h-[30px] md:h-[32px] md:w-[194px] bg-[#D2ADCE] text-[#351A12] font-nats text-[15px] md:text-[20px] mt-[25px] md:mt-[28px] md:mb-[46px] uppercase cursor-pointer">
+                Elevate Your Brand
+              </button>
+            </Link>
           </div>
         </div>
 
