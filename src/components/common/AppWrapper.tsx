@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 
@@ -11,26 +11,53 @@ interface AppWrapperProps {
 export default function AppWrapper({ children }: AppWrapperProps) {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [isRouteChanging, setIsRouteChanging] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
 
-  // Handle initial page load - 3 seconds
+  // Handle initial page load - 10 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 3000); // 3 seconds
+    }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Handle route changes - 3 seconds
+  // Handle route changes - 10 seconds
   useEffect(() => {
-    setIsRouteChanging(true);
-    const timer = setTimeout(() => {
-      setIsRouteChanging(false);
-    }, 3000); // 3 seconds
+    if (currentPath && currentPath !== pathname) {
+      setIsRouteChanging(true);
+      const timer = setTimeout(() => {
+        setIsRouteChanging(false);
+        setCurrentPath(pathname);
+      }, 10000); // 10 seconds
 
-    return () => clearTimeout(timer);
-  }, [pathname]);
+      return () => clearTimeout(timer);
+    } else if (!currentPath) {
+      setCurrentPath(pathname);
+    }
+  }, [pathname, currentPath]);
+
+  // Intercept all link clicks to show loader immediately
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a[href]') as HTMLAnchorElement;
+
+      if (link && link.href && !link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
+        const url = new URL(link.href);
+        const currentUrl = new URL(window.location.href);
+
+        // Only show loader for internal navigation
+        if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
+          setIsRouteChanging(true);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick);
+    return () => document.removeEventListener('click', handleLinkClick);
+  }, []);
 
   return (
     <>
@@ -43,9 +70,9 @@ export default function AppWrapper({ children }: AppWrapperProps) {
       {/* Main content */}
       <div
         className={
-          isInitialLoad
-            ? "opacity-0"
-            : "opacity-100 transition-opacity duration-500"
+          isInitialLoad || isRouteChanging
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100"
         }
       >
         {children}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface DirectionAndExperienceProps {
   pageTitle: string | null;
@@ -40,14 +41,18 @@ const DirectionAndExperience: React.FC<DirectionAndExperienceProps> = (
       )}
       {props.image && (
         <section className="w-full flex justify-center items-center bg-white">
-          <img
+          <Image
             src={props.image ?? ""}
             alt="Process"
+            width={1200}
+            height={738}
             className="hidden lg:block w-full md:h-[738px] lg:h-full object-cover"
           />
-          <img
+          <Image
             src={props.imageMobile || props.image || ""}
             alt="Process"
+            width={1200}
+            height={738}
             className="lg:hidden w-full h-[401px] md:h-[738px] lg:h-full object-cover"
           />
         </section>

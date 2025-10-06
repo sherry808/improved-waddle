@@ -303,7 +303,7 @@ export const pdpData: Record<string, PDPData> = {
       area: ["Print Design", "Layout Design"],
       title: "Print Design",
       shortDescription: "Creative print materials for a cultural event",
-      projectLink: "/projects/print-design",
+      projectLink: "/#projects",
       image: "/images/pdp4/main.png",
       imageMobile: "/images/pdp4/main.png",
     },
@@ -378,7 +378,7 @@ export const pdpData: Record<string, PDPData> = {
       title: "Mobile App Design",
       shortDescription:
         "User-centered mobile app design for a fitness platform",
-      projectLink: "/projects/mobile-app-design",
+      projectLink: "/#projects",
       image: "/images/pdp5/main.png",
       imageMobile: "/images/pdp5/main.png",
     },

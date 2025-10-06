@@ -1,6 +1,8 @@
 "use client";
 
 import ProjectDisplay from "@/components/common/ProjectDisplay";
+import Image from "next/image";
+
 
 interface MoreProjectsProps {
   currentProjectId: string;
@@ -12,9 +14,11 @@ export default function MoreProjects({ currentProjectId }: MoreProjectsProps) {
       <div className="container mx-auto px-4">
         <div className="flex flex-row items-center gap-8 mb-12">
           <div className="w-[100px] h-[100px] relative">
-            <img
-              src="/images/arrow.png"
+            <Image
+              src="/images/Arrow.png"
               alt="Arrow"
+              width={100}
+              height={100}
               className="object-contain"
             />
           </div>

@@ -9,6 +9,7 @@ import MoreProjects from "@/components/pdp/MoreProjects";
 import Strategy from "@/components/pdp/Strategy";
 import { pdpData } from "@/data/pdpData";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function PDP3() {
   const data = pdpData.pdp3;
@@ -103,14 +104,18 @@ export default function PDP3() {
         paddingXl="xl:px-[54px] xl:py-0"
       />
       <section className="w-full flex justify-center items-center">
-        <img
+        <Image
           src={data.page3.media ?? ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page3.mediaMobile || data.page3.media || ""}
           alt="Media"
+          width={1200}
+          height={738}
           className="lg:hidden w-full md:h-[738px] lg:h-full object-cover"
         />
       </section>
@@ -125,14 +130,18 @@ export default function PDP3() {
         imageClass="w-full h-[400px] lg:w-[740px] md:h-[738px] lg:h-[1024px] object-cover"
       />
       <section className="w-full flex justify-center items-center bg-white">
-        <img
+        <Image
           src={data.page5.image ?? ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="hidden lg:block w-full h-[400px] md:h-[738px] lg:h-full object-cover"
         />
-        <img
+        <Image
           src={data.page5.imageMobile || data.page5.image || ""}
           alt="Process"
+          width={1200}
+          height={738}
           className="lg:hidden w-full md:h-[738px] lg:h-full object-cover"
         />
       </section>

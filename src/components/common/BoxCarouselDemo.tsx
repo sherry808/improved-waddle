@@ -7,6 +7,8 @@ import BoxCarousel, {
 import useScreenSize from "@/hooks/use-screen-size";
 import { Bug, BugOff } from "lucide-react";
 import { useRef, useState } from "react";
+import Image from "next/image";
+
 
 const carouselItems: CarouselItem[] = [
   {
@@ -83,7 +85,6 @@ export default function BoxCarouselDemo() {
   };
 
   const handleIndexChange = (index: number) => {
-    console.log("Index changed:", index);
   };
 
   const toggleDebug = () => {
@@ -111,19 +112,25 @@ export default function BoxCarouselDemo() {
             debug={debug}
             enableDrag
             perspective={1000}
+            autoPlay={true}
+            autoPlayInterval={4000}
           />
         </div>
         <div className="flex gap-6 lg:gap-4 justify-center items-center">
-          <img
+          <Image
             onClick={handlePrev}
             src="/images/Arrow-Left.png"
             alt="Previous"
+            width={82}
+            height={82}
             className="w-[38px] lg:w-[82px] cursor-pointer"
           />
-          <img
+          <Image
             onClick={handleNext}
             src="/images/Arrow-Right.png"
             alt="Next"
+            width={82}
+            height={82}
             className="w-[38px] lg:w-[82px] cursor-pointer"
           />
         </div>

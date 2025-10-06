@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+
 
 const GetInTouch: React.FC = () => {
   return (
@@ -42,7 +44,7 @@ const GetInTouch: React.FC = () => {
               href="https://calendly.com/milibajaj-work/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-[300px] lg:w-[452px] h-[30px] lg:h-[32px] justify-center items-center font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE]"
+              className="inline-flex w-[300px] lg:w-[452px] h-[30px] lg:h-[32px] justify-center items-center font-nats font-normal text-[15px] lg:text-[20px] text-[#351A12] uppercase bg-[#D2ADCE] cursor-pointer"
             >
               Schedule A Consultation
             </a>
@@ -50,15 +52,21 @@ const GetInTouch: React.FC = () => {
         </div>
       </div>
       <div className="lg:w-full lg:h-[625px] xl:w-[781px] xl:h-[647px] w-full h-auto">
-        <img
+        <Image
           src="/images/get-in-touch.png"
           alt="Get In Touch"
+          width={781}
+          height={647}
           className="hidden lg:block w-full md:h-[738px] lg:h-full object-cover"
+          style={{ filter: 'saturate(1.2) contrast(1.1)' }}
         />
-        <img
+        <Image
           src="/images/mobile-get-in-touch.png"
           alt="Get In Touch"
+          width={781}
+          height={738}
           className="lg:hidden w-full h-[401px] md:h-[738px] object-cover"
+          style={{ filter: 'saturate(1.2) contrast(1.1)' }}
         />
       </div>
     </div>

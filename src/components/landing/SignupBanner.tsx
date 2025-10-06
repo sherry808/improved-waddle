@@ -8,11 +8,10 @@ export default function SignupBanner() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle newsletter subscription here
-    console.log("Newsletter subscription:", email);
   };
 
   return (
-    <div className="w-full bg-[#351A12] px-[30px] md:px-[103px] overflow-x-hidden">
+    <div className="w-full bg-[#351A12] px-[30px] md:px-[104px] overflow-x-hidden">
       {/* Mobile Layout - Single Column */}
       <div className="md:hidden h-[155px]">
         <div className="pt-[33px]">
@@ -27,12 +26,12 @@ export default function SignupBanner() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="email address"
-              className="w-[300px] pt-0 pb-[1px] border-0 border-b border-[#D2ADCE] focus:outline-none font-nats text-[12px] bg-transparent text-[#F7F5ED] placeholder-[#F7F5ED]"
+              className="w-[300px] pt-0 pb-[1px] border-0 border-b border-[#D2ADCE] focus:outline-none font-nats text-[12px] bg-transparent text-[#F7F5ED] placeholder-[#F7F5ED] focus:placeholder-transparent"
               required
             />
             <button
               type="submit"
-              className="absolute left-[280px] bottom-0 w-[20px] h-[20px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center border-0"
+              className="absolute right-0 bottom-0 w-[20px] h-[20px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center border-0"
             />
           </div>
         </form>
@@ -44,20 +43,20 @@ export default function SignupBanner() {
             Sign up for discounts
           </h2>
         </div>
-        <div className="w-[410px] ml-[632px] pt-[75px]">
+        <div className="w-[377px] ml-[632px] pt-[75px]">
           <form onSubmit={handleSubmit}>
-            <div className="relative w-[410px] md:mb-0">
+            <div className="relative w-[377px] md:mb-0">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email address"
-                className="w-[410px] px-[42px] pt-0 pb-[3px] border-0 border-b border-[#D2ADCE] focus:outline-none font-nats text-[16px] bg-transparent text-[#F7F5ED] placeholder-[#F7F5ED]"
+                className="w-[377px] pl-[11px] pr-[42px] pt-0 pb-[3px] border-0 border-b border-[#D2ADCE] focus:outline-none font-nats text-[16px] bg-transparent text-[#F7F5ED] placeholder-[#F7F5ED] focus:placeholder-transparent"
                 required
               />
               <button
                 type="submit"
-                className="absolute left-[370px] bottom-[1px] w-[40px] h-[40px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center border-0"
+                className="absolute right-0 bottom-[1px] w-[40px] h-[40px] bg-[#D2ADCE] text-[#351A12] font-nats flex items-center justify-center border-0"
               />
             </div>
           </form>

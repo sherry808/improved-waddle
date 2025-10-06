@@ -4,6 +4,7 @@ import useIsMobile from "@/hooks/useIsMobile";
 import useResponsiveDimensions from "@/hooks/useResponsiveDimensions";
 import { FC, forwardRef, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
+import Image from "next/image";
 
 interface PageProps {
   pageNumber?: number;
@@ -11,7 +12,7 @@ interface PageProps {
   alt?: string;
 }
 
-interface BlankPageProps {}
+interface BlankPageProps { }
 
 interface PageFlipBookProps {
   images: string[];
@@ -27,9 +28,11 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
         style={{ width: `${width}px`, height: `${height}px` }}
       >
         {image && (
-          <img
+          <Image
             src={image}
             alt={alt || `Page ${pageNumber}`}
+            width={width}
+            height={height}
             className="w-full h-full object-cover"
             style={{ width: `${width}px`, height: `${height}px` }}
           />
@@ -105,9 +108,11 @@ const PageFlipBook: FC<PageFlipBookProps> = ({ images }) => {
                     height: `${height}px`,
                   }}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`Page ${index + 1}`}
+                    width={width}
+                    height={height}
                     className="w-full h-full object-cover"
                   />
                 </div>

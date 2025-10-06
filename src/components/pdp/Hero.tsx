@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface HeroProps {
   area: (string | null)[];
   title: string | null;
@@ -21,14 +23,18 @@ export default function Hero(props: HeroProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full md:h-[680px] font-nats overflow-x-hidden">
       <div className="lg:w-[55%] w-full h-auto">
-        <img
+        <Image
           src={props.image}
           alt={props.title || ""}
+          width={800}
+          height={680}
           className="hidden lg:block w-full h-[400px] md:h-[680px] object-cover"
         />
-        <img
+        <Image
           src={props.imageMobile || props.image}
           alt={props.title || ""}
+          width={800}
+          height={680}
           className="lg:hidden w-full h-[393px] md:h-[680px] object-cover"
         />
       </div>
@@ -42,9 +48,8 @@ export default function Hero(props: HeroProps) {
             {props.area.map((item, index) => (
               <span
                 key={index}
-                className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${
-                  index >= maxAreaItems ? "hidden lg:inline-block" : ""
-                }`}
+                className={`font-nats text-[#351A12] py-0 text-[15px] lg:text-[20px] uppercase ${index >= maxAreaItems ? "hidden lg:inline-block" : ""
+                  }`}
               >
                 {item}
               </span>

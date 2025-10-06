@@ -20,6 +20,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -114,9 +115,11 @@ const MediaRenderer = memo(
       }
 
       return (
-        <img
+        <Image
           src={item.src}
           alt={item.alt || ""}
+          width={400}
+          height={400}
           draggable={false}
           className={cn("w-full h-full object-cover", className)}
         />
@@ -334,22 +337,22 @@ const BoxCarousel = forwardRef<BoxCarouselRef, BoxCarouselProps>(
           if (currentBackFaceIndex === 0) {
             setPrevIndex(
               (pendingIndexChange.current + indexOffset + items.length) %
-                items.length
+              items.length
             );
           } else if (currentBackFaceIndex === 1) {
             setCurrentIndex(
               (pendingIndexChange.current + indexOffset + items.length) %
-                items.length
+              items.length
             );
           } else if (currentBackFaceIndex === 2) {
             setNextIndex(
               (pendingIndexChange.current + indexOffset + items.length) %
-                items.length
+              items.length
             );
           } else if (currentBackFaceIndex === 3) {
             setAfterNextIndex(
               (pendingIndexChange.current + indexOffset + items.length) %
-                items.length
+              items.length
             );
           }
 
