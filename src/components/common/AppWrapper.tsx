@@ -14,17 +14,31 @@ export default function AppWrapper({ children }: AppWrapperProps) {
   const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
 
-  // Handle initial page load - 10 seconds
+  // Disable loader in development
+  const isDevelopment = process.env.NODE_ENV === 'development';
+
+  // Handle initial page load - 10 seconds (disabled in dev)
   useEffect(() => {
+    if (isDevelopment) {
+      setIsInitialLoad(false);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
     }, 10000); // 10 seconds
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isDevelopment]);
 
-  // Handle route changes - 10 seconds
+  // Handle route changes - 10 seconds (disabled in dev)
   useEffect(() => {
+    if (isDevelopment) {
+      setIsRouteChanging(false);
+      setCurrentPath(pathname);
+      return;
+    }
+
     if (currentPath && currentPath !== pathname) {
       setIsRouteChanging(true);
       const timer = setTimeout(() => {
@@ -36,10 +50,12 @@ export default function AppWrapper({ children }: AppWrapperProps) {
     } else if (!currentPath) {
       setCurrentPath(pathname);
     }
-  }, [pathname, currentPath]);
+  }, [pathname, currentPath, isDevelopment]);
 
-  // Intercept all link clicks to show loader immediately
+  // Intercept all link clicks to show loader immediately (disabled in dev)
   useEffect(() => {
+    if (isDevelopment) return;
+
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const link = target.closest('a[href]') as HTMLAnchorElement;
@@ -57,7 +73,7 @@ export default function AppWrapper({ children }: AppWrapperProps) {
 
     document.addEventListener('click', handleLinkClick);
     return () => document.removeEventListener('click', handleLinkClick);
-  }, []);
+  }, [isDevelopment]);
 
   return (
     <>

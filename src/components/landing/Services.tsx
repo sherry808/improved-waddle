@@ -206,8 +206,13 @@ export default function Services() {
                   alt={services[hovered].title}
                   width={533}
                   height={597}
-                  className="w-[533px] h-[597px] object-cover shadow-none drop-shadow-none filter-none !shadow-none !drop-shadow-none"
-                  style={{ boxShadow: 'none', filter: 'none' }}
+                  className="object-cover shadow-none drop-shadow-none filter-none !shadow-none !drop-shadow-none"
+                  style={{
+                    boxShadow: 'none',
+                    filter: 'none',
+                    width: '533px',
+                    height: '597px'
+                  }}
                 />
               ) : (
                 <div className="w-[533px] h-[597px] bg-white"></div>
